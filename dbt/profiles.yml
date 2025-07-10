@@ -1,0 +1,12 @@
+clickhouse_proj:
+  target: dev
+  outputs:
+    dev:
+      type: clickhouse
+      host: clickhouse
+      port: 8123
+      user: ftw_user
+      password: ftw_pass
+      schema: default        # ClickHouse uses “database”
+      threads: 4
+      secure: false

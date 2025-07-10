@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: default
+    database: default  # Explicitly specify ClickHouse database
+    tables:
+      - name: sample_cars___mpg_raw  # Must match EXACTLY (3 underscores)
+        meta:
+          database: default  # Optional but explicit

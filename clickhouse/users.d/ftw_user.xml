@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<yandex>
+  <users>
+    <dlt_user>
+      <password>ftw_pass</password>
+      <networks>
+        <ip>::/0</ip>
+      </networks>
+      <profile>default</profile>
+      <quota>default</quota>
+      <allow_databases>
+        <database>default</database>
+      </allow_databases>
+    </dlt_user>
+  </users>
+</yandex>
+

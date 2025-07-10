@@ -1,0 +1,7 @@
+adapter: clickhouse_connect
+host:    clickhouse
+port:    8123
+user:    dlt_user
+password:dlt_pass
+database:default          # target DB
+
