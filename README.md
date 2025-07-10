@@ -52,6 +52,12 @@ flowchart LR
     style CH fill:#fde9b4,stroke:#663,stroke-width:2px,color:#000
 ```
 
+This architecture is a **self-contained Docker-Compose stack**—ClickHouse for blazing analytics, **dlt** for Python-native extraction, **dbt** for SQL-first transformations and lineage, and **Metabase** for code-free dashboards—so any scholar can spin up a full ELT pipeline in minutes, on any OS.
+
+In a production environment you’d also introduce an orchestrator (Airflow/Kubeflow), secrets management (Vault/K8s-Secrets), observability (Prometheus/Grafana or ELK), data-quality tooling (Great Expectations/Monte Carlo), and elastic compute (Kubernetes, auto-scaling). **We’ve omitted those** here to keep the focus squarely on core ELT concepts and deliver a reproducible, low-friction playground you can extend on Day 2—without being bogged down in infrastructure complexity.
+
+Above all, this bootcamp emphasizes **SQL** while using only minimal Python, YAML, and Markdown.
+
 ---
 
 ## A · Provision and harden the server (once)
