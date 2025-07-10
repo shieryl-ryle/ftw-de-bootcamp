@@ -47,7 +47,7 @@ flowchart LR
     end
 
     %% styling
-    classDef box fill:#d6eaf8,stroke:#036,stroke-width:1px;
+    classDef box fill:#d6eaf8,stroke:#036,stroke-width:1px,color:#000;
     class SRC,DLT,DBT,META box;
     style CH fill:#fde9b4,stroke:#663,stroke-width:2px,color:#000
 ```
