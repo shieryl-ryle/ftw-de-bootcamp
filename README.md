@@ -1,6 +1,6 @@
 # FTW DE BOOTCAMP
 
-The FTW DE Bootcamp delivers six Saturdays of hands-on data-engineering for 30 scholars.
+The [For the Women Foundation](https://www.ftwfoundation.org/) DE Bootcamp delivers six Saturdays of hands-on data-engineering for 30 scholars.
 This repository jump-starts the entire toolchain so you can skip the yak-shaving and dive straight into concepts and code.
 
 It launches a complete analytics stack with **one Compose command**:
