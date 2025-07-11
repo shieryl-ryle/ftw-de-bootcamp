@@ -23,15 +23,13 @@ Note: This outline is still in development and is subject to change.
 1. **Provision** an Ubuntu 22.04 VPS (or local VM)  
 2. **Install Docker & Compose**, clone this repo, and connect via VS Code Remote-SSH  
 3. **Build** custom images:  
-   ```bash
-   docker compose build dlt dbt
-```
-
+  ```bash
+  docker compose build dlt dbt
+  ```
 4. **Run** extract & transform:
-
-   ```bash
-   docker compose --profile jobs up dlt dbt
-   ```
+  ```bash
+  docker compose --profile jobs up dlt dbt
+  ```
 5. **Open** Metabase at `http://localhost:3001`, add the pre-seeded ClickHouse connection, and start charting.
 
 Everything is containerized, reproducible, and CI-ready—perfect for rapid learning and real-world practice.
