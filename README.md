@@ -2,6 +2,20 @@
 
 The [For the Women Foundation](https://www.ftwfoundation.org/) Data Engineering Bootcamp delivers six Saturdays of hands-on ELT for 30 scholars. This repo jump-starts your environment so you can focus on concepts and code.
 
+**Bootcamp 6-Week Timeline**
+*All sessions are Saturdays, each with a morning lecture (3 hrs) and afternoon lab (3–4 hrs).*
+
+|  Week | Focus                              | Morning Lecture                         | Afternoon Lab                                    |
+| :---: | ---------------------------------- | --------------------------------------- | ------------------------------------------------ |
+| **1** | Platform & ELT Foundations         | Docker Compose, ClickHouse & dlt basics | Load MovieLens, build dim/fact tables & chart    |
+| **2** | SQL Transformations & Modeling     | dbt structure, star schemas, joins      | Ingest NYC Taxi, staging + revenue mart & trends |
+| **3** | Incrementals, Streaming & Testing  | dlt incremental/streaming, testing      | NOAA weather stream + station joins & dashboard  |
+| **4** | Data Quality & Cleaning Messy Data | SQL cleaning patterns, dbt tests        | Ingest 311 complaints, clean, mart + pulse       |
+| **5** | Capstone Kickoff & Pipeline Build  | Capstone briefing & design              | Scaffold dlt + initial dbt staging (team work)   |
+| **6** | Capstone Finish & Presentations    | Finalize models, docs & CI              | Build dashboards, pulse; team demos & wrap-up    |
+
+Note: This outline is still in development and is subject to change.
+
 ---
 
 ## 🚀 Quick Start
