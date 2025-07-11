@@ -25,7 +25,7 @@ Note: This outline is still in development and is subject to change.
 3. **Build** custom images:  
    ```bash
    docker compose build dlt dbt
-````
+```
 
 4. **Run** extract & transform:
 
