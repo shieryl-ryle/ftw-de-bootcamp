@@ -169,7 +169,6 @@ git push -u origin main
 ftw-de-bootcamp/
 ├── clickhouse/
 │   └── users.d/
-│       ├── dlt_user.xml
 │       └── ftw_user.xml
 ├── compose.yaml
 ├── dbt/
@@ -193,27 +192,28 @@ ftw-de-bootcamp/
 
 ```bash
 # Build images
-docker compose build dlt dbt
+docker compose -p myk build dlt dbt
 
 # Start stateful services
-docker compose up -d clickhouse metabase
+docker compose -p myk up -d clickhouse --remove-orphans
+docker compose -p myk up -d metabase --remove-orphans
 
 # Quick ClickHouse sanity check
-docker exec clickhouse \
+docker compose -p myk exec clickhouse \
   clickhouse-client --query="SELECT now();"
 
 # Run extract & load
-docker compose --profile jobs up dlt
+docker compose -p myk --profile jobs up dlt
 
 # Verify raw data
-docker exec clickhouse \
+docker compose -p myk exec clickhouse \
   clickhouse-client --query="SELECT count() FROM sample_cars___mpg_raw;"
 
 # Run transform
-docker compose --profile jobs up dbt
+docker compose -p myk --profile jobs run --rm dbt run 
 
 # Verify model
-docker exec clickhouse \
+docker compose -p myk exec clickhouse \
   clickhouse-client --query="SELECT count() FROM cylinders_by_origin;"
 ```
 
@@ -252,10 +252,10 @@ docker exec clickhouse \
 
 | Goal                          | Command                                    |
 | ----------------------------- | ------------------------------------------ |
-| **Start services**            | `docker compose up -d clickhouse metabase` |
-| **Run full ELT**              | `docker compose --profile jobs up dlt dbt` |
-| **Tail dlt logs**             | `docker compose logs -f dlt`               |
-| **Stop all (keep data)**      | `docker compose down`                      |
+| **Start services**            | `docker compose -p myk up -d clickhouse metabase` |
+| **Run full ELT**              | `docker compose -p myk --profile jobs up dlt dbt` |
+| **Tail dlt logs**             | `docker compose -p myk  logs -f dlt`               |
+| **Stop all (keep data)**      | `docker compose -p myk down -v`                      |
 | **Hard reset (drop volumes)** | `./scripts/reset.sh`                       |
 
 ---

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <yandex>
   <users>
-    <dlt_user>
+    <ftw_user>
       <password>ftw_pass</password>
       <networks>
         <ip>::/0</ip>
@@ -11,7 +11,7 @@
       <allow_databases>
         <database>default</database>
       </allow_databases>
-    </dlt_user>
+    </ftw_user>
   </users>
 </yandex>
 
