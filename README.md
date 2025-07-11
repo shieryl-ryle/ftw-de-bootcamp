@@ -177,15 +177,16 @@ ftw-de-bootcamp/
 │   ├── dbt_project.yml
 │   ├── Dockerfile
 │   ├── models/
-│   │   ├── cylinders_by_origin.sql
+│   │   ├── cylinders_by_origin.sql # transformation of auto_mpg dataset
 │   │   └── sources.yml
 │   └── profiles.yml
 ├── dlt/
 │   ├── clickhouse.yaml
 │   ├── Dockerfile
-│   ├── pipeline.py
-│   └── requirements.txt
+│   ├── requirements.txt
+│   ├── mpg_pipeline.py       # individual pipeline: extraction of auto_mpg dataset
 └── README.md
+
 ```
 
 ---
@@ -254,21 +255,45 @@ docker compose -p myk exec clickhouse \
 
 ## 🔄 Daily Usage
 
-| Goal                          | Command                                    |
-| ----------------------------- | ------------------------------------------ |
-| **Start services**            | `docker compose -p myk up -d clickhouse metabase` |
-| **Run full ELT**              | `docker compose -p myk --profile jobs up dlt dbt` |
-| **Tail dlt logs**             | `docker compose -p myk  logs -f dlt`               |
-| **Stop all (keep data)**      | `docker compose -p myk down -v`                      |
-| **Hard reset (drop volumes)** | `./scripts/reset.sh`                       |
+| Goal                          | Command                                                         |
+| ----------------------------- | --------------------------------------------------------------- |
+| **Start core services**       | `docker compose -p myk up -d clickhouse metabase`               |
+| **Run full ELT pipeline**     | `docker compose -p myk --profile jobs up dlt dbt`               |
+| **Stream DLT logs**           | `docker compose -p myk logs -f dlt`                             |
+| **Shut down (preserve data)** | `docker compose -p myk down -v`                                    |
+| **Wipe all volumes**          | `./scripts/reset.sh`                                            |
 
 ---
 
+## ⏰ Schedule a Daily Job via cron
+
+1. **Edit your crontab**  
+   ```bash
+   crontab -e
+```
+
+2. **Add a nightly job at 2 AM** to run the `cylinders_by_origin` model and capture logs:
+
+   ```cron
+   0 2 * * * cd /home/myk/ftw-de-bootcamp && \
+     docker compose -p myk --profile jobs run --rm dbt \
+       run --models cylinders_by_origin \
+     >> /home/myk/logs/dbt_avg_cyl_$(date +\%Y\%m\%d).log 2>&1
+   ```
+
+3. **Save and exit**.
+
+   > The pipeline will now execute every night at 02:00, appending stdout & stderr to `~/logs/dbt_avg_cyl_YYYYMMDD.log`.
+
+---
+
+
+
 ## 📝 TODO
 
-* Add cron instructions for recurring jobs
+
 * Develop lecture slides, exercises & assignments
 
 ---
 
-You’re all set—edit `dlt/pipeline.py` or any dbt model, re-run the jobs, refresh Metabase, and watch new insights appear!
+You’re all set—edit create a new pipeline or dbt model, re-run the jobs, refresh Metabase, and watch new insights appear!
