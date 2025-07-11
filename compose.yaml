@@ -44,7 +44,10 @@ services:
   # JOB-STYLE SERVICES (profile = jobs)
   # ──────────────────────────────────────────────────────────
   dlt:
-    build: ./dlt                              # uses Dockerfile below
+    build: ./dlt     
+    working_dir: /var/dlt
+    volumes:
+    - ./dlt:/var/dlt/pipelines                # host scripts in pipelines dir
     container_name: ${DLT_CONTAINER}
     environment:
       # DESTINATION section → ClickHouse creds

@@ -1,1 +1,0 @@
-{"_invocation_id": "c917289c-7f7a-4845-b71b-04099ee60ca2", "linked": {"0": {"name": "source.clickhouse_demo.default.sample_cars___mpg_raw", "type": "source", "succ": [1]}, "1": {"name": "model.clickhouse_demo.cylinders_by_origin", "type": "model"}}}

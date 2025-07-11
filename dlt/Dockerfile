@@ -1,10 +1,8 @@
 FROM python:3.9-slim
 
-WORKDIR /project
+WORKDIR /var/dlt/pipelines
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
-
-CMD ["python", "pipeline.py"]
 

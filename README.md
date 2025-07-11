@@ -97,6 +97,8 @@ Above all, this bootcamp emphasizes **SQL** with only minimal Python, YAML, and 
 
 ## 🛠 Setup Instructions
 
+To keep all work within a consistent namespace, replace all 'myk' phrases with a unique name.
+
 ### A. Provision & Harden the Server
 
 | Step                    | Command / Action                                                                                                         | Notes                           |
@@ -202,15 +204,17 @@ docker compose -p myk up -d metabase --remove-orphans
 docker compose -p myk exec clickhouse \
   clickhouse-client --query="SELECT now();"
 
-# Run extract & load
-docker compose -p myk --profile jobs up dlt
+# Run extract 
+docker compose -p myk --profile jobs run --rm dlt   python pipelines/mpg_pipeline.py
 
 # Verify raw data
 docker compose -p myk exec clickhouse \
-  clickhouse-client --query="SELECT count() FROM sample_cars___mpg_raw;"
+  clickhouse-client --query="SELECT count() FROM auto_mpg___mpg_raw;"
+
 
 # Run transform
-docker compose -p myk --profile jobs run --rm dbt run 
+docker compose -p myk --profile jobs run --rm dbt \
+  run --models cylinders_by_origin
 
 # Verify model
 docker compose -p myk exec clickhouse \
