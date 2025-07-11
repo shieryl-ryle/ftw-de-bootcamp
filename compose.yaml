@@ -1,4 +1,3 @@
-
 services:
   # ──────────────────────────────────────────────────────────
   # PERSISTENT SERVICES
@@ -17,6 +16,11 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 4g
 
   metabase:
     image: metabase/metabase:latest
@@ -30,6 +34,11 @@ services:
     depends_on:
       clickhouse:
         condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1g
 
   # ──────────────────────────────────────────────────────────
   # JOB-STYLE SERVICES (profile = jobs)
@@ -38,7 +47,7 @@ services:
     build: ./dlt                              # uses Dockerfile below
     container_name: ${DLT_CONTAINER}
     environment:
-     # DESTINATION section → ClickHouse creds
+      # DESTINATION section → ClickHouse creds
       DESTINATION__CLICKHOUSE__CREDENTIALS__HOST:       clickhouse
       DESTINATION__CLICKHOUSE__CREDENTIALS__PORT:       9000    # ← native port
       DESTINATION__CLICKHOUSE__CREDENTIALS__HTTP_PORT: 8123
@@ -51,12 +60,17 @@ services:
         condition: service_healthy
     restart: "no"                             # exit after success
     profiles: ["jobs"]                        # run only with --profile jobs
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1g
 
   dbt:
     build: ./dbt      # replaces `image:`
     container_name: ${DBT_CONTAINER}
     environment:
-     DBT_GIT_SHA: "skipped"      # dbt stops looking for git
+      DBT_GIT_SHA: "skipped"      # dbt stops looking for git
     working_dir: /workdir
     volumes:
       - ./dbt:/workdir                        # your dbt project
@@ -67,6 +81,11 @@ services:
     command: dbt run                          # one-shot transform
     restart: "no"
     profiles: ["jobs"]
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1g
 
 volumes:
   clickhouse_data:

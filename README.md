@@ -149,8 +149,8 @@ docker version               # verify installation
 
 ```bash
 cd ~
-git clone https://github.com/ogbinar/ftw-de-bootcamp.git
-cd ftw-de-bootcamp
+git clone https://github.com/ogbinar/ftw-de-bootcamp.git ftw-de-bootcamp-myk
+cd ftw-de-bootcamp-myk
 
 # Point to your GitHub
 git remote rename origin upstream
