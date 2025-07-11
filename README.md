@@ -1,4 +1,3 @@
-````markdown
 # FTW DE BOOTCAMP
 
 The [For the Women Foundation](https://www.ftwfoundation.org/) Data Engineering Bootcamp delivers six Saturdays of hands-on ELT for 30 scholars. This repo jump-starts your environment so you can focus on concepts and code.
