@@ -1,0 +1,1 @@
+{"_invocation_id": "401ef7f1-4967-4961-9891-7e6290e040e9", "linked": {"0": {"name": "source.clickhouse_demo.default.auto_mpg___mpg_raw", "type": "source", "succ": [1]}, "1": {"name": "model.clickhouse_demo.cylinders_by_origin", "type": "model"}}}
