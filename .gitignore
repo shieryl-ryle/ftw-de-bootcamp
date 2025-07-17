@@ -1,0 +1,24 @@
+# DBT artifacts
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+
+# DLT pipeline artifacts
+dlt/**/load/
+dlt/**/normalize/
+dlt/**/trace.pickle
+dlt/**/state.json
+dlt/**/.version
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE specific
+.idea/
+.vscode/
