@@ -130,7 +130,8 @@ chmod 644 ~/.ssh/my-server-key.pub  # Public key: Readable by others
 ```powershell
 icacls .\my-server-key /reset
 icacls .\my-server-key /inheritance:r
-icacls .\my-server-key /grant:r "$($env:USERNAME):(R)"
+icacls .\my-server-key /grant:r "$($env:USERNAME):(R)" # Powershell
+icacls .\my-server-key /grant:r "%USERNAME%:(R)" # Windows Command Prompt
 ```
 *(Prevents "UNPROTECTED PRIVATE KEY FILE" errors.)*  
 
@@ -294,7 +295,9 @@ docker compose -p myk exec clickhouse \
   clickhouse-client --query="SELECT now();"
 
 # Run extract 
-docker compose -p myk --profile jobs run --rm dlt   python pipelines/mpg_pipeline.py
+docker compose -p myk --profile jobs run --rm --user $(id -u):$(id -g) dlt   python pipelines/dlt-mpg-pipeline.py
+
+# docker compose -p myk --profile jobs run --rm dlt   python pipelines/dlt-food-pipeline.py
 
 # Verify raw data
 docker compose -p myk exec clickhouse \
@@ -329,15 +332,18 @@ docker compose -p myk exec clickhouse \
 
 ---
 
+If everything works 
+
 ### G. Metabase Setup (One-time)
 
-1. Visit **[http://localhost:3001](http://localhost:3001)** (or forwarded port).
-2. Complete the wizard, choose **ClickHouse**, enter:
+1. Forward port 3001 in VSCODE
+2. Visit **[http://localhost:3001](http://localhost:3001)** (or forwarded port).
+3. Complete the wizard, choose **ClickHouse**, enter:
 
    ```
    clickhouse:8123  •  ftw_user  •  ftw_pass  •  SSL: off
    ```
-3. Build a bar chart of **avg\_cyl by origin** and save to **Cars Demo**.
+4. Build a bar chart of **avg\_cyl by origin** and save to **Cars Demo**.
 
 ---
 

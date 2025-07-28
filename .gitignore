@@ -9,6 +9,7 @@ dlt/**/normalize/
 dlt/**/trace.pickle
 dlt/**/state.json
 dlt/**/.version
+dlt/.dlt/secrets.toml
 
 # Editor files
 *.swp
@@ -22,3 +23,4 @@ Thumbs.db
 # IDE specific
 .idea/
 .vscode/
+

@@ -1,0 +1,254 @@
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline bitcoin_pipeline load step completed in 0.06 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753720355.6431348 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline bitcoin_pipeline load step completed in 0.07 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753720370.301522 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline bitcoin_pipeline load step completed in 0.11 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753720926.3112307 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline bitcoin_pipeline load step completed in 0.06 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753720985.8171415 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline bitcoin_pipeline load step completed in 0.11 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753721045.5420067 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline bitcoin_pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753721106.1746755 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline bitcoin_pipeline load step completed in 0.11 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753721165.5940444 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline bitcoin_pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753721226.148302 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.11 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753721285.453157 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753721345.1165547 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753721405.790426 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.11 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753721465.335637 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753721526.1131258 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: exec: "--user": executable file not found in $PATH: unknown
+ Container clickhouse  Running
+Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: exec: "--user": executable file not found in $PATH: unknown
+ Container clickhouse  Running
+Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: exec: "--user": executable file not found in $PATH: unknown
+ Container clickhouse  Running
+Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: exec: "--user": executable file not found in $PATH: unknown
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753721826.057704 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753721885.5328135 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.06 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753721945.9135969 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.09 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722005.9150445 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.09 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722066.3299115 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722125.4685938 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.06 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722186.2871726 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.09 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722246.6185973 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.09 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722306.3632383 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722366.2789588 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.11 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722426.429532 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.12 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722486.8307123 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.11 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722546.6328049 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.11 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722606.4001849 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722666.294287 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.11 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722726.6947174 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.09 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722785.544348 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.08 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722845.494102 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.09 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722906.0005057 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.11 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753722966.334685 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753723026.4046617 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.09 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753723085.621735 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753723146.2291298 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.05 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753723206.4025486 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.06 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753723266.174447 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.10 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753723326.209153 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.11 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753723386.7405448 is LOADED and contains no failed jobs
+ Container clickhouse  Running
+Fetching and loading...
+records loaded: Pipeline dlt-btc-pipeline load step completed in 0.09 seconds
+1 load package(s) were loaded to destination clickhouse and into dataset btc
+The clickhouse destination used clickhouse://ftw_user:***@clickhouse:9000/default location to store data
+Load package 1753723446.366361 is LOADED and contains no failed jobs
