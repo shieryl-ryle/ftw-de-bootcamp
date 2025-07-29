@@ -289,6 +289,7 @@ docker compose -p myk build dlt dbt
 # Start stateful services
 docker compose -p myk up -d clickhouse --remove-orphans
 docker compose -p myk up -d metabase --remove-orphans
+docker compose -p myk up -d postgres_chinook --remove-orphans
 
 # Quick ClickHouse sanity check
 docker compose -p myk exec clickhouse \
@@ -297,6 +298,7 @@ docker compose -p myk exec clickhouse \
 # Run extract 
 docker compose -p myk --profile jobs run --rm --user $(id -u):$(id -g) dlt   python pipelines/dlt-mpg-pipeline.py
 
+# docker compose -p myk --profile jobs run --rm --user $(id -u):$(id -g) dlt   python pipelines/dlt-chinook-pipeline.py
 # docker compose -p myk --profile jobs run --rm dlt   python pipelines/dlt-food-pipeline.py
 
 # Verify raw data

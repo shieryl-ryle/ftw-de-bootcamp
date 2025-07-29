@@ -1,3 +1,5 @@
+# compose.yaml
+
 services:
   # ──────────────────────────────────────────────────────────
   # PERSISTENT SERVICES
@@ -40,6 +42,22 @@ services:
           cpus: "1.0"
           memory: 1g
 
+
+# External database containing source data
+  postgres_chinook:
+    image: postgres:14-alpine
+    container_name: chinook_postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: chinook
+      POSTGRES_PASSWORD: chinook
+    ports:
+      - "5432:5432"
+    #networks:
+    #  - chinook_net
+    volumes:
+      - ./dlt/staging/chinook-initdb:/docker-entrypoint-initdb.d:ro
+
   # ──────────────────────────────────────────────────────────
   # JOB-STYLE SERVICES (profile = jobs)
   # ──────────────────────────────────────────────────────────
@@ -58,10 +76,20 @@ services:
       DESTINATION__CLICKHOUSE__CREDENTIALS__PASSWORD:   ftw_pass
       DESTINATION__CLICKHOUSE__CREDENTIALS__DATABASE:   default
       DESTINATION__CLICKHOUSE__CREDENTIALS__SECURE:     0
+      
+      # postgres source database for chinook
+      POSTGRES_HOST:     postgres_chinook
+      POSTGRES_PORT:     "5432"
+      POSTGRES_USER:     chinook
+      POSTGRES_PASSWORD: chinook
+      POSTGRES_DB:       chinook
     depends_on:
       clickhouse:
         condition: service_healthy
     restart: "no"                             # exit after success
+    #networks:
+    #  - default
+    #  - chinook_net
     profiles: ["jobs"]                        # run only with --profile jobs
     deploy:
       resources:
@@ -93,3 +121,8 @@ services:
 volumes:
   clickhouse_data:
   metabase_data:
+
+# isoldate chinook container
+#networks:
+#  chinook_net:
+#    driver: bridge
