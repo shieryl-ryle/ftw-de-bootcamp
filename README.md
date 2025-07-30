@@ -298,9 +298,6 @@ docker compose -p myk exec clickhouse \
 # Run extract 
 docker compose -p myk --profile jobs run --rm --user $(id -u):$(id -g) dlt   python pipelines/dlt-mpg-pipeline.py
 
-# docker compose -p myk --profile jobs run --rm --user $(id -u):$(id -g) dlt   python pipelines/dlt-chinook-pipeline.py
-# docker compose -p myk --profile jobs run --rm dlt   python pipelines/dlt-food-pipeline.py
-
 # Verify raw data
 docker compose -p myk exec clickhouse \
   clickhouse-client --query="SELECT count() FROM auto_mpg___mpg_raw;"
@@ -313,13 +310,31 @@ docker compose -p myk --profile jobs run --rm dbt \
 # Verify model
 docker compose -p myk exec clickhouse \
   clickhouse-client --query="SELECT count() FROM cylinders_by_origin;"
-```
+
 
 > If ports 8123/3001 are firewall-blocked, use VS Code port forwarding.
 
+# advanced exercises
+
+## Ingest from Postgres
+### make sure postgres is running
+docker compose -p myk --profile jobs run --rm --user $(id -u):$(id -g) dlt   python pipelines/dlt-chinook-pipeline.py
+
+## Timeseries
+docker compose -p myk --profile jobs run --rm --user $(id -u):$(id -g) dlt   python pipelines/dlt-meteo-pipeline.py
+
+## Incremental + Cron
+docker compose -p myk --profile jobs run --rm --user $(id -u):$(id -g) dlt   python pipelines/dlt-btc-pipeline.py
+
+## Ingest from REST API
+docker compose -p myk --profile jobs run --rm --user $(id -u):$(id -g) dlt   python pipelines/dlt-poke-pipeline.py
+
+## Ingest from Webscraping
+docker compose -p myk --profile jobs run --rm --user $(id -u):$(id -g) dlt   python pipelines/dlt-laz-pipeline.py
+```
 ---
 
-### F. DBeaver (Optional)
+### F. DBeaver 
 
 1. Install DBeaver locally.
 2. Create a **ClickHouse** connection:
@@ -366,20 +381,17 @@ If everything works
 1. **Edit your crontab**  
    ```bash
    crontab -e
-```
+  ```
 
-2. **Add a nightly job at 2 AM** to run the `cylinders_by_origin` model and capture logs:
+2. **Run btc pipeline every minute**:
 
    ```cron
-   0 2 * * * cd /home/myk/ftw-de-bootcamp && \
-     docker compose -p myk --profile jobs run --rm dbt \
-       run --models cylinders_by_origin \
-     >> /home/myk/logs/dbt_avg_cyl_$(date +\%Y\%m\%d).log 2>&1
+   * * * * *  /projects/ftw-de-bootcamp/scripts/run-btc-pipeline.sh
    ```
 
 3. **Save and exit**.
 
-   > The pipeline will now execute every night at 02:00, appending stdout & stderr to `~/logs/dbt_avg_cyl_YYYYMMDD.log`.
+   > The pipeline will now execute every minutes, appending stdout & stderr to `ftw-de-bootcamp/logs/dlt-btc-pipeline.log`.
 
 ---
 
@@ -387,8 +399,8 @@ If everything works
 
 ## 📝 TODO
 
-
-* Develop lecture slides, exercises & assignments
+* exercises - done
+* Develop lecture slides, assignments, pre-lectures / courses to take 
 
 ---
 

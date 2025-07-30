@@ -13,6 +13,7 @@ services:
     volumes:
       - clickhouse_data:/var/lib/clickhouse
       - ./clickhouse/users.d/ftw_user.xml:/etc/clickhouse-server/users.d/ftw_user.xml:ro
+      - ./clickhouse/initdb:/docker-entrypoint-initdb.d:ro 
     healthcheck:
       test: ["CMD-SHELL", "clickhouse-client --query='SELECT 1' || exit 1"]
       interval: 10s
@@ -56,7 +57,7 @@ services:
     #networks:
     #  - chinook_net
     volumes:
-      - ./dlt/staging/chinook-initdb:/docker-entrypoint-initdb.d:ro
+      - ./postgres/initdb:/docker-entrypoint-initdb.d:ro
 
   # ──────────────────────────────────────────────────────────
   # JOB-STYLE SERVICES (profile = jobs)
@@ -65,7 +66,7 @@ services:
     build: ./dlt     
     working_dir: /var/dlt
     volumes:
-    - ./dlt:/var/dlt/pipelines                # host scripts in pipelines dir
+    - ./dlt:/var/dlt/               # host scripts in pipelines dir
     container_name: ${DLT_CONTAINER}
     environment:
       # DESTINATION section → ClickHouse creds
@@ -74,7 +75,7 @@ services:
       DESTINATION__CLICKHOUSE__CREDENTIALS__HTTP_PORT: 8123
       DESTINATION__CLICKHOUSE__CREDENTIALS__USERNAME:   ftw_user
       DESTINATION__CLICKHOUSE__CREDENTIALS__PASSWORD:   ftw_pass
-      DESTINATION__CLICKHOUSE__CREDENTIALS__DATABASE:   default
+      DESTINATION__CLICKHOUSE__CREDENTIALS__DATABASE:   raw
       DESTINATION__CLICKHOUSE__CREDENTIALS__SECURE:     0
       
       # postgres source database for chinook

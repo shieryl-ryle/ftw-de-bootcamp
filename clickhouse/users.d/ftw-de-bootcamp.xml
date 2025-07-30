@@ -10,6 +10,10 @@
       <quota>default</quota>
       <allow_databases>
         <database>default</database>
+        <database>raw</database>
+        <database>clean</database>
+        <database>mart</database>
+        <database>sandbox</database>
       </allow_databases>
     </ftw_user>
   </users>
