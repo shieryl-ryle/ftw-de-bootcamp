@@ -399,8 +399,12 @@ If everything works
 
 ## 📝 TODO
 
+
 * exercises - done
 * Develop lecture slides, assignments, pre-lectures / courses to take 
+- access isolation
+- docker cronjob
+- number of pages for laz scrape
 
 ---
 
