@@ -137,7 +137,7 @@ docker logs -f metabase | head -n 50   # Metabase warms up on first boot
 docker compose --compatibility up -d --profile core
 
 # Ingest (dlt)
-docker compose --profile jobs run --rm dlt python pipelines/dlt-mpg-pipeline.py
+docker compose --profile jobs run --rm dlt python pipelines/01-dlt-mpg-pipeline.py
 
 # Transform (dbt)
 docker compose --profile jobs run --rm dbt run

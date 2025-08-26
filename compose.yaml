@@ -82,17 +82,50 @@ services:
 
   # External sample database (Chinook) used as a SOURCE.
   # Intentionally NO host port to avoid conflicts; other containers reach it by name.
+
+ 
+  chinook_fetch:
+    image: alpine:3.20
+    entrypoint: /bin/sh
+    command:
+      - -c
+      - |
+        set -eux
+        apk add --no-cache curl
+        mkdir -p /initdb
+        curl -fsSL https://raw.githubusercontent.com/lerocha/chinook-database/master/ChinookDatabase/DataSources/Chinook_PostgreSql.sql \
+          -o /initdb/01-load-chinook.sql
+        ls -lh /initdb
+    volumes:
+      - chinook_init:/initdb
+    restart: "no"
+    profiles: ["core"]
+
   postgres_chinook:
     image: postgres:14-alpine
     container_name: chinook_postgres
     environment:
-      POSTGRES_DB: postgres
+      POSTGRES_DB: postgres        # 👈 connect here so DROP/CREATE chinook works
       POSTGRES_USER: chinook
       POSTGRES_PASSWORD: chinook
     volumes:
-      - ./postgres/initdb:/docker-entrypoint-initdb.d:ro
+      - chinook_init:/docker-entrypoint-initdb.d:ro
+      - pgdata:/var/lib/postgresql/data
+    ports:
+    # Public on host:5432 → container:5432
+    # If 5432 is busy on the host, use "65432:5432" instead.
+    - "5432:5432"
+    depends_on:
+      chinook_fetch:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chinook -d postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
     profiles: ["core"]
-
+ 
+  
   # ──────────────────────────────────────────────────────────
   # JOB-STYLE SERVICES (ephemeral; run with --profile jobs)
   # ──────────────────────────────────────────────────────────
@@ -121,7 +154,7 @@ services:
       POSTGRES_PORT:     "5432"
       POSTGRES_USER:     "chinook"
       POSTGRES_PASSWORD: "chinook"
-      POSTGRES_DB:       "chinook"
+      POSTGRES_DB:       "chinook" # this was created by load-chinook.sh
     restart: "no"
     deploy:
       resources:
@@ -161,3 +194,5 @@ services:
 volumes:
   clickhouse_data:
   metabase_data:
+  chinook_init:
+  pgdata:
