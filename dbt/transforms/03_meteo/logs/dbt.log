@@ -4063,3 +4063,1337 @@ EXCHANGE TABLES `mart`.`mart_meteo__manila_monthly__dbt_backup` AND `mart`.`mart
 [0m15:39:35.860933 [debug] [MainThread]: Command `dbt build` succeeded at 15:39:35.860735 after 6.76 seconds
 [0m15:39:35.861599 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70899b86d310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708997cb5790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708997655c40>]}
 [0m15:39:35.862189 [debug] [MainThread]: Flushing usage events
+[0m17:17:00.281349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c9011310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c5c75b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c5c75a30>]}
+
+
+============================== 17:17:00.293240 | 0bc6499c-f9d0-481c-baf0-82e67858e88a ==============================
+[0m17:17:00.293240 [info ] [MainThread]: Running with dbt=1.8.9
+[0m17:17:00.294693 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'static_parser': 'True', 'log_path': '/workdir/transforms/03_meteo/logs', 'debug': 'False', 'quiet': 'False', 'profiles_dir': '.', 'introspect': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'printer_width': '80', 'version_check': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'no_print': 'None', 'target_path': 'None', 'use_colors': 'True', 'empty': 'False', 'log_cache_events': 'False', 'invocation_command': 'dbt build --profiles-dir . --target local', 'write_json': 'True'}
+[0m17:17:00.998048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0bc6499c-f9d0-481c-baf0-82e67858e88a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c7c18490>]}
+[0m17:17:01.258602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0bc6499c-f9d0-481c-baf0-82e67858e88a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c67a1430>]}
+[0m17:17:01.259976 [info ] [MainThread]: Registered adapter: clickhouse=1.8.6
+[0m17:17:01.801039 [debug] [MainThread]: checksum: 134c0f7b96382cc6938697739bc32fb1adc530b177e30f60cebddf61dbd7e979, vars: {}, profile: , target: local, version: 1.8.9
+[0m17:17:02.763306 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 2 files added, 1 files changed.
+[0m17:17:02.764713 [debug] [MainThread]: Partial parsing: added file: ex_03_meteo://models/clean/stg_meteo__regions_daily.sql
+[0m17:17:02.765678 [debug] [MainThread]: Partial parsing: added file: ex_03_meteo://models/mart/vw_meteo__regions_latest.sql
+[0m17:17:02.767432 [debug] [MainThread]: Partial parsing: updated file: ex_03_meteo://models/sources.yml
+[0m17:17:03.793741 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m17:17:03.794748 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '0bc6499c-f9d0-481c-baf0-82e67858e88a', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c5419820>]}
+[0m17:17:04.877110 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0bc6499c-f9d0-481c-baf0-82e67858e88a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c4b0b130>]}
+[0m17:17:05.369601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0bc6499c-f9d0-481c-baf0-82e67858e88a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c4a8f220>]}
+[0m17:17:05.370518 [info ] [MainThread]: Found 6 models, 4 data tests, 3 sources, 471 macros
+[0m17:17:05.374445 [info ] [MainThread]: 
+[0m17:17:05.375555 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m17:17:05.389010 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m17:17:05.400370 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m17:17:05.592804 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:17:05.596791 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:17:06.114113 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m17:17:06.119080 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:17:06.129361 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m17:17:06.166172 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:17:06.202613 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__mart)
+[0m17:17:06.203796 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__clean)
+[0m17:17:06.270706 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__mart: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list__mart"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'mart'
+      
+
+  ...
+[0m17:17:06.278845 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__clean: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list__clean"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'clean'
+      
+
+  ...
+[0m17:17:06.290821 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:17:06.297525 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m17:17:06.361700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0bc6499c-f9d0-481c-baf0-82e67858e88a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c4edf4f0>]}
+[0m17:17:06.363657 [info ] [MainThread]: Concurrency: 4 threads (target='local')
+[0m17:17:06.364962 [info ] [MainThread]: 
+[0m17:17:06.391334 [debug] [Thread-1  ]: Began running node model.ex_03_meteo.stg_meteo__manila
+[0m17:17:06.392287 [debug] [Thread-2  ]: Began running node model.ex_03_meteo.stg_meteo__regions_daily
+[0m17:17:06.393603 [info ] [Thread-1  ]: 1 of 10 START sql view model `clean`.`stg_meteo__manila` ....................... [RUN]
+[0m17:17:06.394883 [info ] [Thread-2  ]: 2 of 10 START sql view model `clean`.`stg_meteo__regions_daily` ................ [RUN]
+[0m17:17:06.396055 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list__mart, now model.ex_03_meteo.stg_meteo__manila)
+[0m17:17:06.397178 [debug] [Thread-2  ]: Acquiring new clickhouse connection 'model.ex_03_meteo.stg_meteo__regions_daily'
+[0m17:17:06.398241 [debug] [Thread-1  ]: Began compiling node model.ex_03_meteo.stg_meteo__manila
+[0m17:17:06.399229 [debug] [Thread-2  ]: Began compiling node model.ex_03_meteo.stg_meteo__regions_daily
+[0m17:17:06.476829 [debug] [Thread-1  ]: Writing injected SQL for node "model.ex_03_meteo.stg_meteo__manila"
+[0m17:17:06.481938 [debug] [Thread-2  ]: Writing injected SQL for node "model.ex_03_meteo.stg_meteo__regions_daily"
+[0m17:17:06.483981 [debug] [Thread-2  ]: Began executing node model.ex_03_meteo.stg_meteo__regions_daily
+[0m17:17:06.485399 [debug] [Thread-1  ]: Began executing node model.ex_03_meteo.stg_meteo__manila
+[0m17:17:06.698139 [debug] [Thread-2  ]: Creating new relation stg_meteo__regions_daily
+[0m17:17:06.890658 [debug] [Thread-2  ]: Opening a new connection, currently in state init
+[0m17:17:06.895583 [debug] [Thread-1  ]: Writing runtime sql for node "model.ex_03_meteo.stg_meteo__manila"
+[0m17:17:06.898202 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__manila: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__manila"} */
+
+
+  create view `clean`.`stg_meteo__manila__dbt_tmp` 
+  
+    
+    
+  as (
+    
+
+-- Normalize types & naming; no business logic here.
+select
+  toDate(date)                         as dte,
+  toFloat64(temp_min)                  as temp_min_c,
+  toFloat64(temp_max)                  as temp_max_c,
+  toFloat64(precipitation)             as precip_mm,
+  toInt32(weather_code)                as weather_code
+from `raw`.`meteo___manila`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m17:17:06.957857 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m17:17:07.000239 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__manila: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__manila"} */
+
+    drop table if exists `clean`.`stg_meteo__manila__dbt_backup` 
+  
+  ...
+[0m17:17:07.059927 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m17:17:07.065667 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__manila: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__manila"} */
+
+    rename table `clean`.`stg_meteo__manila` to `clean`.`stg_meteo__manila__dbt_backup` 
+  
+  ...
+[0m17:17:07.073156 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:17:07.097889 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__manila: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__manila"} */
+
+    drop table if exists `clean`.`stg_meteo__manila` 
+  
+  ...
+[0m17:17:07.103526 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:17:07.159791 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__manila: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__manila"} */
+
+    rename table `clean`.`stg_meteo__manila__dbt_tmp` to `clean`.`stg_meteo__manila` 
+  
+  ...
+[0m17:17:07.170566 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:17:07.298651 [debug] [Thread-2  ]: Writing runtime sql for node "model.ex_03_meteo.stg_meteo__regions_daily"
+[0m17:17:07.300224 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__manila: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__manila"} */
+
+    drop table if exists `clean`.`stg_meteo__manila__dbt_backup` 
+  ...
+[0m17:17:07.303146 [debug] [Thread-2  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__regions_daily: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__regions_daily"} */
+
+
+  create view `clean`.`stg_meteo__regions_daily` 
+  
+    
+    
+  as (
+    -- models/clean/stg_meteo__regions_daily.sql
+
+
+select
+  cast(region_code as String)          as region_code,
+  cast(region_name as String)          as region_name,
+  toFloat64(latitude)                  as latitude,
+  toFloat64(longitude)                 as longitude,
+  toDate(date)                         as dte,
+  toFloat64(temp_min)                  as temp_min_c,
+  toFloat64(temp_max)                  as temp_max_c,
+  toFloat64(precipitation)             as precip_mm,
+  toInt32(weather_code)                as weather_code
+from `raw`.`meteo__regions_daily`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m17:17:07.361036 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m17:17:07.364161 [debug] [Thread-2  ]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__regions_daily"} */
+
+
+  create view `clean`.`stg_meteo__regions_daily` 
+  
+    
+    
+  as (
+    -- models/clean/stg_meteo__regions_daily.sql
+
+
+select
+  cast(region_code as String)          as region_code,
+  cast(region_name as String)          as region_name,
+  toFloat64(latitude)                  as latitude,
+  toFloat64(longitude)                 as longitude,
+  toDate(date)                         as dte,
+  toFloat64(temp_min)                  as temp_min_c,
+  toFloat64(temp_max)                  as temp_max_c,
+  toFloat64(precipitation)             as precip_mm,
+  toInt32(weather_code)                as weather_code
+from `raw`.`meteo__regions_daily`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    
+[0m17:17:07.377781 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0bc6499c-f9d0-481c-baf0-82e67858e88a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c4687f10>]}
+[0m17:17:07.381055 [info ] [Thread-1  ]: 1 of 10 OK created sql view model `clean`.`stg_meteo__manila` .................. [[32mOK[0m in 0.98s]
+[0m17:17:07.383950 [debug] [Thread-1  ]: Finished running node model.ex_03_meteo.stg_meteo__manila
+[0m17:17:07.387036 [debug] [Thread-4  ]: Began running node test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f
+[0m17:17:07.388634 [debug] [Thread-3  ]: Began running node test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339
+[0m17:17:07.391312 [debug] [Thread-1  ]: Began running node test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9
+[0m17:17:07.389975 [info ] [Thread-4  ]: 3 of 10 START test not_null_stg_meteo__manila_dte .............................. [RUN]
+[0m17:17:07.392651 [info ] [Thread-3  ]: 4 of 10 START test not_null_stg_meteo__manila_temp_max_c ....................... [RUN]
+[0m17:17:07.394214 [info ] [Thread-1  ]: 5 of 10 START test not_null_stg_meteo__manila_temp_min_c ....................... [RUN]
+[0m17:17:07.395956 [debug] [Thread-4  ]: Acquiring new clickhouse connection 'test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f'
+[0m17:17:07.397883 [debug] [Thread-3  ]: Acquiring new clickhouse connection 'test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339'
+[0m17:17:07.399231 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.ex_03_meteo.stg_meteo__manila, now test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9)
+[0m17:17:07.400926 [debug] [Thread-4  ]: Began compiling node test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f
+[0m17:17:07.402011 [debug] [Thread-3  ]: Began compiling node test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339
+[0m17:17:07.403248 [debug] [Thread-1  ]: Began compiling node test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9
+[0m17:17:07.405398 [debug] [Thread-2  ]: Database Error in model stg_meteo__regions_daily (models/clean/stg_meteo__regions_daily.sql)
+  HTTPDriver for http://clickhouse:8123 received ClickHouse error code 60
+   Code: 60. DB::Exception: Table raw.meteo__regions_daily does not exist. Maybe you meant raw.meteo___regions_daily?. (UNKNOWN_TABLE) (version 23.12.6.19 (official build))
+  compiled code at target/run/ex_03_meteo/models/clean/stg_meteo__regions_daily.sql
+[0m17:17:07.497821 [debug] [Thread-4  ]: Writing injected SQL for node "test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f"
+[0m17:17:07.499785 [debug] [Thread-3  ]: Writing injected SQL for node "test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339"
+[0m17:17:07.560665 [debug] [Thread-1  ]: Writing injected SQL for node "test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9"
+[0m17:17:07.562413 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0bc6499c-f9d0-481c-baf0-82e67858e88a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c46adf40>]}
+[0m17:17:07.564875 [debug] [Thread-4  ]: Began executing node test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f
+[0m17:17:07.566076 [debug] [Thread-3  ]: Began executing node test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339
+[0m17:17:07.568504 [error] [Thread-2  ]: 2 of 10 ERROR creating sql view model `clean`.`stg_meteo__regions_daily` ....... [[31mERROR[0m in 1.17s]
+[0m17:17:07.570059 [debug] [Thread-1  ]: Began executing node test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9
+[0m17:17:07.672449 [debug] [Thread-2  ]: Finished running node model.ex_03_meteo.stg_meteo__regions_daily
+[0m17:17:07.790082 [debug] [Thread-3  ]: Writing runtime sql for node "test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339"
+[0m17:17:07.799276 [debug] [Thread-4  ]: Writing runtime sql for node "test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f"
+[0m17:17:07.797773 [debug] [Thread-1  ]: Writing runtime sql for node "test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9"
+[0m17:17:07.801365 [debug] [Thread-2  ]: Began running node test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc
+[0m17:17:07.856788 [debug] [Thread-3  ]: Opening a new connection, currently in state init
+[0m17:17:07.804937 [debug] [Thread-4  ]: Opening a new connection, currently in state init
+[0m17:17:07.858329 [info ] [Thread-2  ]: 6 of 10 START test unique_stg_meteo__manila_dte ................................ [RUN]
+[0m17:17:07.861185 [debug] [Thread-1  ]: dbt_clickhouse adapter: On test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select temp_min_c
+from `clean`.`stg_meteo__manila`
+where temp_min_c is null
+
+
+
+    ) dbt_internal_test...
+[0m17:17:07.862668 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.ex_03_meteo.stg_meteo__regions_daily, now test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc)
+[0m17:17:07.868132 [debug] [Thread-2  ]: Began compiling node test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc
+[0m17:17:07.904237 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.04 seconds
+[0m17:17:07.964503 [debug] [Thread-2  ]: Writing injected SQL for node "test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc"
+[0m17:17:07.972866 [info ] [Thread-1  ]: 5 of 10 PASS not_null_stg_meteo__manila_temp_min_c ............................. [[32mPASS[0m in 0.57s]
+[0m17:17:07.977427 [debug] [Thread-1  ]: Finished running node test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9
+[0m17:17:07.978648 [debug] [Thread-2  ]: Began executing node test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc
+[0m17:17:07.981669 [debug] [Thread-1  ]: Began running node model.ex_03_meteo.vw_meteo__regions_latest
+[0m17:17:07.987002 [debug] [Thread-2  ]: Writing runtime sql for node "test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc"
+[0m17:17:07.990367 [info ] [Thread-1  ]: 7 of 10 SKIP relation mart.vw_meteo__regions_latest ............................ [[33mSKIP[0m]
+[0m17:17:07.992768 [debug] [Thread-1  ]: Finished running node model.ex_03_meteo.vw_meteo__regions_latest
+[0m17:17:07.993820 [debug] [Thread-2  ]: dbt_clickhouse adapter: On test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    dte as unique_field,
+    count(*) as n_records
+
+from `clean`.`stg_meteo__manila`
+where dte is not null
+group by dte
+having count(*) > 1
+
+
+
+    ) dbt_internal_test...
+[0m17:17:08.003002 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:17:08.056904 [info ] [Thread-2  ]: 6 of 10 PASS unique_stg_meteo__manila_dte ...................................... [[32mPASS[0m in 0.19s]
+[0m17:17:08.062100 [debug] [Thread-2  ]: Finished running node test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc
+[0m17:17:08.082599 [debug] [Thread-3  ]: dbt_clickhouse adapter: On test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select temp_max_c
+from `clean`.`stg_meteo__manila`
+where temp_max_c is null
+
+
+
+    ) dbt_internal_test...
+[0m17:17:08.090387 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:17:08.092025 [debug] [Thread-4  ]: dbt_clickhouse adapter: On test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select dte
+from `clean`.`stg_meteo__manila`
+where dte is null
+
+
+
+    ) dbt_internal_test...
+[0m17:17:08.095236 [info ] [Thread-3  ]: 4 of 10 PASS not_null_stg_meteo__manila_temp_max_c ............................. [[32mPASS[0m in 0.70s]
+[0m17:17:08.098400 [debug] [Thread-3  ]: Finished running node test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339
+[0m17:17:08.103398 [debug] [Thread-4  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:17:08.106334 [info ] [Thread-4  ]: 3 of 10 PASS not_null_stg_meteo__manila_dte .................................... [[32mPASS[0m in 0.71s]
+[0m17:17:08.107840 [debug] [Thread-4  ]: Finished running node test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f
+[0m17:17:08.109439 [debug] [Thread-1  ]: Began running node model.ex_03_meteo.mart_meteo__manila_daily
+[0m17:17:08.110516 [info ] [Thread-1  ]: 8 of 10 START sql table model `mart`.`mart_meteo__manila_daily` ................ [RUN]
+[0m17:17:08.111380 [debug] [Thread-2  ]: Began running node model.ex_03_meteo.mart_meteo__manila_monthly
+[0m17:17:08.112183 [debug] [Thread-3  ]: Began running node model.ex_03_meteo.vw_meteo__manila_weather
+[0m17:17:08.112937 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9, now model.ex_03_meteo.mart_meteo__manila_daily)
+[0m17:17:08.113970 [info ] [Thread-2  ]: 9 of 10 START sql table model `mart`.`mart_meteo__manila_monthly` .............. [RUN]
+[0m17:17:08.115043 [info ] [Thread-3  ]: 10 of 10 START sql view model `mart`.`vw_meteo__manila_weather` ................ [RUN]
+[0m17:17:08.115903 [debug] [Thread-1  ]: Began compiling node model.ex_03_meteo.mart_meteo__manila_daily
+[0m17:17:08.116649 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc, now model.ex_03_meteo.mart_meteo__manila_monthly)
+[0m17:17:08.117370 [debug] [Thread-3  ]: Re-using an available connection from the pool (formerly test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339, now model.ex_03_meteo.vw_meteo__manila_weather)
+[0m17:17:08.124107 [debug] [Thread-1  ]: Writing injected SQL for node "model.ex_03_meteo.mart_meteo__manila_daily"
+[0m17:17:08.156825 [debug] [Thread-2  ]: Began compiling node model.ex_03_meteo.mart_meteo__manila_monthly
+[0m17:17:08.157676 [debug] [Thread-3  ]: Began compiling node model.ex_03_meteo.vw_meteo__manila_weather
+[0m17:17:08.164430 [debug] [Thread-2  ]: Writing injected SQL for node "model.ex_03_meteo.mart_meteo__manila_monthly"
+[0m17:17:08.170635 [debug] [Thread-1  ]: Began executing node model.ex_03_meteo.mart_meteo__manila_daily
+[0m17:17:08.173762 [debug] [Thread-3  ]: Writing injected SQL for node "model.ex_03_meteo.vw_meteo__manila_weather"
+[0m17:17:08.190206 [debug] [Thread-2  ]: Began executing node model.ex_03_meteo.mart_meteo__manila_monthly
+[0m17:17:08.287567 [debug] [Thread-3  ]: Began executing node model.ex_03_meteo.vw_meteo__manila_weather
+[0m17:17:08.372391 [debug] [Thread-3  ]: Writing runtime sql for node "model.ex_03_meteo.vw_meteo__manila_weather"
+[0m17:17:08.391632 [debug] [Thread-2  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_monthly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_monthly"} */
+
+            
+
+    
+        create table `mart`.`mart_meteo__manila_monthly__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        order by (month)
+        
+        partition by (toYYYYMM(month))
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            
+
+with base as (
+  select
+    assumeNotNull(dte)                            as dte_nn,   -- 👈 non-nullable
+    toFloat64(temp_min_c)                         as temp_min_c,
+    toFloat64(temp_max_c)                         as temp_max_c,
+    (toFloat64(temp_min_c) + toFloat64(temp_max_c))/2.0 as temp_avg_c,
+    toFloat64(precip_mm)                          as precip_mm
+  from `clean`.`stg_meteo__manila`
+)
+select
+  toStartOfMonth(dte_nn)                as month,             -- 👈 computed from non-null date
+  avg(temp_min_c)                       as avg_min_c,
+  avg(temp_max_c)                       as avg_max_c,
+  avg(temp_avg_c)                       as avg_temp_c,
+  sum(precip_mm)                        as total_precip_mm,
+  countIf(precip_mm > 0)                as rainy_days
+from base
+group by month
+order by month
+          )
+        
+        ...
+[0m17:17:08.394042 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_daily: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_daily"} */
+
+            
+
+    
+        create table `mart`.`mart_meteo__manila_daily__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        order by (dte)
+        
+        partition by (toYYYYMM(dte))
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            
+
+-- Force non-nullable key for MergeTree
+select
+  assumeNotNull(dte)                         as dte,          -- 👈 non-nullable
+  temp_min_c,
+  temp_max_c,
+  (temp_min_c + temp_max_c)/2.0              as temp_avg_c,
+  precip_mm,
+  weather_code
+from `clean`.`stg_meteo__manila`
+          )
+        
+        ...
+[0m17:17:08.396216 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__manila_weather: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__manila_weather"} */
+
+
+  create view `mart`.`vw_meteo__manila_weather__dbt_tmp` 
+  
+    
+    
+  as (
+    
+
+with daily as (
+  select
+    dte,
+    temp_min_c,
+    temp_max_c,
+    (temp_min_c + temp_max_c)/2.0 as temp_avg_c,
+    precip_mm,
+    weather_code
+  from `clean`.`stg_meteo__manila`
+),
+codes as (
+  select
+    toInt32(weather_code)                as weather_code,
+    cast(night_description as String)    as condition
+  from `raw`.`meteo___wmo_codes`
+)
+
+select
+  d.dte,
+  d.temp_min_c,
+  d.temp_max_c,
+  d.temp_avg_c,
+  d.precip_mm,
+  d.weather_code,
+  c.condition
+from daily d
+left join codes c
+  on c.weather_code = d.weather_code
+order by d.dte
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m17:17:08.414901 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m17:17:08.457011 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m17:17:08.458483 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m17:17:08.421484 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__manila_weather: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__manila_weather"} */
+
+    drop table if exists `mart`.`vw_meteo__manila_weather__dbt_backup` 
+  
+  ...
+[0m17:17:08.477488 [debug] [Thread-2  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_monthly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_monthly"} */
+
+    select name, type from system.columns where table = 'mart_meteo__manila_monthly__dbt_backup'
+    
+      and database = 'mart'
+    
+    order by position
+  ...
+[0m17:17:08.486089 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_daily: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_daily"} */
+
+    select name, type from system.columns where table = 'mart_meteo__manila_daily__dbt_backup'
+    
+      and database = 'mart'
+    
+    order by position
+  ...
+[0m17:17:08.489809 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:17:08.493876 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__manila_weather: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__manila_weather"} */
+
+    rename table `mart`.`vw_meteo__manila_weather` to `mart`.`vw_meteo__manila_weather__dbt_backup` 
+  
+  ...
+[0m17:17:08.495430 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:17:08.497749 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:17:08.504764 [debug] [Thread-2  ]: Writing runtime sql for node "model.ex_03_meteo.mart_meteo__manila_monthly"
+[0m17:17:08.559101 [debug] [Thread-1  ]: Writing runtime sql for node "model.ex_03_meteo.mart_meteo__manila_daily"
+[0m17:17:08.560829 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m17:17:08.567383 [debug] [Thread-2  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_monthly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_monthly"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `mart`.`mart_meteo__manila_monthly__dbt_backup`
+        ("month", "avg_min_c", "avg_max_c", "avg_temp_c", "total_precip_mm", "rainy_days")
+
+with base as (
+  select
+    assumeNotNull(dte)                            as dte_nn,   -- 👈 non-nullable
+    toFloat64(temp_min_c)                         as temp_min_c,
+    toFloat64(temp_max_c)                         as temp_max_c,
+    (toFloat64(temp_min_c) + toFloat64(temp_max_c))/2.0 as temp_avg_c,
+    toFloat64(precip_mm)                          as precip_mm
+  from `clean`.`stg_meteo__manila`
+)
+select
+  toStartOfMonth(dte_nn)                as month,             -- 👈 computed from non-null date
+  avg(temp_min_c)                       as avg_min_c,
+  avg(temp_max_c)                       as avg_max_c,
+  avg(temp_avg_c)                       as avg_temp_c,
+  sum(precip_mm)                        as total_precip_mm,
+  countIf(precip_mm > 0)                as rainy_days
+from base
+group by month
+order by month
+  ...
+[0m17:17:08.568230 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__manila_weather: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__manila_weather"} */
+
+    drop table if exists `mart`.`vw_meteo__manila_weather` 
+  
+  ...
+[0m17:17:08.569342 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_daily: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_daily"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `mart`.`mart_meteo__manila_daily__dbt_backup`
+        ("dte", "temp_min_c", "temp_max_c", "temp_avg_c", "precip_mm", "weather_code")
+
+-- Force non-nullable key for MergeTree
+select
+  assumeNotNull(dte)                         as dte,          -- 👈 non-nullable
+  temp_min_c,
+  temp_max_c,
+  (temp_min_c + temp_max_c)/2.0              as temp_avg_c,
+  precip_mm,
+  weather_code
+from `clean`.`stg_meteo__manila`
+  ...
+[0m17:17:08.574009 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:17:08.576211 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__manila_weather: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__manila_weather"} */
+
+    rename table `mart`.`vw_meteo__manila_weather__dbt_tmp` to `mart`.`vw_meteo__manila_weather` 
+  
+  ...
+[0m17:17:08.579311 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:17:08.586904 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__manila_weather: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__manila_weather"} */
+
+    drop table if exists `mart`.`vw_meteo__manila_weather__dbt_backup` 
+  ...
+[0m17:17:08.589358 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m17:17:08.590880 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m17:17:08.597288 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:17:08.601142 [debug] [Thread-2  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_monthly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_monthly"} */
+EXCHANGE TABLES `mart`.`mart_meteo__manila_monthly__dbt_backup` AND `mart`.`mart_meteo__manila_monthly` 
+  
+  ...
+[0m17:17:08.603268 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_daily: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_daily"} */
+EXCHANGE TABLES `mart`.`mart_meteo__manila_daily__dbt_backup` AND `mart`.`mart_meteo__manila_daily` 
+  
+  ...
+[0m17:17:08.658916 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0bc6499c-f9d0-481c-baf0-82e67858e88a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c38584c0>]}
+[0m17:17:08.664430 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:17:08.663012 [info ] [Thread-3  ]: 10 of 10 OK created sql view model `mart`.`vw_meteo__manila_weather` ........... [[32mOK[0m in 0.54s]
+[0m17:17:08.665778 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:17:08.672516 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_daily: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_daily"} */
+
+    drop table if exists `mart`.`mart_meteo__manila_daily__dbt_backup` 
+  ...
+[0m17:17:08.674044 [debug] [Thread-3  ]: Finished running node model.ex_03_meteo.vw_meteo__manila_weather
+[0m17:17:08.681008 [debug] [Thread-2  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_monthly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_monthly"} */
+
+    drop table if exists `mart`.`mart_meteo__manila_monthly__dbt_backup` 
+  ...
+[0m17:17:08.684650 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:17:08.687224 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0bc6499c-f9d0-481c-baf0-82e67858e88a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c38db9a0>]}
+[0m17:17:08.688392 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:17:08.689651 [info ] [Thread-1  ]: 8 of 10 OK created sql table model `mart`.`mart_meteo__manila_daily` ........... [[32mOK[0m in 0.57s]
+[0m17:17:08.692396 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0bc6499c-f9d0-481c-baf0-82e67858e88a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c4687a60>]}
+[0m17:17:08.693792 [debug] [Thread-1  ]: Finished running node model.ex_03_meteo.mart_meteo__manila_daily
+[0m17:17:08.695032 [info ] [Thread-2  ]: 9 of 10 OK created sql table model `mart`.`mart_meteo__manila_monthly` ......... [[32mOK[0m in 0.58s]
+[0m17:17:08.697099 [debug] [Thread-2  ]: Finished running node model.ex_03_meteo.mart_meteo__manila_monthly
+[0m17:17:08.699328 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:17:08.699898 [debug] [MainThread]: Connection 'model.ex_03_meteo.mart_meteo__manila_daily' was left open.
+[0m17:17:08.700454 [debug] [MainThread]: On model.ex_03_meteo.mart_meteo__manila_daily: Close
+[0m17:17:08.700949 [debug] [MainThread]: Connection 'list__clean' was left open.
+[0m17:17:08.701431 [debug] [MainThread]: On list__clean: Close
+[0m17:17:08.701916 [debug] [MainThread]: Connection 'model.ex_03_meteo.mart_meteo__manila_monthly' was left open.
+[0m17:17:08.702403 [debug] [MainThread]: On model.ex_03_meteo.mart_meteo__manila_monthly: Close
+[0m17:17:08.702889 [debug] [MainThread]: Connection 'test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f' was left open.
+[0m17:17:08.703397 [debug] [MainThread]: On test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f: Close
+[0m17:17:08.703891 [debug] [MainThread]: Connection 'model.ex_03_meteo.vw_meteo__manila_weather' was left open.
+[0m17:17:08.704357 [debug] [MainThread]: On model.ex_03_meteo.vw_meteo__manila_weather: Close
+[0m17:17:08.757380 [info ] [MainThread]: 
+[0m17:17:08.758188 [info ] [MainThread]: Finished running 4 view models, 4 data tests, 2 table models in 0 hours 0 minutes and 3.38 seconds (3.38s).
+[0m17:17:08.762933 [debug] [MainThread]: Command end result
+[0m17:17:08.874063 [info ] [MainThread]: 
+[0m17:17:08.874990 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m17:17:08.875631 [info ] [MainThread]: 
+[0m17:17:08.876453 [error] [MainThread]:   Database Error in model stg_meteo__regions_daily (models/clean/stg_meteo__regions_daily.sql)
+  HTTPDriver for http://clickhouse:8123 received ClickHouse error code 60
+   Code: 60. DB::Exception: Table raw.meteo__regions_daily does not exist. Maybe you meant raw.meteo___regions_daily?. (UNKNOWN_TABLE) (version 23.12.6.19 (official build))
+  compiled code at target/run/ex_03_meteo/models/clean/stg_meteo__regions_daily.sql
+[0m17:17:08.877185 [info ] [MainThread]: 
+[0m17:17:08.877885 [info ] [MainThread]: Done. PASS=8 WARN=0 ERROR=1 SKIP=1 TOTAL=10
+[0m17:17:08.879264 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 8.811372, "process_in_blocks": "0", "process_kernel_time": 0.694339, "process_mem_max_rss": "119252", "process_out_blocks": "10832", "process_user_time": 7.046407}
+[0m17:17:08.880145 [debug] [MainThread]: Command `dbt build` failed at 17:17:08.879960 after 8.81 seconds
+[0m17:17:08.880833 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c9011310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c7c18490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7299c3741d00>]}
+[0m17:17:08.881474 [debug] [MainThread]: Flushing usage events
+[0m17:17:49.910254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed7de8b6310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed7db519af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed7db5199a0>]}
+
+
+============================== 17:17:49.919703 | 7997de04-d067-458c-9cd4-0f3ed824877c ==============================
+[0m17:17:49.919703 [info ] [MainThread]: Running with dbt=1.8.9
+[0m17:17:49.920822 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'no_print': 'None', 'empty': 'False', 'profiles_dir': '.', 'fail_fast': 'False', 'log_cache_events': 'False', 'target_path': 'None', 'printer_width': '80', 'partial_parse': 'True', 'write_json': 'True', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'version_check': 'True', 'static_parser': 'True', 'introspect': 'True', 'log_path': '/workdir/transforms/03_meteo/logs', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt build --profiles-dir . --target local', 'quiet': 'False', 'use_colors': 'True', 'debug': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'warn_error': 'None'}
+[0m17:17:50.522754 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7997de04-d067-458c-9cd4-0f3ed824877c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed7dde5bfd0>]}
+[0m17:17:50.722955 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7997de04-d067-458c-9cd4-0f3ed824877c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed7db4e3be0>]}
+[0m17:17:50.724329 [info ] [MainThread]: Registered adapter: clickhouse=1.8.6
+[0m17:17:51.193136 [debug] [MainThread]: checksum: 134c0f7b96382cc6938697739bc32fb1adc530b177e30f60cebddf61dbd7e979, vars: {}, profile: , target: local, version: 1.8.9
+[0m17:17:51.701755 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:17:51.702869 [debug] [MainThread]: Partial parsing: updated file: ex_03_meteo://models/clean/stg_meteo__regions_daily.sql
+[0m17:17:52.232852 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.ex_03_meteo.stg_meteo__regions_daily' (models/clean/stg_meteo__regions_daily.sql) depends on a source named 'raw.meteo___regions_daily' which was not found
+[0m17:17:52.234471 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 2.5158033, "process_in_blocks": "0", "process_kernel_time": 0.503843, "process_mem_max_rss": "100552", "process_out_blocks": "6608", "process_user_time": 4.122176}
+[0m17:17:52.235294 [debug] [MainThread]: Command `dbt build` failed at 17:17:52.235084 after 2.52 seconds
+[0m17:17:52.236018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed7de8b6310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed7dace0610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed7dacbf640>]}
+[0m17:17:52.236651 [debug] [MainThread]: Flushing usage events
+[0m17:20:11.906359 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fec9d2310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe9631b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe96319d0>]}
+
+
+============================== 17:20:11.916261 | 77875404-3f8d-4e79-b310-76421c781df2 ==============================
+[0m17:20:11.916261 [info ] [MainThread]: Running with dbt=1.8.9
+[0m17:20:11.917393 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'debug': 'False', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'write_json': 'True', 'fail_fast': 'False', 'invocation_command': 'dbt build --profiles-dir . --target local', 'static_parser': 'True', 'log_path': '/workdir/transforms/03_meteo/logs', 'quiet': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'introspect': 'True', 'profiles_dir': '.', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'version_check': 'True', 'empty': 'False', 'warn_error': 'None', 'printer_width': '80', 'indirect_selection': 'eager', 'target_path': 'None'}
+[0m17:20:12.503512 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '77875404-3f8d-4e79-b310-76421c781df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708febf72ca0>]}
+[0m17:20:12.698299 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '77875404-3f8d-4e79-b310-76421c781df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe97484f0>]}
+[0m17:20:12.699620 [info ] [MainThread]: Registered adapter: clickhouse=1.8.6
+[0m17:20:13.114644 [debug] [MainThread]: checksum: 134c0f7b96382cc6938697739bc32fb1adc530b177e30f60cebddf61dbd7e979, vars: {}, profile: , target: local, version: 1.8.9
+[0m17:20:13.629816 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m17:20:13.631617 [debug] [MainThread]: Partial parsing: updated file: ex_03_meteo://models/sources.yml
+[0m17:20:13.632227 [debug] [MainThread]: Partial parsing: updated file: ex_03_meteo://models/clean/stg_meteo__regions_daily.sql
+[0m17:20:14.431907 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m17:20:14.432830 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '77875404-3f8d-4e79-b310-76421c781df2', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe8c6efd0>]}
+[0m17:20:15.416620 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '77875404-3f8d-4e79-b310-76421c781df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe84d2130>]}
+[0m17:20:15.897477 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '77875404-3f8d-4e79-b310-76421c781df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe83def70>]}
+[0m17:20:15.898381 [info ] [MainThread]: Found 6 models, 4 data tests, 3 sources, 471 macros
+[0m17:20:15.902500 [info ] [MainThread]: 
+[0m17:20:15.903520 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m17:20:15.916144 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m17:20:15.917710 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m17:20:16.125709 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:20:16.127338 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:20:16.795088 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m17:20:16.797379 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m17:20:16.803625 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:16.806022 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:16.907108 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__mart)
+[0m17:20:16.908784 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__clean)
+[0m17:20:16.924280 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__mart: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list__mart"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'mart'
+      
+
+  ...
+[0m17:20:16.929279 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__clean: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list__clean"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'clean'
+      
+
+  ...
+[0m17:20:16.935825 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:16.991848 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m17:20:17.001854 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '77875404-3f8d-4e79-b310-76421c781df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe8780d00>]}
+[0m17:20:17.003794 [info ] [MainThread]: Concurrency: 4 threads (target='local')
+[0m17:20:17.005025 [info ] [MainThread]: 
+[0m17:20:17.029740 [debug] [Thread-1  ]: Began running node model.ex_03_meteo.stg_meteo__manila
+[0m17:20:17.030703 [debug] [Thread-2  ]: Began running node model.ex_03_meteo.stg_meteo__regions_daily
+[0m17:20:17.032911 [info ] [Thread-2  ]: 2 of 10 START sql view model `clean`.`stg_meteo__regions_daily` ................ [RUN]
+[0m17:20:17.031753 [info ] [Thread-1  ]: 1 of 10 START sql view model `clean`.`stg_meteo__manila` ....................... [RUN]
+[0m17:20:17.084239 [debug] [Thread-2  ]: Acquiring new clickhouse connection 'model.ex_03_meteo.stg_meteo__regions_daily'
+[0m17:20:17.085898 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list__mart, now model.ex_03_meteo.stg_meteo__manila)
+[0m17:20:17.087236 [debug] [Thread-2  ]: Began compiling node model.ex_03_meteo.stg_meteo__regions_daily
+[0m17:20:17.088783 [debug] [Thread-1  ]: Began compiling node model.ex_03_meteo.stg_meteo__manila
+[0m17:20:17.123963 [debug] [Thread-2  ]: Writing injected SQL for node "model.ex_03_meteo.stg_meteo__regions_daily"
+[0m17:20:17.125069 [debug] [Thread-1  ]: Writing injected SQL for node "model.ex_03_meteo.stg_meteo__manila"
+[0m17:20:17.126128 [debug] [Thread-1  ]: Began executing node model.ex_03_meteo.stg_meteo__manila
+[0m17:20:17.126905 [debug] [Thread-2  ]: Began executing node model.ex_03_meteo.stg_meteo__regions_daily
+[0m17:20:17.322214 [debug] [Thread-2  ]: Creating new relation stg_meteo__regions_daily
+[0m17:20:17.399625 [debug] [Thread-1  ]: Writing runtime sql for node "model.ex_03_meteo.stg_meteo__manila"
+[0m17:20:17.400906 [debug] [Thread-2  ]: Opening a new connection, currently in state init
+[0m17:20:17.402882 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__manila: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__manila"} */
+
+
+  create view `clean`.`stg_meteo__manila__dbt_tmp` 
+  
+    
+    
+  as (
+    
+
+-- Normalize types & naming; no business logic here.
+select
+  toDate(date)                         as dte,
+  toFloat64(temp_min)                  as temp_min_c,
+  toFloat64(temp_max)                  as temp_max_c,
+  toFloat64(precipitation)             as precip_mm,
+  toInt32(weather_code)                as weather_code
+from `raw`.`meteo___manila`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m17:20:17.414722 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:17.430400 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__manila: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__manila"} */
+
+    drop table if exists `clean`.`stg_meteo__manila__dbt_backup` 
+  
+  ...
+[0m17:20:17.486649 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m17:20:17.490169 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__manila: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__manila"} */
+
+    rename table `clean`.`stg_meteo__manila` to `clean`.`stg_meteo__manila__dbt_backup` 
+  
+  ...
+[0m17:20:17.493155 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:20:17.499379 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__manila: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__manila"} */
+
+    drop table if exists `clean`.`stg_meteo__manila` 
+  
+  ...
+[0m17:20:17.502153 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:20:17.504191 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__manila: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__manila"} */
+
+    rename table `clean`.`stg_meteo__manila__dbt_tmp` to `clean`.`stg_meteo__manila` 
+  
+  ...
+[0m17:20:17.508777 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:20:17.612070 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__manila: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__manila"} */
+
+    drop table if exists `clean`.`stg_meteo__manila__dbt_backup` 
+  ...
+[0m17:20:17.616152 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:20:17.617931 [debug] [Thread-2  ]: Writing runtime sql for node "model.ex_03_meteo.stg_meteo__regions_daily"
+[0m17:20:17.624229 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '77875404-3f8d-4e79-b310-76421c781df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe80a1820>]}
+[0m17:20:17.627121 [debug] [Thread-2  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_meteo__regions_daily: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_meteo__regions_daily"} */
+
+
+  create view `clean`.`stg_meteo__regions_daily` 
+  
+    
+    
+  as (
+    -- models/clean/stg_meteo__regions_daily.sql
+
+
+select
+  cast(region_code as String)          as region_code,
+  cast(region_name as String)          as region_name,
+  toFloat64(latitude)                  as latitude,
+  toFloat64(longitude)                 as longitude,
+  toDate(date)                         as dte,
+  toFloat64(temp_min)                  as temp_min_c,
+  toFloat64(temp_max)                  as temp_max_c,
+  toFloat64(precipitation)             as precip_mm,
+  toInt32(weather_code)                as weather_code
+from `raw`.`meteo___regions_daily`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m17:20:17.626046 [info ] [Thread-1  ]: 1 of 10 OK created sql view model `clean`.`stg_meteo__manila` .................. [[32mOK[0m in 0.54s]
+[0m17:20:17.631197 [debug] [Thread-1  ]: Finished running node model.ex_03_meteo.stg_meteo__manila
+[0m17:20:17.683636 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:17.689323 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '77875404-3f8d-4e79-b310-76421c781df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe7a2e3a0>]}
+[0m17:20:17.691092 [info ] [Thread-2  ]: 2 of 10 OK created sql view model `clean`.`stg_meteo__regions_daily` ........... [[32mOK[0m in 0.66s]
+[0m17:20:17.692402 [debug] [Thread-4  ]: Began running node test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f
+[0m17:20:17.693206 [debug] [Thread-3  ]: Began running node test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339
+[0m17:20:17.694870 [debug] [Thread-2  ]: Finished running node model.ex_03_meteo.stg_meteo__regions_daily
+[0m17:20:17.696156 [info ] [Thread-4  ]: 3 of 10 START test not_null_stg_meteo__manila_dte .............................. [RUN]
+[0m17:20:17.697090 [debug] [Thread-1  ]: Began running node test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9
+[0m17:20:17.697899 [info ] [Thread-3  ]: 4 of 10 START test not_null_stg_meteo__manila_temp_max_c ....................... [RUN]
+[0m17:20:17.699161 [debug] [Thread-2  ]: Began running node test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc
+[0m17:20:17.700718 [debug] [Thread-4  ]: Acquiring new clickhouse connection 'test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f'
+[0m17:20:17.701650 [info ] [Thread-1  ]: 5 of 10 START test not_null_stg_meteo__manila_temp_min_c ....................... [RUN]
+[0m17:20:17.702790 [debug] [Thread-3  ]: Acquiring new clickhouse connection 'test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339'
+[0m17:20:17.703913 [info ] [Thread-2  ]: 6 of 10 START test unique_stg_meteo__manila_dte ................................ [RUN]
+[0m17:20:17.705039 [debug] [Thread-4  ]: Began compiling node test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f
+[0m17:20:17.705838 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.ex_03_meteo.stg_meteo__manila, now test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9)
+[0m17:20:17.706645 [debug] [Thread-3  ]: Began compiling node test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339
+[0m17:20:17.707619 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.ex_03_meteo.stg_meteo__regions_daily, now test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc)
+[0m17:20:17.724133 [debug] [Thread-1  ]: Began compiling node test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9
+[0m17:20:17.783985 [debug] [Thread-4  ]: Writing injected SQL for node "test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f"
+[0m17:20:17.792232 [debug] [Thread-3  ]: Writing injected SQL for node "test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339"
+[0m17:20:17.793194 [debug] [Thread-2  ]: Began compiling node test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc
+[0m17:20:17.800240 [debug] [Thread-1  ]: Writing injected SQL for node "test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9"
+[0m17:20:17.806853 [debug] [Thread-4  ]: Began executing node test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f
+[0m17:20:17.816896 [debug] [Thread-3  ]: Began executing node test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339
+[0m17:20:17.820904 [debug] [Thread-2  ]: Writing injected SQL for node "test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc"
+[0m17:20:17.917074 [debug] [Thread-3  ]: Writing runtime sql for node "test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339"
+[0m17:20:17.926836 [debug] [Thread-4  ]: Writing runtime sql for node "test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f"
+[0m17:20:17.927935 [debug] [Thread-1  ]: Began executing node test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9
+[0m17:20:17.929169 [debug] [Thread-2  ]: Began executing node test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc
+[0m17:20:17.930223 [debug] [Thread-3  ]: Opening a new connection, currently in state init
+[0m17:20:17.986704 [debug] [Thread-1  ]: Writing runtime sql for node "test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9"
+[0m17:20:17.991219 [debug] [Thread-2  ]: Writing runtime sql for node "test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc"
+[0m17:20:17.992295 [debug] [Thread-4  ]: Opening a new connection, currently in state init
+[0m17:20:17.994807 [debug] [Thread-1  ]: dbt_clickhouse adapter: On test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select temp_min_c
+from `clean`.`stg_meteo__manila`
+where temp_min_c is null
+
+
+
+    ) dbt_internal_test...
+[0m17:20:17.996420 [debug] [Thread-2  ]: dbt_clickhouse adapter: On test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    dte as unique_field,
+    count(*) as n_records
+
+from `clean`.`stg_meteo__manila`
+where dte is not null
+group by dte
+having count(*) > 1
+
+
+
+    ) dbt_internal_test...
+[0m17:20:18.018040 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m17:20:18.022620 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m17:20:18.083620 [info ] [Thread-1  ]: 5 of 10 PASS not_null_stg_meteo__manila_temp_min_c ............................. [[32mPASS[0m in 0.32s]
+[0m17:20:18.091381 [info ] [Thread-2  ]: 6 of 10 PASS unique_stg_meteo__manila_dte ...................................... [[32mPASS[0m in 0.38s]
+[0m17:20:18.097824 [debug] [Thread-1  ]: Finished running node test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9
+[0m17:20:18.104954 [debug] [Thread-2  ]: Finished running node test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc
+[0m17:20:18.106783 [debug] [Thread-1  ]: Began running node model.ex_03_meteo.vw_meteo__regions_latest
+[0m17:20:18.113631 [info ] [Thread-1  ]: 7 of 10 START sql view model `mart`.`vw_meteo__regions_latest` ................. [RUN]
+[0m17:20:18.114620 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.ex_03_meteo.not_null_stg_meteo__manila_temp_min_c.f577a564e9, now model.ex_03_meteo.vw_meteo__regions_latest)
+[0m17:20:18.115345 [debug] [Thread-1  ]: Began compiling node model.ex_03_meteo.vw_meteo__regions_latest
+[0m17:20:18.122414 [debug] [Thread-1  ]: Writing injected SQL for node "model.ex_03_meteo.vw_meteo__regions_latest"
+[0m17:20:18.123374 [debug] [Thread-1  ]: Began executing node model.ex_03_meteo.vw_meteo__regions_latest
+[0m17:20:18.128471 [debug] [Thread-1  ]: Creating new relation vw_meteo__regions_latest
+[0m17:20:18.130286 [debug] [Thread-1  ]: Writing runtime sql for node "model.ex_03_meteo.vw_meteo__regions_latest"
+[0m17:20:18.190573 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__regions_latest: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__regions_latest"} */
+
+
+  create view `mart`.`vw_meteo__regions_latest` 
+  
+    
+    
+  as (
+    -- models/mart/vw_meteo__regions_latest.sql
+
+
+with last_dates as (
+  select region_code, max(dte) as dte_max
+  from `clean`.`stg_meteo__regions_daily`
+  group by region_code
+)
+select
+  s.region_code,
+  s.region_name,
+  s.latitude,
+  s.longitude,
+  s.dte,
+  s.temp_min_c,
+  s.temp_max_c,
+  (s.temp_min_c + s.temp_max_c)/2.0 as temp_avg_c,
+  s.precip_mm,
+  s.weather_code
+from `clean`.`stg_meteo__regions_daily` s
+join last_dates ld
+  on s.region_code = ld.region_code and s.dte = ld.dte_max
+order by s.region_code
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m17:20:18.211671 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m17:20:18.217523 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '77875404-3f8d-4e79-b310-76421c781df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe7a53a60>]}
+[0m17:20:18.223613 [info ] [Thread-1  ]: 7 of 10 OK created sql view model `mart`.`vw_meteo__regions_latest` ............ [[32mOK[0m in 0.10s]
+[0m17:20:18.225985 [debug] [Thread-3  ]: dbt_clickhouse adapter: On test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select temp_max_c
+from `clean`.`stg_meteo__manila`
+where temp_max_c is null
+
+
+
+    ) dbt_internal_test...
+[0m17:20:18.231157 [debug] [Thread-1  ]: Finished running node model.ex_03_meteo.vw_meteo__regions_latest
+[0m17:20:18.235808 [debug] [Thread-4  ]: dbt_clickhouse adapter: On test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select dte
+from `clean`.`stg_meteo__manila`
+where dte is null
+
+
+
+    ) dbt_internal_test...
+[0m17:20:18.239356 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:18.242414 [info ] [Thread-3  ]: 4 of 10 PASS not_null_stg_meteo__manila_temp_max_c ............................. [[32mPASS[0m in 0.54s]
+[0m17:20:18.243986 [debug] [Thread-4  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:18.245256 [debug] [Thread-3  ]: Finished running node test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339
+[0m17:20:18.248074 [info ] [Thread-4  ]: 3 of 10 PASS not_null_stg_meteo__manila_dte .................................... [[32mPASS[0m in 0.55s]
+[0m17:20:18.285750 [debug] [Thread-4  ]: Finished running node test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f
+[0m17:20:18.289031 [debug] [Thread-2  ]: Began running node model.ex_03_meteo.mart_meteo__manila_daily
+[0m17:20:18.290661 [debug] [Thread-1  ]: Began running node model.ex_03_meteo.mart_meteo__manila_monthly
+[0m17:20:18.292440 [debug] [Thread-3  ]: Began running node model.ex_03_meteo.vw_meteo__manila_weather
+[0m17:20:18.294479 [info ] [Thread-2  ]: 8 of 10 START sql table model `mart`.`mart_meteo__manila_daily` ................ [RUN]
+[0m17:20:18.296918 [info ] [Thread-1  ]: 9 of 10 START sql table model `mart`.`mart_meteo__manila_monthly` .............. [RUN]
+[0m17:20:18.299178 [info ] [Thread-3  ]: 10 of 10 START sql view model `mart`.`vw_meteo__manila_weather` ................ [RUN]
+[0m17:20:18.301139 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly test.ex_03_meteo.unique_stg_meteo__manila_dte.65d5c5a8bc, now model.ex_03_meteo.mart_meteo__manila_daily)
+[0m17:20:18.302705 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.ex_03_meteo.vw_meteo__regions_latest, now model.ex_03_meteo.mart_meteo__manila_monthly)
+[0m17:20:18.304448 [debug] [Thread-3  ]: Re-using an available connection from the pool (formerly test.ex_03_meteo.not_null_stg_meteo__manila_temp_max_c.a5e6f8c339, now model.ex_03_meteo.vw_meteo__manila_weather)
+[0m17:20:18.306151 [debug] [Thread-2  ]: Began compiling node model.ex_03_meteo.mart_meteo__manila_daily
+[0m17:20:18.307873 [debug] [Thread-1  ]: Began compiling node model.ex_03_meteo.mart_meteo__manila_monthly
+[0m17:20:18.309494 [debug] [Thread-3  ]: Began compiling node model.ex_03_meteo.vw_meteo__manila_weather
+[0m17:20:18.321631 [debug] [Thread-2  ]: Writing injected SQL for node "model.ex_03_meteo.mart_meteo__manila_daily"
+[0m17:20:18.330358 [debug] [Thread-1  ]: Writing injected SQL for node "model.ex_03_meteo.mart_meteo__manila_monthly"
+[0m17:20:18.394443 [debug] [Thread-3  ]: Writing injected SQL for node "model.ex_03_meteo.vw_meteo__manila_weather"
+[0m17:20:18.396779 [debug] [Thread-2  ]: Began executing node model.ex_03_meteo.mart_meteo__manila_daily
+[0m17:20:18.404218 [debug] [Thread-1  ]: Began executing node model.ex_03_meteo.mart_meteo__manila_monthly
+[0m17:20:18.421423 [debug] [Thread-3  ]: Began executing node model.ex_03_meteo.vw_meteo__manila_weather
+[0m17:20:18.521931 [debug] [Thread-3  ]: Writing runtime sql for node "model.ex_03_meteo.vw_meteo__manila_weather"
+[0m17:20:18.689123 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__manila_weather: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__manila_weather"} */
+
+
+  create view `mart`.`vw_meteo__manila_weather__dbt_tmp` 
+  
+    
+    
+  as (
+    
+
+with daily as (
+  select
+    dte,
+    temp_min_c,
+    temp_max_c,
+    (temp_min_c + temp_max_c)/2.0 as temp_avg_c,
+    precip_mm,
+    weather_code
+  from `clean`.`stg_meteo__manila`
+),
+codes as (
+  select
+    toInt32(weather_code)                as weather_code,
+    cast(night_description as String)    as condition
+  from `raw`.`meteo___wmo_codes`
+)
+
+select
+  d.dte,
+  d.temp_min_c,
+  d.temp_max_c,
+  d.temp_avg_c,
+  d.precip_mm,
+  d.weather_code,
+  c.condition
+from daily d
+left join codes c
+  on c.weather_code = d.weather_code
+order by d.dte
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m17:20:18.715823 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.03 seconds
+[0m17:20:18.792196 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__manila_weather: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__manila_weather"} */
+
+    drop table if exists `mart`.`vw_meteo__manila_weather__dbt_backup` 
+  
+  ...
+[0m17:20:18.885215 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m17:20:18.910133 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__manila_weather: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__manila_weather"} */
+
+    rename table `mart`.`vw_meteo__manila_weather` to `mart`.`vw_meteo__manila_weather__dbt_backup` 
+  
+  ...
+[0m17:20:18.912981 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_monthly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_monthly"} */
+
+            
+
+    
+        create table `mart`.`mart_meteo__manila_monthly__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        order by (month)
+        
+        partition by (toYYYYMM(month))
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            
+
+with base as (
+  select
+    assumeNotNull(dte)                            as dte_nn,   -- 👈 non-nullable
+    toFloat64(temp_min_c)                         as temp_min_c,
+    toFloat64(temp_max_c)                         as temp_max_c,
+    (toFloat64(temp_min_c) + toFloat64(temp_max_c))/2.0 as temp_avg_c,
+    toFloat64(precip_mm)                          as precip_mm
+  from `clean`.`stg_meteo__manila`
+)
+select
+  toStartOfMonth(dte_nn)                as month,             -- 👈 computed from non-null date
+  avg(temp_min_c)                       as avg_min_c,
+  avg(temp_max_c)                       as avg_max_c,
+  avg(temp_avg_c)                       as avg_temp_c,
+  sum(precip_mm)                        as total_precip_mm,
+  countIf(precip_mm > 0)                as rainy_days
+from base
+group by month
+order by month
+          )
+        
+        ...
+[0m17:20:18.920983 [debug] [Thread-2  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_daily: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_daily"} */
+
+            
+
+    
+        create table `mart`.`mart_meteo__manila_daily__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        order by (dte)
+        
+        partition by (toYYYYMM(dte))
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            
+
+-- Force non-nullable key for MergeTree
+select
+  assumeNotNull(dte)                         as dte,          -- 👈 non-nullable
+  temp_min_c,
+  temp_max_c,
+  (temp_min_c + temp_max_c)/2.0              as temp_avg_c,
+  precip_mm,
+  weather_code
+from `clean`.`stg_meteo__manila`
+          )
+        
+        ...
+[0m17:20:18.924906 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:18.984653 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__manila_weather: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__manila_weather"} */
+
+    drop table if exists `mart`.`vw_meteo__manila_weather` 
+  
+  ...
+[0m17:20:18.986071 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m17:20:18.988407 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m17:20:19.011078 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m17:20:19.103600 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__manila_weather: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__manila_weather"} */
+
+    rename table `mart`.`vw_meteo__manila_weather__dbt_tmp` to `mart`.`vw_meteo__manila_weather` 
+  
+  ...
+[0m17:20:19.105456 [debug] [Thread-2  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_daily: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_daily"} */
+
+    select name, type from system.columns where table = 'mart_meteo__manila_daily__dbt_backup'
+    
+      and database = 'mart'
+    
+    order by position
+  ...
+[0m17:20:19.107766 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_monthly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_monthly"} */
+
+    select name, type from system.columns where table = 'mart_meteo__manila_monthly__dbt_backup'
+    
+      and database = 'mart'
+    
+    order by position
+  ...
+[0m17:20:19.113247 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m17:20:19.117631 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:19.130204 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:19.186511 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_meteo__manila_weather: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_meteo__manila_weather"} */
+
+    drop table if exists `mart`.`vw_meteo__manila_weather__dbt_backup` 
+  ...
+[0m17:20:19.199987 [debug] [Thread-2  ]: Writing runtime sql for node "model.ex_03_meteo.mart_meteo__manila_daily"
+[0m17:20:19.204806 [debug] [Thread-1  ]: Writing runtime sql for node "model.ex_03_meteo.mart_meteo__manila_monthly"
+[0m17:20:19.209438 [debug] [Thread-2  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_daily: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_daily"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `mart`.`mart_meteo__manila_daily__dbt_backup`
+        ("dte", "temp_min_c", "temp_max_c", "temp_avg_c", "precip_mm", "weather_code")
+
+-- Force non-nullable key for MergeTree
+select
+  assumeNotNull(dte)                         as dte,          -- 👈 non-nullable
+  temp_min_c,
+  temp_max_c,
+  (temp_min_c + temp_max_c)/2.0              as temp_avg_c,
+  precip_mm,
+  weather_code
+from `clean`.`stg_meteo__manila`
+  ...
+[0m17:20:19.213515 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:19.215400 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_monthly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_monthly"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `mart`.`mart_meteo__manila_monthly__dbt_backup`
+        ("month", "avg_min_c", "avg_max_c", "avg_temp_c", "total_precip_mm", "rainy_days")
+
+with base as (
+  select
+    assumeNotNull(dte)                            as dte_nn,   -- 👈 non-nullable
+    toFloat64(temp_min_c)                         as temp_min_c,
+    toFloat64(temp_max_c)                         as temp_max_c,
+    (toFloat64(temp_min_c) + toFloat64(temp_max_c))/2.0 as temp_avg_c,
+    toFloat64(precip_mm)                          as precip_mm
+  from `clean`.`stg_meteo__manila`
+)
+select
+  toStartOfMonth(dte_nn)                as month,             -- 👈 computed from non-null date
+  avg(temp_min_c)                       as avg_min_c,
+  avg(temp_max_c)                       as avg_max_c,
+  avg(temp_avg_c)                       as avg_temp_c,
+  sum(precip_mm)                        as total_precip_mm,
+  countIf(precip_mm > 0)                as rainy_days
+from base
+group by month
+order by month
+  ...
+[0m17:20:19.220036 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '77875404-3f8d-4e79-b310-76421c781df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe71ac3a0>]}
+[0m17:20:19.224454 [info ] [Thread-3  ]: 10 of 10 OK created sql view model `mart`.`vw_meteo__manila_weather` ........... [[32mOK[0m in 0.92s]
+[0m17:20:19.227472 [debug] [Thread-3  ]: Finished running node model.ex_03_meteo.vw_meteo__manila_weather
+[0m17:20:19.237559 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.03 seconds
+[0m17:20:19.291744 [debug] [Thread-2  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_daily: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_daily"} */
+EXCHANGE TABLES `mart`.`mart_meteo__manila_daily__dbt_backup` AND `mart`.`mart_meteo__manila_daily` 
+  
+  ...
+[0m17:20:19.293283 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m17:20:19.297025 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_monthly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_monthly"} */
+EXCHANGE TABLES `mart`.`mart_meteo__manila_monthly__dbt_backup` AND `mart`.`mart_meteo__manila_monthly` 
+  
+  ...
+[0m17:20:19.299320 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:19.308398 [debug] [Thread-2  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_daily: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_daily"} */
+
+    drop table if exists `mart`.`mart_meteo__manila_daily__dbt_backup` 
+  ...
+[0m17:20:19.309749 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:19.317095 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_meteo__manila_monthly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_meteo__manila_monthly"} */
+
+    drop table if exists `mart`.`mart_meteo__manila_monthly__dbt_backup` 
+  ...
+[0m17:20:19.318292 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:19.321479 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '77875404-3f8d-4e79-b310-76421c781df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe71b2250>]}
+[0m17:20:19.322670 [info ] [Thread-2  ]: 8 of 10 OK created sql table model `mart`.`mart_meteo__manila_daily` ........... [[32mOK[0m in 1.02s]
+[0m17:20:19.324776 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m17:20:19.326607 [debug] [Thread-2  ]: Finished running node model.ex_03_meteo.mart_meteo__manila_daily
+[0m17:20:19.329613 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '77875404-3f8d-4e79-b310-76421c781df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe71ac550>]}
+[0m17:20:19.331239 [info ] [Thread-1  ]: 9 of 10 OK created sql table model `mart`.`mart_meteo__manila_monthly` ......... [[32mOK[0m in 1.03s]
+[0m17:20:19.385882 [debug] [Thread-1  ]: Finished running node model.ex_03_meteo.mart_meteo__manila_monthly
+[0m17:20:19.390041 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:20:19.391264 [debug] [MainThread]: Connection 'model.ex_03_meteo.mart_meteo__manila_monthly' was left open.
+[0m17:20:19.392446 [debug] [MainThread]: On model.ex_03_meteo.mart_meteo__manila_monthly: Close
+[0m17:20:19.393570 [debug] [MainThread]: Connection 'list__clean' was left open.
+[0m17:20:19.394696 [debug] [MainThread]: On list__clean: Close
+[0m17:20:19.395783 [debug] [MainThread]: Connection 'model.ex_03_meteo.mart_meteo__manila_daily' was left open.
+[0m17:20:19.396965 [debug] [MainThread]: On model.ex_03_meteo.mart_meteo__manila_daily: Close
+[0m17:20:19.398042 [debug] [MainThread]: Connection 'test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f' was left open.
+[0m17:20:19.399154 [debug] [MainThread]: On test.ex_03_meteo.not_null_stg_meteo__manila_dte.513a28a12f: Close
+[0m17:20:19.400234 [debug] [MainThread]: Connection 'model.ex_03_meteo.vw_meteo__manila_weather' was left open.
+[0m17:20:19.401329 [debug] [MainThread]: On model.ex_03_meteo.vw_meteo__manila_weather: Close
+[0m17:20:19.403597 [info ] [MainThread]: 
+[0m17:20:19.405016 [info ] [MainThread]: Finished running 4 view models, 4 data tests, 2 table models in 0 hours 0 minutes and 3.50 seconds (3.50s).
+[0m17:20:19.416961 [debug] [MainThread]: Command end result
+[0m17:20:19.684164 [info ] [MainThread]: 
+[0m17:20:19.685149 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:20:19.685783 [info ] [MainThread]: 
+[0m17:20:19.686431 [info ] [MainThread]: Done. PASS=10 WARN=0 ERROR=0 SKIP=0 TOTAL=10
+[0m17:20:19.687812 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 7.981366, "process_in_blocks": "8", "process_kernel_time": 0.66156, "process_mem_max_rss": "118192", "process_out_blocks": "10840", "process_user_time": 6.82561}
+[0m17:20:19.688575 [debug] [MainThread]: Command `dbt build` succeeded at 17:20:19.688364 after 7.98 seconds
+[0m17:20:19.689206 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fec9d2310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708fe846e550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708feb4d8c40>]}
+[0m17:20:19.689918 [debug] [MainThread]: Flushing usage events

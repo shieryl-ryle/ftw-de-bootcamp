@@ -1,6 +1,6 @@
 
 
-  create view `mart`.`vw_meteo__manila_weather` 
+  create view `mart`.`vw_meteo__manila_weather__dbt_tmp` 
   
     
     

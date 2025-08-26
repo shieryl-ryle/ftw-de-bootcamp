@@ -11,3 +11,8 @@ sources:
       - name: meteo__wmo_codes
         identifier: meteo___wmo_codes   # use this if SHOW TABLES shows three underscores
         description: WMO code night/day labels & icons (ingested via dlt)
+
+      - name: meteo___regions_daily
+        # If SHOW TABLES shows meteo___regions_daily, add:
+        # identifier: meteo___regions_daily
+        description: PH regions 7-day archive (Open-Meteo), one row per region/day
