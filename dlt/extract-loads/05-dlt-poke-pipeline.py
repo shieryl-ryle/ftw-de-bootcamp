@@ -37,7 +37,7 @@ def gen1_pokemon() -> Dict[str, Any]:
 def run():
     # Create a ClickHouse pipeline that will auto-create the database and tables
     pipeline = dlt.pipeline(
-        pipeline_name="dlt-poke-pipeline",
+        pipeline_name="05-dlt-poke-pipeline",
         destination="clickhouse",
         dataset_name="pokemon",
         dev_mode=False  

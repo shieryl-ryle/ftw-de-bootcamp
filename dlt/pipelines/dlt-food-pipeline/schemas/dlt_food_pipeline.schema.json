@@ -1,0 +1,304 @@
+{
+  "version": 4,
+  "version_hash": "tXmRk2Iiob3Y1CPCOOQ92cb6ZQR3Ki8QWyxKeyndeSY=",
+  "engine_version": 11,
+  "name": "dlt_food_pipeline",
+  "tables": {
+    "_dlt_version": {
+      "name": "_dlt_version",
+      "columns": {
+        "version": {
+          "name": "version",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "engine_version": {
+          "name": "engine_version",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "inserted_at": {
+          "name": "inserted_at",
+          "data_type": "timestamp",
+          "nullable": false
+        },
+        "schema_name": {
+          "name": "schema_name",
+          "data_type": "text",
+          "nullable": false
+        },
+        "version_hash": {
+          "name": "version_hash",
+          "data_type": "text",
+          "nullable": false
+        },
+        "schema": {
+          "name": "schema",
+          "data_type": "text",
+          "nullable": false
+        }
+      },
+      "write_disposition": "skip",
+      "resource": "_dlt_version",
+      "description": "Created by DLT. Tracks schema updates"
+    },
+    "_dlt_loads": {
+      "name": "_dlt_loads",
+      "columns": {
+        "load_id": {
+          "name": "load_id",
+          "data_type": "text",
+          "nullable": false
+        },
+        "schema_name": {
+          "name": "schema_name",
+          "data_type": "text",
+          "nullable": true
+        },
+        "status": {
+          "name": "status",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "inserted_at": {
+          "name": "inserted_at",
+          "data_type": "timestamp",
+          "nullable": false
+        },
+        "schema_version_hash": {
+          "name": "schema_version_hash",
+          "data_type": "text",
+          "nullable": true
+        }
+      },
+      "write_disposition": "skip",
+      "resource": "_dlt_loads",
+      "description": "Created by DLT. Tracks completed loads"
+    },
+    "restaurants": {
+      "columns": {
+        "store_id": {
+          "name": "store_id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "name": {
+          "name": "name",
+          "data_type": "text",
+          "nullable": true
+        },
+        "food_type": {
+          "name": "food_type",
+          "data_type": "text",
+          "nullable": true
+        },
+        "average_rating": {
+          "name": "average_rating",
+          "data_type": "double",
+          "nullable": true
+        },
+        "reviewer_count": {
+          "name": "reviewer_count",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "city": {
+          "name": "city",
+          "data_type": "text",
+          "nullable": true
+        },
+        "_dlt_load_id": {
+          "name": "_dlt_load_id",
+          "data_type": "text",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "write_disposition": "append",
+      "name": "restaurants",
+      "resource": "restaurants",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "_dlt_pipeline_state": {
+      "columns": {
+        "version": {
+          "name": "version",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "engine_version": {
+          "name": "engine_version",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "pipeline_name": {
+          "name": "pipeline_name",
+          "data_type": "text",
+          "nullable": false
+        },
+        "state": {
+          "name": "state",
+          "data_type": "text",
+          "nullable": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "nullable": false
+        },
+        "version_hash": {
+          "name": "version_hash",
+          "data_type": "text",
+          "nullable": true
+        },
+        "_dlt_load_id": {
+          "name": "_dlt_load_id",
+          "data_type": "text",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "write_disposition": "append",
+      "file_format": "preferred",
+      "name": "_dlt_pipeline_state",
+      "resource": "_dlt_pipeline_state",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "reviews": {
+      "columns": {
+        "store_id": {
+          "name": "store_id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "uuid": {
+          "name": "uuid",
+          "data_type": "text",
+          "nullable": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "nullable": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "nullable": true
+        },
+        "text": {
+          "name": "text",
+          "data_type": "text",
+          "nullable": true
+        },
+        "is_anonymous": {
+          "name": "is_anonymous",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "reviewer_id": {
+          "name": "reviewer_id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "like_count": {
+          "name": "like_count",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "is_liked": {
+          "name": "is_liked",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "overall_rating": {
+          "name": "overall_rating",
+          "data_type": "double",
+          "nullable": true
+        },
+        "restaurant_rating": {
+          "name": "restaurant_rating",
+          "data_type": "double",
+          "nullable": true
+        },
+        "_dlt_load_id": {
+          "name": "_dlt_load_id",
+          "data_type": "text",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        },
+        "rider_rating": {
+          "name": "rider_rating",
+          "nullable": true,
+          "data_type": "double"
+        }
+      },
+      "write_disposition": "append",
+      "name": "reviews",
+      "resource": "reviews",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    }
+  },
+  "settings": {
+    "detections": [
+      "iso_timestamp"
+    ],
+    "default_hints": {
+      "not_null": [
+        "_dlt_id",
+        "_dlt_root_id",
+        "_dlt_parent_id",
+        "_dlt_list_idx",
+        "_dlt_load_id"
+      ],
+      "parent_key": [
+        "_dlt_parent_id"
+      ],
+      "root_key": [
+        "_dlt_root_id"
+      ],
+      "unique": [
+        "_dlt_id"
+      ],
+      "row_key": [
+        "_dlt_id"
+      ]
+    }
+  },
+  "normalizers": {
+    "names": "snake_case",
+    "json": {
+      "module": "dlt.common.normalizers.json.relational"
+    }
+  },
+  "previous_hashes": [
+    "pnizEL8xMBNJNsbKOnzBOxIK8NB2F/53H/QVO+1uh9M=",
+    "iTMk2EgrhbWOG/B3zlMmhSFP8mUqhfxolXOJm68UjQ0=",
+    "ysb4jWNvnHAaRA3uK7v/UZrRWpJeeNlZMYEzVjLNKt0=",
+    "rpAn1x1q0+VywWaOiQ72jpyJ4Nv7B5BzDwojHgy7gx4="
+  ]
+}

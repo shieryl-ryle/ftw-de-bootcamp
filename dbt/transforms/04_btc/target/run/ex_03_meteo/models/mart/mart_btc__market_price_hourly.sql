@@ -8,7 +8,7 @@
          
 
 
-        insert into `mart`.`mart_btc__market_price_hourly__dbt_new_data_036b3fd9_3983_4070_a3fe_7b781f11f123`
+        insert into `mart`.`mart_btc__market_price_hourly__dbt_new_data_4f63e7af_7ff6_449a_a3f7_f8e7b1b8ff20`
         ("hour_local", "coin_id", "low_usd", "high_usd", "open_usd", "close_usd")
 
 with base as (
