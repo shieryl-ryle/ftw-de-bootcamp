@@ -1,6 +1,3 @@
-Here’s a clean, copy-paste **README.md** you can drop into the repo. It matches your “edit-the-YAML, no env exports” approach, supports Windows 10/11 + macOS, and separates **Teacher/Admin** vs **Student** flows.
-
----
 
 # FTW DE Bootcamp — Local & Remote Setup
 

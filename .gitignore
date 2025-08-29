@@ -1,7 +1,7 @@
 # DBT artifacts
-dbt/target/
-dbt/logs/
 dbt/dbt_packages/
+dbt/transforms/**/logs/
+dbt/transforms/**/target/
 
 # DLT pipeline artifacts
 dlt/**/load/
@@ -9,6 +9,7 @@ dlt/**/normalize/
 dlt/**/trace.pickle
 dlt/**/state.json
 dlt/**/.version
+dlt/pipelines/
 dlt/.dlt/secrets.toml
 
 # Editor files
