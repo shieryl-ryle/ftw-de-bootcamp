@@ -2075,3 +2075,256 @@ group by origin
 [0m16:57:41.628002 [debug] [MainThread]: Command `dbt build` succeeded at 16:57:41.627678 after 5.02 seconds
 [0m16:57:41.629083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76551d1ff310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765519e173a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765519e17700>]}
 [0m16:57:41.630090 [debug] [MainThread]: Flushing usage events
+[0m10:29:24.564673 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74315181b310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74314e478a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74314e478940>]}
+
+
+============================== 10:29:24.617579 | 137ce063-02c1-488c-8a25-e2b3b0384657 ==============================
+[0m10:29:24.617579 [info ] [MainThread]: Running with dbt=1.8.9
+[0m10:29:24.619237 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt build --profiles-dir . --target local', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'version_check': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'no_print': 'None', 'log_path': '/workdir/transforms/01_mpg/logs', 'log_cache_events': 'False', 'profiles_dir': '.', 'fail_fast': 'False', 'quiet': 'False', 'use_colors': 'True', 'cache_selected_only': 'False', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'debug': 'False', 'empty': 'False'}
+[0m10:29:25.263834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '137ce063-02c1-488c-8a25-e2b3b0384657', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x743150dc4fd0>]}
+[0m10:29:25.535000 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '137ce063-02c1-488c-8a25-e2b3b0384657', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74314ef5d430>]}
+[0m10:29:25.536543 [info ] [MainThread]: Registered adapter: clickhouse=1.8.6
+[0m10:29:26.053557 [debug] [MainThread]: checksum: 134c0f7b96382cc6938697739bc32fb1adc530b177e30f60cebddf61dbd7e979, vars: {}, profile: , target: local, version: 1.8.9
+[0m10:29:26.503430 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:29:26.504081 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:29:26.638141 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '137ce063-02c1-488c-8a25-e2b3b0384657', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74314dcfbe20>]}
+[0m10:29:27.236372 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '137ce063-02c1-488c-8a25-e2b3b0384657', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74314dc07c10>]}
+[0m10:29:27.237525 [info ] [MainThread]: Found 2 models, 1 source, 471 macros
+[0m10:29:27.241126 [info ] [MainThread]: 
+[0m10:29:27.242487 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m10:29:27.258632 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m10:29:27.259967 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m10:29:27.331584 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:29:27.335457 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:29:27.895496 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m10:29:27.904636 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m10:29:27.906994 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m10:29:27.925123 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m10:29:28.026156 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__mart)
+[0m10:29:28.028917 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__clean)
+[0m10:29:28.050596 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__mart: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list__mart"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'mart'
+      
+
+  ...
+[0m10:29:28.057142 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__clean: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list__clean"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'clean'
+      
+
+  ...
+[0m10:29:28.068607 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m10:29:28.070403 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m10:29:28.145806 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '137ce063-02c1-488c-8a25-e2b3b0384657', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74314db94670>]}
+[0m10:29:28.147767 [info ] [MainThread]: Concurrency: 4 threads (target='local')
+[0m10:29:28.149274 [info ] [MainThread]: 
+[0m10:29:28.229178 [debug] [Thread-1  ]: Began running node model.ex_01_mpg.mpg_standardized
+[0m10:29:28.230775 [info ] [Thread-1  ]: 1 of 2 START sql table model `clean`.`mpg_standardized` ........................ [RUN]
+[0m10:29:28.232197 [debug] [Thread-1  ]: Acquiring new clickhouse connection 'model.ex_01_mpg.mpg_standardized'
+[0m10:29:28.233234 [debug] [Thread-1  ]: Began compiling node model.ex_01_mpg.mpg_standardized
+[0m10:29:28.253982 [debug] [Thread-1  ]: Writing injected SQL for node "model.ex_01_mpg.mpg_standardized"
+[0m10:29:28.255206 [debug] [Thread-1  ]: Began executing node model.ex_01_mpg.mpg_standardized
+[0m10:29:28.527454 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m10:29:28.604195 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_01_mpg.mpg_standardized: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_01_mpg.mpg_standardized"} */
+
+            
+
+    
+        create table `clean`.`mpg_standardized__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            
+
+-- Source columns are already Nullable with correct types.
+-- Keep them as-is to preserve nullability and avoid insert errors.
+
+select
+  mpg,            -- Nullable(Float64)
+  cylinders,      -- Nullable(Int64)
+  displacement,   -- Nullable(Float64)
+  horsepower,     -- Nullable(Float64)
+  weight,         -- Nullable(Int64)
+  acceleration,   -- Nullable(Float64)
+  model_year,     -- Nullable(Int64)
+  origin,         -- Nullable(String)
+  name as make    -- Nullable(String)
+from `raw`.`autompg___cars`
+          )
+        
+        ...
+[0m10:29:28.628530 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m10:29:28.652375 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_01_mpg.mpg_standardized: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_01_mpg.mpg_standardized"} */
+
+    select name, type from system.columns where table = 'mpg_standardized__dbt_backup'
+    
+      and database = 'clean'
+    
+    order by position
+  ...
+[0m10:29:28.657950 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m10:29:28.664817 [debug] [Thread-1  ]: Writing runtime sql for node "model.ex_01_mpg.mpg_standardized"
+[0m10:29:28.666200 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_01_mpg.mpg_standardized: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_01_mpg.mpg_standardized"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `clean`.`mpg_standardized__dbt_backup`
+        ("mpg", "cylinders", "displacement", "horsepower", "weight", "acceleration", "model_year", "origin", "make")
+
+-- Source columns are already Nullable with correct types.
+-- Keep them as-is to preserve nullability and avoid insert errors.
+
+select
+  mpg,            -- Nullable(Float64)
+  cylinders,      -- Nullable(Int64)
+  displacement,   -- Nullable(Float64)
+  horsepower,     -- Nullable(Float64)
+  weight,         -- Nullable(Int64)
+  acceleration,   -- Nullable(Float64)
+  model_year,     -- Nullable(Int64)
+  origin,         -- Nullable(String)
+  name as make    -- Nullable(String)
+from `raw`.`autompg___cars`
+  ...
+[0m10:29:28.672603 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m10:29:28.681769 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_01_mpg.mpg_standardized: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_01_mpg.mpg_standardized"} */
+EXCHANGE TABLES `clean`.`mpg_standardized__dbt_backup` AND `clean`.`mpg_standardized` 
+  
+  ...
+[0m10:29:28.685017 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m10:29:28.957349 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_01_mpg.mpg_standardized: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_01_mpg.mpg_standardized"} */
+
+    drop table if exists `clean`.`mpg_standardized__dbt_backup` 
+  ...
+[0m10:29:28.960829 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m10:29:28.967306 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '137ce063-02c1-488c-8a25-e2b3b0384657', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x743150dbc820>]}
+[0m10:29:28.968682 [info ] [Thread-1  ]: 1 of 2 OK created sql table model `clean`.`mpg_standardized` ................... [[32mOK[0m in 0.73s]
+[0m10:29:28.970114 [debug] [Thread-1  ]: Finished running node model.ex_01_mpg.mpg_standardized
+[0m10:29:28.971764 [debug] [Thread-3  ]: Began running node model.ex_01_mpg.cylinders_by_origin
+[0m10:29:28.972903 [info ] [Thread-3  ]: 2 of 2 START sql view model `mart`.`cylinders_by_origin` ....................... [RUN]
+[0m10:29:28.974171 [debug] [Thread-3  ]: Acquiring new clickhouse connection 'model.ex_01_mpg.cylinders_by_origin'
+[0m10:29:28.975077 [debug] [Thread-3  ]: Began compiling node model.ex_01_mpg.cylinders_by_origin
+[0m10:29:29.030778 [debug] [Thread-3  ]: Writing injected SQL for node "model.ex_01_mpg.cylinders_by_origin"
+[0m10:29:29.032044 [debug] [Thread-3  ]: Began executing node model.ex_01_mpg.cylinders_by_origin
+[0m10:29:29.135906 [debug] [Thread-3  ]: Opening a new connection, currently in state init
+[0m10:29:29.197873 [debug] [Thread-3  ]: Writing runtime sql for node "model.ex_01_mpg.cylinders_by_origin"
+[0m10:29:29.199401 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_01_mpg.cylinders_by_origin: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_01_mpg.cylinders_by_origin"} */
+
+
+  create view `mart`.`cylinders_by_origin__dbt_tmp` 
+  
+    
+    
+  as (
+    
+
+select
+  origin,
+  avg(cylinders) as avg_cylinders,
+  count()        as n
+from `clean`.`mpg_standardized`
+group by origin
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m10:29:29.215186 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m10:29:29.228341 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_01_mpg.cylinders_by_origin: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_01_mpg.cylinders_by_origin"} */
+
+    drop table if exists `mart`.`cylinders_by_origin__dbt_backup` 
+  
+  ...
+[0m10:29:29.231358 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m10:29:29.233483 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_01_mpg.cylinders_by_origin: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_01_mpg.cylinders_by_origin"} */
+
+    rename table `mart`.`cylinders_by_origin` to `mart`.`cylinders_by_origin__dbt_backup` 
+  
+  ...
+[0m10:29:29.236302 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m10:29:29.243066 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_01_mpg.cylinders_by_origin: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_01_mpg.cylinders_by_origin"} */
+
+    drop table if exists `mart`.`cylinders_by_origin` 
+  
+  ...
+[0m10:29:29.245897 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m10:29:29.247842 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_01_mpg.cylinders_by_origin: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_01_mpg.cylinders_by_origin"} */
+
+    rename table `mart`.`cylinders_by_origin__dbt_tmp` to `mart`.`cylinders_by_origin` 
+  
+  ...
+[0m10:29:29.250578 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m10:29:29.257266 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_01_mpg.cylinders_by_origin: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_01_mpg.cylinders_by_origin"} */
+
+    drop table if exists `mart`.`cylinders_by_origin__dbt_backup` 
+  ...
+[0m10:29:29.260202 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m10:29:29.262714 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '137ce063-02c1-488c-8a25-e2b3b0384657', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74314ced2640>]}
+[0m10:29:29.263838 [info ] [Thread-3  ]: 2 of 2 OK created sql view model `mart`.`cylinders_by_origin` .................. [[32mOK[0m in 0.29s]
+[0m10:29:29.265176 [debug] [Thread-3  ]: Finished running node model.ex_01_mpg.cylinders_by_origin
+[0m10:29:29.267122 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:29:29.267681 [debug] [MainThread]: Connection 'list__mart' was left open.
+[0m10:29:29.268200 [debug] [MainThread]: On list__mart: Close
+[0m10:29:29.268706 [debug] [MainThread]: Connection 'list__clean' was left open.
+[0m10:29:29.269191 [debug] [MainThread]: On list__clean: Close
+[0m10:29:29.269679 [debug] [MainThread]: Connection 'model.ex_01_mpg.mpg_standardized' was left open.
+[0m10:29:29.270248 [debug] [MainThread]: On model.ex_01_mpg.mpg_standardized: Close
+[0m10:29:29.270740 [debug] [MainThread]: Connection 'model.ex_01_mpg.cylinders_by_origin' was left open.
+[0m10:29:29.271221 [debug] [MainThread]: On model.ex_01_mpg.cylinders_by_origin: Close
+[0m10:29:29.272098 [info ] [MainThread]: 
+[0m10:29:29.272786 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 2.03 seconds (2.03s).
+[0m10:29:29.274554 [debug] [MainThread]: Command end result
+[0m10:29:29.429607 [info ] [MainThread]: 
+[0m10:29:29.430586 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:29:29.431269 [info ] [MainThread]: 
+[0m10:29:29.431933 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m10:29:29.433327 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 5.0828104, "process_in_blocks": "1320", "process_kernel_time": 0.638786, "process_mem_max_rss": "111484", "process_out_blocks": "9504", "process_user_time": 5.238449}
+[0m10:29:29.434152 [debug] [MainThread]: Command `dbt build` succeeded at 10:29:29.433938 after 5.08 seconds
+[0m10:29:29.434858 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74315181b310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74314f740f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x743150dc4fd0>]}
+[0m10:29:29.435469 [debug] [MainThread]: Flushing usage events

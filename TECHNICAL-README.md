@@ -1,3 +1,113 @@
+
+# 🚀 Bootcamp Modern Data Stack Architecture
+
+This bootcamp uses a **lightweight Modern Data Stack (MDS)** to teach the **Extract → Load → Transform → Visualize** workflow on real datasets.
+
+
+```mermaid
+flowchart LR
+  subgraph Extract-Load
+    direction LR
+    SRC[(External<br>data sources)]
+    DLT[dlt&nbsp;container]
+    SRC --> DLT
+    DLT -->|raw tables| CH[(ClickHouse)]
+  end
+  subgraph Transform
+    direction LR
+    DBT[dbt&nbsp;container]
+    CH --> DBT
+    DBT -->|views / tables| CH
+  end
+  subgraph Visualise
+    direction LR
+    CH --> META[Metabase UI]
+  end
+
+  classDef box fill:#d6eaf8,stroke:#036,stroke-width:1px,color:#000;
+  class SRC,DLT,DBT,META box;
+  style CH fill:#fde9b4,stroke:#663,stroke-width:2px,color:#000
+```
+
+
+
+## ⚙️ Components & Roles
+
+| Layer             | Tool                 | Role in the Stack                                               |
+| ----------------- | -------------------- | --------------------------------------------------------------- |
+| **Ingestion**     | `dlt`                | Connectors for APIs, CSVs, scraping, DB; retries; deduplication |
+| **Storage**       | `ClickHouse`         | Fast columnar OLAP warehouse; MergeTree engines for time-series |
+| **Transform**     | `dbt`                | SQL models, schema tests, semantic layer (facts & dims)         |
+| **Visualization** | `Metabase`           | Self-service BI dashboards                                      |
+| **Source DB**     | `Postgres (Chinook)` | Example operational system for ingestion demo                   |
+
+---
+* **Sources**: Static CSV, Transactional Database, Timeseries API, Streaming API, Static API, Ecommerce Website, Other sources.
+* **dlt (Extract & Load)**: Ingests data from multiple formats/APIs, applies light schema, pushes to warehouse.
+* **ClickHouse (Warehouse)**: Stores data in efficient **MergeTree**/ **ReplacingMergeTree** tables with partitions (by date/region) for fast analytics.
+* **dbt (Transform)**: Builds **staging → core → marts** models, runs tests (`unique`, `not_null`), and materializes facts/dimensions.
+* **Metabase (Visualize)**: Queries the warehouse and builds dashboards (weather, BTC prices, reviews).
+
+
+> **Note:** In production you’d add a data lake (e.g. S3/Delta Lake), data catalog (Amundsen/DataHub), security/Governance (RBAC, encryption, Ranger), orchestration (Airflow/Kubernetes), observability (Prometheus/Grafana), and data quality (Great Expectations). We’ve omitted those to focus on core ELT.
+
+Above all, this bootcamp emphasizes **SQL** with only minimal Python, YAML, and Markdown.
+
+
+---
+
+
+## 🗄️ Modeling Conventions
+
+* **dlt → raw layer**: Tables named `raw_*`, append/merge mode.
+* **dbt → clean**: `dim_*` and `fct_*` models with tests.
+* **dbt → marts**: Aggregations, rollups, and reporting views.
+* **exploratory -> sandbox**: Discovery and temporary tables.
+
+---
+
+## 🔒 Security & Isolation
+
+* Students connect with **`ftw_user`** (no `CREATE DATABASE`).
+* Each student uses a **separate dbt schema**: `ftw_<alias>` to avoid collisions.
+* Secrets (API keys, passwords) are stored in **dlt secrets.toml** or `.env`.
+
+---
+
+## 📊 Example Pipelines
+
+* `01_mpg.py` → UCI Auto MPG dataset
+* `02_chinook.py` → Artists & Albums from Postgres
+* `03_meteo_*` → Historical weather + PH regions + WMO codes
+* `04_btc_markets.py` → CoinGecko Bitcoin prices
+* `05_pokeapi_gen1.py` → Pokémon API (Gen 1)
+* `06_lazada_scrape.py` → Lazada scraping (Playwright)
+* `07_foodpanda.py` → Kaggle restaurant reviews
+
+---
+
+## ✅ Key Teaching Points
+
+* How to ingest from **databases, APIs, CSVs, scrapers**.
+* How **ClickHouse engines** affect deduplication, partitions, and performance.
+* Why **dbt tests** matter (data quality + schema enforcement).
+* How to isolate schemas/users for **multi-tenant teaching environments**.
+* Building quick **dashboards** in Metabase from dbt models.
+
+---
+
+## 📌 Extensions (for production mindset)
+
+* Add **orchestration** (Mage/Dagster/Airflow) to chain dlt → dbt → tests.
+* Introduce **data contracts** (typed schemas, versioning).
+* Enable **observability** (OpenLineage, Marquez, or dbt docs lineage).
+* Apply **monitoring/alerts** on late data and API failures.
+
+---
+
+👉 This architecture balances **simplicity (bootcamp teaching)** with **modern practices** (idempotent loads, schema tests, semantic layers, partitioning). Learners get a hands-on feel for the modern data stack without the operational overhead of enterprise setups.
+ 
+
 # FTW DE Bootcamp — Exercise Run Guide
 
 This guide shows how to run each **extract → load (dlt)** and **transform (dbt)** exercise in your Docker setup. Commands assume you’re in the project root.
@@ -14,7 +124,7 @@ This guide shows how to run each **extract → load (dlt)** and **transform (dbt
 
 ```bash
 # Start core (ClickHouse, Metabase, Chinook Postgres)
-docker compose --compatibility up -d --profile core
+docker compose --profile core --compatibility up -d
 
 # Check health
 docker ps

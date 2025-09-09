@@ -14,8 +14,6 @@ Resolving deltas: 100% (58/58), done.
 
 ## Navigating to the project directory
 ```bash
-test@ip-172-31-240-50:~$ cd ftw-de-bootcamp-myk
-bash: cd: ftw-de-bootcamp-myk: No such file or directory
 test@ip-172-31-240-50:~$ cd ftw-de-bootcamp
 test@ip-172-31-240-50:~/ftw-de-bootcamp$ ls
 README.md  clickhouse  compose.yaml  dbt  dlt
