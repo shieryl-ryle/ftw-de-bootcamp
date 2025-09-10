@@ -136,6 +136,27 @@ docker compose down
 
 ---
 
+## How to reset docker containers
+
+### stop Metabase only
+docker compose stop metabase
+
+### remove the metabase container and any anonymous volumes it owns
+docker compose rm -f -s -v metabase
+
+### find the actual named volume (compose prefixes it with the project name)
+docker volume ls | grep metabase_data
+#### e.g. myproject_metabase_data
+
+## delete that named volume (this wipes metabase.db and all Metabase state)
+docker volume rm <yourproject>_metabase_data
+
+### bring Metabase back fresh
+docker compose up -d metabase
+
+
+---
+
 ## 01 — Auto MPG
 
 **Extract & Load (dlt)**

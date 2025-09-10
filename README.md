@@ -275,6 +275,7 @@ git clone git@github.com:ogbinar/ftw-de-bootcamp.git
 - Lecture slides will be provided separately
 - Technical overview and guide can be found [here](TECHNICAL-README.md).
 - Configuration for Local vs Remote setup can be found [here](LOCAL-REMOTE-SETUP.md).
+- Example of first exercise pipeline logs can be found [here](Example.md).
 
 # Track Your Learnings
 

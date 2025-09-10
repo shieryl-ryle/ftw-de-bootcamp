@@ -8,9 +8,16 @@ select
   cylinders,      -- Nullable(Int64)
   displacement,   -- Nullable(Float64)
   horsepower,     -- Nullable(Float64)
+  /*
+  coalesce(
+        horsepower,
+        avg(horsepower) over (partition by cylinders)
+    ) as horsepower_imputed,
+  */
   weight,         -- Nullable(Int64)
   acceleration,   -- Nullable(Float64)
   model_year,     -- Nullable(Int64)
   origin,         -- Nullable(String)
   name as make    -- Nullable(String)
 from {{ source('raw', 'autompg___cars') }}
+

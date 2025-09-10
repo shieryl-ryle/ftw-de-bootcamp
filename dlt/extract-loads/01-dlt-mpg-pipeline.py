@@ -1,11 +1,21 @@
 # dlt/pipeline.py
 import dlt, pandas as pd
-
+import os
 
 # https://archive.ics.uci.edu/dataset/9/auto+mpg
 @dlt.resource(name="cars")
 def mpg():
+   
+    
     yield pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/mpg.csv")
+    
+    #ROOT_DIR = os.path.dirname(__file__)
+    #STAGING_DIR = os.path.join(ROOT_DIR, "staging", "auto-mpg")
+    #FILE_PATH = os.path.join(STAGING_DIR, "mpg.csv")
+    # yield pd.read_csv(FILE_PATH)
+    
+    #FILE_PATH = os.path.join(STAGING_DIR, "mpg.xlsx")
+    #yield pd.read_excel(FILE_PATH)
 
 def run():
     p = dlt.pipeline(
