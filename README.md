@@ -279,7 +279,7 @@ git clone git@github.com:ogbinar/ftw-de-bootcamp.git
 
 # Track Your Learnings
 
-A minimal learning journal to capture learnings, reflections, vocabulary, and the **DE mindset**—especially for documenting, communicating, and presenting.
+A minimal learning journal to capture learnings, reflections, vocabulary, and the **DE mindset**—especially for documenting, communicating, and presenting. Journal repo can be found [here](https://github.com/ogbinar/ftw-de-journal).
 
 > clone and rename:  
 > `git clone https://github.com/ogbinar/ftw-de-journal.git`
