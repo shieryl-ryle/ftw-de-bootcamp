@@ -8,7 +8,7 @@
          
 
 
-        insert into `mart`.`mart_btc__daily_ohlc__dbt_new_data_95368610_3f39_409a_ac3a_a4484f60e36e`
+        insert into `mart`.`mart_btc__daily_ohlc__dbt_new_data_c46aa814_8bda_443a_88a2_6d5cd235fe11`
         ("day_local", "coin_id", "low_usd", "high_usd", "open_usd", "close_usd")
 
 with base as (

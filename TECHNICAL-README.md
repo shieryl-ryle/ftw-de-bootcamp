@@ -369,7 +369,7 @@ docker compose --profile jobs run --rm \
    * In `compose.yaml`:
 
      * For **dlt**: set `DESTINATION__CLICKHOUSE__CREDENTIALS__HOST` to server IP/DNS
-     * For **dbt**: set `CH_HOST` to server IP/DNS and (optionally) `DBT_SCHEMA=ftw_<alias>`
+     * For **dbt**: set `CH_HOST` to server IP/DNS`
    * Then run the same **dlt** and **dbt** commands per exercise.
 
 ---
@@ -382,15 +382,10 @@ docker compose --profile jobs run --rm \
 * **Chinook loader not found**
 
   * Ensure `chinook_fetch` completed and `postgres_chinook` is healthy: `docker ps`
-* **DBT permissions**
 
-  * If using a shared remote server, set a unique `DBT_SCHEMA` like `ftw_<alias>`
 * **Metabase can’t see new tables**
 
   * In Admin → Databases → ClickHouse → **Sync** & **Re-scan field values**
-* **Port conflicts**
-
-  * Change host ports in `compose.yaml` (e.g., `65432:5432`) then `docker compose up -d`
 
 ---
 

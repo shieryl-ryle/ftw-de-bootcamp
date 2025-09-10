@@ -48,7 +48,7 @@
    * Port: `8123`
    * User: `ftw_user`
    * Pass: `ftw_pass`
-   * DB: `raw` / `clean` / `mart` (as needed)
+   * DB:  `mart`, `sandbox`/ `raw` / `clean` / (as needed)
 
 ---
 
@@ -111,8 +111,9 @@
    CH_TCP_PORT: "9000"
    CH_USER: "ftw_user"
    CH_PASS: "ftw_pass"
-   DBT_SCHEMA: "ftw_<student_alias>"   # 👈 IMPORTANT! unique per student
    ```
+
+Note: Review each DLT and DBT job and ensure that target tables have the following structure: `database.name_table-name`
 
 3. **Run dlt job**
 
@@ -133,7 +134,7 @@
          port: 8123
          user: ftw_user
          password: ftw_pass
-         schema: ftw_<student_alias>
+
    ```
 
    Then run:
@@ -152,6 +153,6 @@
 
 * **Local mode:** everything (ClickHouse, Postgres, Metabase, dlt, dbt) runs on your laptop.
 * **Remote hybrid:** teacher runs core on server, students point dlt/dbt jobs to server IP.
-* **Isolation:** each student must use their own `DBT_SCHEMA` (e.g., `ftw_myk01`).
+* **Isolation:** For remote setup, each student must name their tables `database.name_table-name`
 
  
