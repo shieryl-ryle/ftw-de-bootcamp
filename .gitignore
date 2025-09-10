@@ -12,6 +12,7 @@ dlt/**/.version
 dlt/pipelines/
 dlt/.dlt/secrets.toml
 
+
 # Editor files
 *.swp
 *.swo
