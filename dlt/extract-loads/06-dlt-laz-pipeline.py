@@ -64,7 +64,7 @@ def run():
         pipeline_name="dlt-laz-pipeline",
         destination="clickhouse",
         dataset_name="lazada_products",
-        dev_mode=True,
+        dev_mode=False,
     )
     print("Fetching and loading...")
     info = pipeline.run(lazada_scraped_data())
