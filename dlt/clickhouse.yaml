@@ -1,5 +1,5 @@
 adapter: clickhouse_connect
-host:    clickhouse
+host:    54.87.106.52  #clickhouse    #remote 54.87.106.52
 port:    8123
 user:    ftw_user
 password: ftw_pass

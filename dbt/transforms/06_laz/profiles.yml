@@ -12,3 +12,12 @@ clickhouse_ftw:
       schema: mart          # ClickHouse "database". For isolation you can set ftw_myk01
       threads: 4
       secure: false
+    remote:
+      type: clickhouse
+      host: 54.87.106.52 # For REMOTE class: set to your server IP/DNS, e.g. 34.12.34.56
+      port: 8123
+      user: ftw_user
+      password: ftw_pass
+      schema: mart
+      threads: 4
+      secure: false

@@ -130,7 +130,7 @@ services:
       # ── CLICKHOUSE DESTINATION (EDIT HERE for LOCAL vs REMOTE) ─────────────
       # LOCAL (default): use the service name "clickhouse"
       # REMOTE: set CH_HOST to your SERVER public IP or DNS (e.g., "34.12.34.56")
-      DESTINATION__CLICKHOUSE__CREDENTIALS__HOST:       "clickhouse"   # ← change to "<SERVER_IP_OR_DNS>" for REMOTE
+      DESTINATION__CLICKHOUSE__CREDENTIALS__HOST:       "clickhouse"   # ← change to "54.87.106.52" for REMOTE
       DESTINATION__CLICKHOUSE__CREDENTIALS__PORT:       "9000"
       DESTINATION__CLICKHOUSE__CREDENTIALS__HTTP_PORT:  "8123"
       DESTINATION__CLICKHOUSE__CREDENTIALS__USERNAME:   "ftw_user"     # ← teacher sets this on server
@@ -160,7 +160,7 @@ services:
       # DBT_TARGET choices are defined in ./dbt/profiles.yml (e.g., local / remote).
       # LOCAL default (service name):
       # DBT_TARGET: "local"                     # ← set to "remote" when pointing to server
-      CH_HOST: "clickhouse"                   # ← change to "<SERVER_IP_OR_DNS>" for REMOTE
+      # CH_HOST: "54.87.106.52" # "clickhouse"                   # ← change to "54.87.106.52" for REMOTE
       CH_HTTP_PORT: "8123"
       CH_TCP_PORT:  "9000"
       CH_USER: "ftw_user"                     # ← teacher sets this on server

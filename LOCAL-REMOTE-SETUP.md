@@ -7,7 +7,7 @@
 1. **Start the core stack**
 
    ```bash
-   docker compose --compatibility up -d --profile core
+   docker compose --profile core --compatibility up -d
    ```
 
    This launches:
@@ -30,14 +30,16 @@
    Example (Auto MPG pipeline):
 
    ```bash
-   docker compose --profile jobs run --rm dlt python pipelines/dlt-mpg-pipeline.py
+   docker compose --profile jobs run --rm \
+  dlt python extract-loads/01-dlt-mpg-pipeline.py
    ```
 
 4. **Run dbt transformations/tests**
 
    ```bash
-   docker compose --profile jobs run --rm dbt run
-   docker compose --profile jobs run --rm dbt test
+   docker compose --profile jobs run --rm \
+  -w /workdir/transforms/01_mpg \
+  dbt build --profiles-dir . --target local
    ```
 
 5. **Explore in Metabase**
@@ -72,14 +74,14 @@
 2. **Start only core services**
 
    ```bash
-   docker compose --compatibility up -d --profile core
+   docker compose --profile core --compatibility up -d
    ```
 
 3. **Check health**
 
    ```bash
    docker ps
-   curl http://localhost:8123/ping
+   curl http://<SERVER_IP>:8123/ping
    ```
 
 4. **Verify Metabase**
@@ -106,19 +108,20 @@
    DESTINATION__CLICKHOUSE__CREDENTIALS__DATABASE: "raw"
 
    # For dbt
-   CH_HOST: "<SERVER_IP>"
+   
    CH_HTTP_PORT: "8123"
    CH_TCP_PORT: "9000"
    CH_USER: "ftw_user"
    CH_PASS: "ftw_pass"
    ```
 
-Note: Review each DLT and DBT job and ensure that target tables have the following structure: `database.name_table-name`
+Note: Review each DLT and DBT job and ensure that target tables have the following structure: `database.tablename_studentname`
 
 3. **Run dlt job**
 
    ```bash
-   docker compose --profile jobs run --rm dlt python pipelines/dlt-mpg-pipeline.py
+   docker compose --profile jobs run --rm \
+  dlt python extract-loads/01-dlt-mpg-pipeline.py
    ```
 
 4. **Run dbt (remote target)**
@@ -140,8 +143,7 @@ Note: Review each DLT and DBT job and ensure that target tables have the followi
    Then run:
 
    ```bash
-   docker compose --profile jobs run --rm dbt run
-   docker compose --profile jobs run --rm dbt test
+   docker compose --profile jobs run --rm   -w /workdir/transforms/01_mpg   dbt build --profiles-dir . --target remote
    ```
 
 5. **Check results in Metabase**
@@ -153,6 +155,6 @@ Note: Review each DLT and DBT job and ensure that target tables have the followi
 
 * **Local mode:** everything (ClickHouse, Postgres, Metabase, dlt, dbt) runs on your laptop.
 * **Remote hybrid:** teacher runs core on server, students point dlt/dbt jobs to server IP.
-* **Isolation:** For remote setup, each student must name their tables `database.name_table-name`
+* **Isolation:** For remote setup, each student must name their tables `database.tablename_studentname`
 
  

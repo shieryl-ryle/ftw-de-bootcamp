@@ -3,6 +3,7 @@
 
 This bootcamp uses a **lightweight Modern Data Stack (MDS)** to teach the **Extract → Load → Transform → Visualize** workflow on real datasets.
 
+## Local Setup
 
 ```mermaid
 flowchart LR
@@ -29,6 +30,38 @@ flowchart LR
   style CH fill:#fde9b4,stroke:#663,stroke-width:2px,color:#000
 ```
 
+## Remote Setup
+
+```mermaid
+flowchart LR
+  %% STYLE DEFINITIONS
+  classDef box fill:#d6eaf8,stroke:#036,stroke-width:1px,color:#000;
+  classDef remote fill:#fde9b4,stroke:#663,stroke-width:2px,color:#000;
+
+  %% === LOCAL MACHINE ===
+  subgraph LOCAL[Local machine]
+    direction LR
+    SRC[(External data sources)]
+    DLT[dlt local]
+    DBT[dbt local]
+    class SRC,DLT,DBT box
+  end
+
+  %% === REMOTE SERVER ===
+  subgraph REMOTE[Remote server]
+    direction LR
+    CH[(ClickHouse)]
+    META[Metabase UI]
+    class CH,META remote
+  end
+
+  %% FLOWS
+  SRC --> DLT
+  DLT -->|raw tables| CH
+  CH --> DBT
+  DBT -->|views / tables| CH
+  CH --> META
+```
 
 
 ## ⚙️ Components & Roles
@@ -243,6 +276,8 @@ docker compose --profile jobs run --rm \
 ---
 
 ## 04 — Bitcoin (BTC)
+
+Note: make a non-scheduled version
 
 **Extract & Load (dlt)**
 
