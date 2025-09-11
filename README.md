@@ -14,6 +14,62 @@ The [For the Women Foundation](https://www.ftwfoundation.org/) Data Engineering 
 | **4** | Web & API Pipelines                 | Web scraping ethics, APIs, staging raw data     | Ingest Lazada + Pokémon API → dbt transforms, custom tests, Metabase dashboards  |
 | **5-6** | Capstone Activities  |     Casptone Development     |        Documentation & Presentation Practice                |
 
+# Hardware Setup
+## 💻 Minimum PC Specs for the Data Engineering Bootcamp
+
+Running our bootcamp environment means using **Docker containers** (tiny virtual computers) for databases (ClickHouse + Postgres), a dashboard tool (Metabase), and job runners (dlt + dbt).
+
+This isn’t as heavy as gaming or video editing, but it still needs enough resources so your laptop doesn’t slow down or crash.
+
+---
+
+### ✅ Local Setup (everything on your laptop)
+
+**Minimum (it will work, but might feel slow):**
+
+* **CPU:** 4 cores (Intel i5 / Ryzen 5 or newer)
+* **RAM:** 8 GB
+* **Storage:** 50 GB free space on SSD
+* **OS:** Linux (Ubuntu, Fedora) or Windows 10/11 with WSL2 (Ubuntu)
+* **Tip:** Mac M1/M2 is fine, but may need an extra setting in Docker.
+
+**Recommended (for a smoother experience):**
+
+* **CPU:** 4–6 cores
+* **RAM:** 16 GB
+* **Storage:** 100 GB free SSD
+* **Reason:** Chrome + VSCode + Docker + databases running together can easily use 10+ GB memory.
+
+---
+
+### 🌐 Remote Hybrid Setup (server runs core, students run jobs)
+
+Sometimes we’ll run the **databases + Metabase** on a **remote server** (e.g., AWS), and you’ll only run the **dlt/dbt jobs** on your laptop.
+
+**Server specs (teacher side):**
+
+* **CPU:** 4 vCPU (8 vCPU if 10+ students connect at once)
+* **RAM:** 16 GB minimum (32 GB for bigger classes)
+* **Storage:** 100–200 GB SSD
+* **Network:** Open ports `8123`, `9000`, `3001`
+
+**Student laptops (lighter load in this mode):**
+
+* **CPU:** 2–4 cores
+* **RAM:** 8 GB (still better with 16 GB)
+* **Storage:** 20–50 GB free SSD
+
+---
+
+### 📝 TL;DR (Quick Checklist)
+
+* **Will 8 GB RAM work?** → Yes, but it will feel tight.
+* **Best for smooth experience?** → 16 GB RAM, 4 cores, SSD storage.
+* **Server for class:** → Start with 8 vCPU + 16 GB RAM + 200 GB SSD.
+
+---
+
+⚡ **Tip:** If you only have 8 GB RAM, close heavy apps (Chrome tabs, video calls, Spotify, etc.) before starting Docker.
 
 # Environment Setup
 

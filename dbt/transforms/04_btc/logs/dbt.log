@@ -10466,3 +10466,649 @@ order by day_local, coin_id
 [0m23:52:15.007466 [debug] [MainThread]: Command `dbt build` succeeded at 23:52:15.007255 after 3.18 seconds
 [0m23:52:15.008113 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7759c9cb7310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7759c7c4ad00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7759c7c4d850>]}
 [0m23:52:15.008704 [debug] [MainThread]: Flushing usage events
+[0m23:53:12.725338 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea74cc310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea4122b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea4122a00>]}
+
+
+============================== 23:53:12.737834 | c4d04e9e-2147-45cf-9c7e-91538ab69d61 ==============================
+[0m23:53:12.737834 [info ] [MainThread]: Running with dbt=1.8.9
+[0m23:53:12.739022 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'fail_fast': 'False', 'empty': 'False', 'log_path': '/workdir/transforms/04_btc/logs', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'partial_parse': 'True', 'target_path': 'None', 'version_check': 'True', 'warn_error': 'None', 'write_json': 'True', 'introspect': 'True', 'no_print': 'None', 'printer_width': '80', 'profiles_dir': '.', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'invocation_command': 'dbt build --profiles-dir . --target local', 'use_experimental_parser': 'False', 'static_parser': 'True', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'quiet': 'False'}
+[0m23:53:13.080926 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c4d04e9e-2147-45cf-9c7e-91538ab69d61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea401a490>]}
+[0m23:53:13.179410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c4d04e9e-2147-45cf-9c7e-91538ab69d61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea4c043a0>]}
+[0m23:53:13.181304 [info ] [MainThread]: Registered adapter: clickhouse=1.8.6
+[0m23:53:13.390193 [debug] [MainThread]: checksum: 134c0f7b96382cc6938697739bc32fb1adc530b177e30f60cebddf61dbd7e979, vars: {}, profile: , target: local, version: 1.8.9
+[0m23:53:13.714261 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:53:13.714937 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:53:13.820779 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c4d04e9e-2147-45cf-9c7e-91538ab69d61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea388beb0>]}
+[0m23:53:14.276826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c4d04e9e-2147-45cf-9c7e-91538ab69d61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea37804c0>]}
+[0m23:53:14.277759 [info ] [MainThread]: Found 4 models, 3 data tests, 1 source, 471 macros
+[0m23:53:14.281228 [info ] [MainThread]: 
+[0m23:53:14.282399 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m23:53:14.294401 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m23:53:14.305574 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m23:53:14.321387 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:53:14.325167 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:53:14.597776 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m23:53:14.603835 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:14.605823 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m23:53:14.609521 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:14.633385 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__clean)
+[0m23:53:14.634364 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__mart)
+[0m23:53:14.646447 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__clean: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list__clean"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'clean'
+      
+
+  ...
+[0m23:53:14.650663 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__mart: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list__mart"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'mart'
+      
+
+  ...
+[0m23:53:14.658371 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m23:53:14.660039 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m23:53:14.677358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c4d04e9e-2147-45cf-9c7e-91538ab69d61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea406a400>]}
+[0m23:53:14.678461 [info ] [MainThread]: Concurrency: 4 threads (target='local')
+[0m23:53:14.679159 [info ] [MainThread]: 
+[0m23:53:14.692362 [debug] [Thread-1  ]: Began running node model.ex_03_meteo.stg_btc__market_price
+[0m23:53:14.693572 [info ] [Thread-1  ]: 1 of 7 START sql view model `clean`.`stg_btc__market_price` .................... [RUN]
+[0m23:53:14.694750 [debug] [Thread-1  ]: Acquiring new clickhouse connection 'model.ex_03_meteo.stg_btc__market_price'
+[0m23:53:14.695547 [debug] [Thread-1  ]: Began compiling node model.ex_03_meteo.stg_btc__market_price
+[0m23:53:14.713432 [debug] [Thread-1  ]: Writing injected SQL for node "model.ex_03_meteo.stg_btc__market_price"
+[0m23:53:14.731269 [debug] [Thread-1  ]: Began executing node model.ex_03_meteo.stg_btc__market_price
+[0m23:53:14.806989 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m23:53:14.864949 [debug] [Thread-1  ]: Writing runtime sql for node "model.ex_03_meteo.stg_btc__market_price"
+[0m23:53:14.871321 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_btc__market_price: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_btc__market_price"} */
+
+
+  create view `clean`.`stg_btc__market_price__dbt_tmp` 
+  
+    
+    
+  as (
+    -- models/clean/stg_btc__market_price.sql
+
+
+select
+  cast(id as String)                       as coin_id,
+  cast(symbol as String)                   as symbol,
+  cast(name as String)                     as name,
+  cast(image as String)                    as image_url,
+  toFloat64(current_price)                 as price_usd,
+  toFloat64(market_cap)                    as market_cap_usd,
+  toInt32(market_cap_rank)                 as market_cap_rank,
+  toFloat64(total_volume)                  as total_volume_usd,
+  toFloat64(high_24h)                      as high_24h_usd,
+  toFloat64(low_24h)                       as low_24h_usd,
+  toFloat64(price_change_24h)              as price_change_24h_usd,
+  toFloat64(price_change_percentage_24h)   as price_change_pct_24h,
+
+  -- Normalize last_updated to DateTime64(6,'UTC') whether it's already DT or a String
+  ifNull(
+    parseDateTime64BestEffortOrNull(toString(last_updated), 6, 'UTC'),
+    toDateTime64(last_updated, 6, 'UTC')
+  )                                        as last_updated_utc,
+
+  toTimeZone(
+    ifNull(
+      parseDateTime64BestEffortOrNull(toString(last_updated), 6, 'UTC'),
+      toDateTime64(last_updated, 6, 'UTC')
+    ),
+    'Asia/Manila'
+  )                                        as last_updated_manila
+
+from `raw`.`btc___market_price`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m23:53:14.882695 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m23:53:14.968643 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_btc__market_price: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_btc__market_price"} */
+
+    drop table if exists `clean`.`stg_btc__market_price__dbt_backup` 
+  
+  ...
+[0m23:53:14.972879 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:14.976262 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_btc__market_price: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_btc__market_price"} */
+
+    rename table `clean`.`stg_btc__market_price` to `clean`.`stg_btc__market_price__dbt_backup` 
+  
+  ...
+[0m23:53:14.979512 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:14.986557 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_btc__market_price: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_btc__market_price"} */
+
+    drop table if exists `clean`.`stg_btc__market_price` 
+  
+  ...
+[0m23:53:14.990120 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:14.992380 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_btc__market_price: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_btc__market_price"} */
+
+    rename table `clean`.`stg_btc__market_price__dbt_tmp` to `clean`.`stg_btc__market_price` 
+  
+  ...
+[0m23:53:14.995324 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:15.046659 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.stg_btc__market_price: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.stg_btc__market_price"} */
+
+    drop table if exists `clean`.`stg_btc__market_price__dbt_backup` 
+  ...
+[0m23:53:15.050455 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:15.059034 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c4d04e9e-2147-45cf-9c7e-91538ab69d61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea2bc9430>]}
+[0m23:53:15.060427 [info ] [Thread-1  ]: 1 of 7 OK created sql view model `clean`.`stg_btc__market_price` ............... [[32mOK[0m in 0.36s]
+[0m23:53:15.061792 [debug] [Thread-1  ]: Finished running node model.ex_03_meteo.stg_btc__market_price
+[0m23:53:15.063392 [debug] [Thread-3  ]: Began running node test.ex_03_meteo.not_null_stg_btc__market_price_coin_id.022fc4d0c1
+[0m23:53:15.064183 [debug] [Thread-4  ]: Began running node test.ex_03_meteo.not_null_stg_btc__market_price_last_updated_utc.d63cb9517a
+[0m23:53:15.065213 [debug] [Thread-2  ]: Began running node test.ex_03_meteo.not_null_stg_btc__market_price_price_usd.639627ceb6
+[0m23:53:15.066153 [info ] [Thread-3  ]: 2 of 7 START test not_null_stg_btc__market_price_coin_id ....................... [RUN]
+[0m23:53:15.067116 [info ] [Thread-4  ]: 3 of 7 START test not_null_stg_btc__market_price_last_updated_utc .............. [RUN]
+[0m23:53:15.068042 [info ] [Thread-2  ]: 4 of 7 START test not_null_stg_btc__market_price_price_usd ..................... [RUN]
+[0m23:53:15.069213 [debug] [Thread-3  ]: Acquiring new clickhouse connection 'test.ex_03_meteo.not_null_stg_btc__market_price_coin_id.022fc4d0c1'
+[0m23:53:15.070382 [debug] [Thread-4  ]: Acquiring new clickhouse connection 'test.ex_03_meteo.not_null_stg_btc__market_price_last_updated_utc.d63cb9517a'
+[0m23:53:15.071318 [debug] [Thread-2  ]: Acquiring new clickhouse connection 'test.ex_03_meteo.not_null_stg_btc__market_price_price_usd.639627ceb6'
+[0m23:53:15.072120 [debug] [Thread-3  ]: Began compiling node test.ex_03_meteo.not_null_stg_btc__market_price_coin_id.022fc4d0c1
+[0m23:53:15.072891 [debug] [Thread-4  ]: Began compiling node test.ex_03_meteo.not_null_stg_btc__market_price_last_updated_utc.d63cb9517a
+[0m23:53:15.073650 [debug] [Thread-2  ]: Began compiling node test.ex_03_meteo.not_null_stg_btc__market_price_price_usd.639627ceb6
+[0m23:53:15.101550 [debug] [Thread-3  ]: Writing injected SQL for node "test.ex_03_meteo.not_null_stg_btc__market_price_coin_id.022fc4d0c1"
+[0m23:53:15.103563 [debug] [Thread-4  ]: Writing injected SQL for node "test.ex_03_meteo.not_null_stg_btc__market_price_last_updated_utc.d63cb9517a"
+[0m23:53:15.110627 [debug] [Thread-2  ]: Writing injected SQL for node "test.ex_03_meteo.not_null_stg_btc__market_price_price_usd.639627ceb6"
+[0m23:53:15.134160 [debug] [Thread-4  ]: Began executing node test.ex_03_meteo.not_null_stg_btc__market_price_last_updated_utc.d63cb9517a
+[0m23:53:15.135108 [debug] [Thread-3  ]: Began executing node test.ex_03_meteo.not_null_stg_btc__market_price_coin_id.022fc4d0c1
+[0m23:53:15.135987 [debug] [Thread-2  ]: Began executing node test.ex_03_meteo.not_null_stg_btc__market_price_price_usd.639627ceb6
+[0m23:53:15.189807 [debug] [Thread-2  ]: Writing runtime sql for node "test.ex_03_meteo.not_null_stg_btc__market_price_price_usd.639627ceb6"
+[0m23:53:15.190698 [debug] [Thread-4  ]: Writing runtime sql for node "test.ex_03_meteo.not_null_stg_btc__market_price_last_updated_utc.d63cb9517a"
+[0m23:53:15.199492 [debug] [Thread-3  ]: Writing runtime sql for node "test.ex_03_meteo.not_null_stg_btc__market_price_coin_id.022fc4d0c1"
+[0m23:53:15.245869 [debug] [Thread-4  ]: Opening a new connection, currently in state init
+[0m23:53:15.252136 [debug] [Thread-3  ]: Opening a new connection, currently in state init
+[0m23:53:15.260251 [debug] [Thread-2  ]: Opening a new connection, currently in state init
+[0m23:53:15.387278 [debug] [Thread-4  ]: dbt_clickhouse adapter: On test.ex_03_meteo.not_null_stg_btc__market_price_last_updated_utc.d63cb9517a: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "test.ex_03_meteo.not_null_stg_btc__market_price_last_updated_utc.d63cb9517a"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select last_updated_utc
+from `clean`.`stg_btc__market_price`
+where last_updated_utc is null
+
+
+
+    ) dbt_internal_test...
+[0m23:53:15.395364 [debug] [Thread-3  ]: dbt_clickhouse adapter: On test.ex_03_meteo.not_null_stg_btc__market_price_coin_id.022fc4d0c1: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "test.ex_03_meteo.not_null_stg_btc__market_price_coin_id.022fc4d0c1"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select coin_id
+from `clean`.`stg_btc__market_price`
+where coin_id is null
+
+
+
+    ) dbt_internal_test...
+[0m23:53:15.400817 [debug] [Thread-4  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m23:53:15.403036 [debug] [Thread-2  ]: dbt_clickhouse adapter: On test.ex_03_meteo.not_null_stg_btc__market_price_price_usd.639627ceb6: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "test.ex_03_meteo.not_null_stg_btc__market_price_price_usd.639627ceb6"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select price_usd
+from `clean`.`stg_btc__market_price`
+where price_usd is null
+
+
+
+    ) dbt_internal_test...
+[0m23:53:15.411595 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m23:53:15.409661 [info ] [Thread-4  ]: 3 of 7 PASS not_null_stg_btc__market_price_last_updated_utc .................... [[32mPASS[0m in 0.34s]
+[0m23:53:15.416741 [info ] [Thread-3  ]: 2 of 7 PASS not_null_stg_btc__market_price_coin_id ............................. [[32mPASS[0m in 0.35s]
+[0m23:53:15.419125 [debug] [Thread-4  ]: Finished running node test.ex_03_meteo.not_null_stg_btc__market_price_last_updated_utc.d63cb9517a
+[0m23:53:15.420858 [debug] [Thread-2  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m23:53:15.422195 [debug] [Thread-3  ]: Finished running node test.ex_03_meteo.not_null_stg_btc__market_price_coin_id.022fc4d0c1
+[0m23:53:15.425445 [info ] [Thread-2  ]: 4 of 7 PASS not_null_stg_btc__market_price_price_usd ........................... [[32mPASS[0m in 0.35s]
+[0m23:53:15.427123 [debug] [Thread-2  ]: Finished running node test.ex_03_meteo.not_null_stg_btc__market_price_price_usd.639627ceb6
+[0m23:53:15.428756 [debug] [Thread-1  ]: Began running node model.ex_03_meteo.mart_btc__daily_ohlc
+[0m23:53:15.429543 [debug] [Thread-4  ]: Began running node model.ex_03_meteo.mart_btc__market_price_hourly
+[0m23:53:15.430286 [debug] [Thread-3  ]: Began running node model.ex_03_meteo.vw_btc__latest_24h
+[0m23:53:15.431265 [info ] [Thread-1  ]: 5 of 7 START sql incremental model `mart`.`mart_btc__daily_ohlc` ............... [RUN]
+[0m23:53:15.432265 [info ] [Thread-4  ]: 6 of 7 START sql incremental model `mart`.`mart_btc__market_price_hourly` ...... [RUN]
+[0m23:53:15.433320 [info ] [Thread-3  ]: 7 of 7 START sql view model `mart`.`vw_btc__latest_24h` ........................ [RUN]
+[0m23:53:15.434221 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.ex_03_meteo.stg_btc__market_price, now model.ex_03_meteo.mart_btc__daily_ohlc)
+[0m23:53:15.434938 [debug] [Thread-4  ]: Re-using an available connection from the pool (formerly test.ex_03_meteo.not_null_stg_btc__market_price_last_updated_utc.d63cb9517a, now model.ex_03_meteo.mart_btc__market_price_hourly)
+[0m23:53:15.435657 [debug] [Thread-3  ]: Re-using an available connection from the pool (formerly test.ex_03_meteo.not_null_stg_btc__market_price_coin_id.022fc4d0c1, now model.ex_03_meteo.vw_btc__latest_24h)
+[0m23:53:15.436475 [debug] [Thread-1  ]: Began compiling node model.ex_03_meteo.mart_btc__daily_ohlc
+[0m23:53:15.437294 [debug] [Thread-4  ]: Began compiling node model.ex_03_meteo.mart_btc__market_price_hourly
+[0m23:53:15.438015 [debug] [Thread-3  ]: Began compiling node model.ex_03_meteo.vw_btc__latest_24h
+[0m23:53:15.458152 [debug] [Thread-1  ]: Writing injected SQL for node "model.ex_03_meteo.mart_btc__daily_ohlc"
+[0m23:53:15.466929 [debug] [Thread-4  ]: Writing injected SQL for node "model.ex_03_meteo.mart_btc__market_price_hourly"
+[0m23:53:15.473886 [debug] [Thread-3  ]: Writing injected SQL for node "model.ex_03_meteo.vw_btc__latest_24h"
+[0m23:53:15.521027 [debug] [Thread-1  ]: Began executing node model.ex_03_meteo.mart_btc__daily_ohlc
+[0m23:53:15.521975 [debug] [Thread-4  ]: Began executing node model.ex_03_meteo.mart_btc__market_price_hourly
+[0m23:53:15.522714 [debug] [Thread-3  ]: Began executing node model.ex_03_meteo.vw_btc__latest_24h
+[0m23:53:15.603687 [debug] [Thread-3  ]: Writing runtime sql for node "model.ex_03_meteo.vw_btc__latest_24h"
+[0m23:53:15.694461 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_btc__latest_24h: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_btc__latest_24h"} */
+
+
+  create view `mart`.`vw_btc__latest_24h__dbt_tmp` 
+  
+    
+    
+  as (
+    
+
+WITH (SELECT max(last_updated_utc) FROM `clean`.`stg_btc__market_price`) AS ts_max
+SELECT
+  *
+FROM `clean`.`stg_btc__market_price`
+WHERE last_updated_utc >= ts_max - INTERVAL 24 HOUR
+ORDER BY last_updated_utc
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m23:53:15.719406 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__daily_ohlc: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__daily_ohlc"} */
+
+    drop table if exists `mart`.`mart_btc__daily_ohlc__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61` 
+  ...
+[0m23:53:15.741328 [debug] [Thread-4  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__market_price_hourly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__market_price_hourly"} */
+
+    drop table if exists `mart`.`mart_btc__market_price_hourly__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61` 
+  ...
+[0m23:53:15.745216 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:15.746694 [debug] [Thread-4  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:15.764378 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.04 seconds
+[0m23:53:15.822224 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_btc__latest_24h: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_btc__latest_24h"} */
+
+    drop table if exists `mart`.`vw_btc__latest_24h__dbt_backup` 
+  
+  ...
+[0m23:53:15.842708 [debug] [Thread-4  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__market_price_hourly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__market_price_hourly"} */
+
+            
+
+    
+        create table `mart`.`mart_btc__market_price_hourly__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61`
+        
+  
+        
+  engine = MergeTree()
+        order by (hour_local,coin_id)
+        
+        partition by (toYYYYMM(hour_local))
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            
+
+with base as (
+  select
+    -- non-nullable for MergeTree keys
+    toStartOfHour(toTimeZone(assumeNotNull(last_updated_utc), 'Asia/Manila')) as hour_local,
+    assumeNotNull(coin_id)                                                    as coin_id,
+    last_updated_utc,
+    toFloat64(price_usd)                                                      as price_usd
+  from `clean`.`stg_btc__market_price`
+  where last_updated_utc is not null
+
+  
+    -- Recompute only latest (and previous) Manila hours
+    and toStartOfHour(toTimeZone(last_updated_utc,'Asia/Manila')) >= (
+      select coalesce(max(hour_local), toStartOfHour(now('Asia/Manila')) - interval 1 hour)
+      from `mart`.`mart_btc__market_price_hourly`
+    ) - interval 1 hour
+  
+)
+select
+  hour_local,
+  coin_id,
+  min(price_usd)                      as low_usd,
+  max(price_usd)                      as high_usd,
+  argMin(price_usd, last_updated_utc) as open_usd,   -- first in hour
+  argMax(price_usd, last_updated_utc) as close_usd   -- last in hour
+from base
+group by hour_local, coin_id
+order by hour_local, coin_id
+          )
+        
+        ...
+[0m23:53:15.844180 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__daily_ohlc: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__daily_ohlc"} */
+
+            
+
+    
+        create table `mart`.`mart_btc__daily_ohlc__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61`
+        
+  
+        
+  engine = MergeTree()
+        order by (day_local,coin_id)
+        
+        partition by (toYYYYMM(day_local))
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            
+
+with base as (
+  select
+    assumeNotNull(toDate(toTimeZone(last_updated_utc,'Asia/Manila'))) as day_local,
+    assumeNotNull(coin_id)                                            as coin_id,
+    last_updated_utc,
+    toFloat64(price_usd)                                              as price_usd
+  from `clean`.`stg_btc__market_price`
+  where last_updated_utc is not null
+
+  
+    -- Recompute only latest (and previous) Manila days
+    and toDate(toTimeZone(last_updated_utc,'Asia/Manila')) >= (
+      select coalesce(max(day_local), toDate(now('Asia/Manila')) - 1)
+      from `mart`.`mart_btc__daily_ohlc`
+    ) - 1
+  
+)
+select
+  day_local,
+  coin_id,
+  min(price_usd)                      as low_usd,
+  max(price_usd)                      as high_usd,
+  argMin(price_usd, last_updated_utc) as open_usd,   -- first in day
+  argMax(price_usd, last_updated_utc) as close_usd   -- last in day
+from base
+group by day_local, coin_id
+order by day_local, coin_id
+          )
+        
+        ...
+[0m23:53:15.848240 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:15.853274 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_btc__latest_24h: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_btc__latest_24h"} */
+
+    rename table `mart`.`vw_btc__latest_24h` to `mart`.`vw_btc__latest_24h__dbt_backup` 
+  
+  ...
+[0m23:53:15.857321 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:15.867535 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_btc__latest_24h: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_btc__latest_24h"} */
+
+    drop table if exists `mart`.`vw_btc__latest_24h` 
+  
+  ...
+[0m23:53:15.871030 [debug] [Thread-4  ]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m23:53:15.873177 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:15.892061 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.04 seconds
+[0m23:53:15.895542 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_btc__latest_24h: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_btc__latest_24h"} */
+
+    rename table `mart`.`vw_btc__latest_24h__dbt_tmp` to `mart`.`vw_btc__latest_24h` 
+  
+  ...
+[0m23:53:15.897175 [debug] [Thread-4  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__market_price_hourly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__market_price_hourly"} */
+
+    select name, type from system.columns where table = 'mart_btc__market_price_hourly__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61'
+    
+      and database = 'mart'
+    
+    order by position
+  ...
+[0m23:53:15.906423 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__daily_ohlc: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__daily_ohlc"} */
+
+    select name, type from system.columns where table = 'mart_btc__daily_ohlc__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61'
+    
+      and database = 'mart'
+    
+    order by position
+  ...
+[0m23:53:15.910483 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:15.913463 [debug] [Thread-4  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:15.925362 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m23:53:15.926573 [debug] [Thread-3  ]: dbt_clickhouse adapter: On model.ex_03_meteo.vw_btc__latest_24h: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.vw_btc__latest_24h"} */
+
+    drop table if exists `mart`.`vw_btc__latest_24h__dbt_backup` 
+  ...
+[0m23:53:15.934972 [debug] [Thread-4  ]: Writing runtime sql for node "model.ex_03_meteo.mart_btc__market_price_hourly"
+[0m23:53:15.937963 [debug] [Thread-1  ]: Writing runtime sql for node "model.ex_03_meteo.mart_btc__daily_ohlc"
+[0m23:53:15.941104 [debug] [Thread-3  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:15.943772 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c4d04e9e-2147-45cf-9c7e-91538ab69d61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea2b7f3a0>]}
+[0m23:53:15.945028 [info ] [Thread-3  ]: 7 of 7 OK created sql view model `mart`.`vw_btc__latest_24h` ................... [[32mOK[0m in 0.51s]
+[0m23:53:15.946723 [debug] [Thread-3  ]: Finished running node model.ex_03_meteo.vw_btc__latest_24h
+[0m23:53:15.947942 [debug] [Thread-4  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__market_price_hourly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__market_price_hourly"} */
+
+        
+  
+    
+    
+    
+        
+         
+
+
+        insert into `mart`.`mart_btc__market_price_hourly__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61`
+        ("hour_local", "coin_id", "low_usd", "high_usd", "open_usd", "close_usd")
+
+with base as (
+  select
+    -- non-nullable for MergeTree keys
+    toStartOfHour(toTimeZone(assumeNotNull(last_updated_utc), 'Asia/Manila')) as hour_local,
+    assumeNotNull(coin_id)                                                    as coin_id,
+    last_updated_utc,
+    toFloat64(price_usd)                                                      as price_usd
+  from `clean`.`stg_btc__market_price`
+  where last_updated_utc is not null
+
+  
+    -- Recompute only latest (and previous) Manila hours
+    and toStartOfHour(toTimeZone(last_updated_utc,'Asia/Manila')) >= (
+      select coalesce(max(hour_local), toStartOfHour(now('Asia/Manila')) - interval 1 hour)
+      from `mart`.`mart_btc__market_price_hourly`
+    ) - interval 1 hour
+  
+)
+select
+  hour_local,
+  coin_id,
+  min(price_usd)                      as low_usd,
+  max(price_usd)                      as high_usd,
+  argMin(price_usd, last_updated_utc) as open_usd,   -- first in hour
+  argMax(price_usd, last_updated_utc) as close_usd   -- last in hour
+from base
+group by hour_local, coin_id
+order by hour_local, coin_id
+  
+      ...
+[0m23:53:15.966249 [debug] [Thread-4  ]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m23:53:15.968440 [debug] [Thread-4  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__market_price_hourly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__market_price_hourly"} */
+
+      
+            delete from `mart`.`mart_btc__market_price_hourly` where (hour_local, coin_id) in (select hour_local, coin_id
+                                          from `mart`.`mart_btc__market_price_hourly__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61`)
+      
+    ...
+[0m23:53:15.969386 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__daily_ohlc: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__daily_ohlc"} */
+
+        
+  
+    
+    
+    
+        
+         
+
+
+        insert into `mart`.`mart_btc__daily_ohlc__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61`
+        ("day_local", "coin_id", "low_usd", "high_usd", "open_usd", "close_usd")
+
+with base as (
+  select
+    assumeNotNull(toDate(toTimeZone(last_updated_utc,'Asia/Manila'))) as day_local,
+    assumeNotNull(coin_id)                                            as coin_id,
+    last_updated_utc,
+    toFloat64(price_usd)                                              as price_usd
+  from `clean`.`stg_btc__market_price`
+  where last_updated_utc is not null
+
+  
+    -- Recompute only latest (and previous) Manila days
+    and toDate(toTimeZone(last_updated_utc,'Asia/Manila')) >= (
+      select coalesce(max(day_local), toDate(now('Asia/Manila')) - 1)
+      from `mart`.`mart_btc__daily_ohlc`
+    ) - 1
+  
+)
+select
+  day_local,
+  coin_id,
+  min(price_usd)                      as low_usd,
+  max(price_usd)                      as high_usd,
+  argMin(price_usd, last_updated_utc) as open_usd,   -- first in day
+  argMax(price_usd, last_updated_utc) as close_usd   -- last in day
+from base
+group by day_local, coin_id
+order by day_local, coin_id
+  
+      ...
+[0m23:53:15.990692 [debug] [Thread-4  ]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m23:53:15.992299 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m23:53:15.999264 [debug] [Thread-4  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__market_price_hourly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__market_price_hourly"} */
+
+    select name, type from system.columns where table = 'mart_btc__market_price_hourly'
+    
+      and database = 'mart'
+    
+    order by position
+  ...
+[0m23:53:16.001515 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__daily_ohlc: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__daily_ohlc"} */
+
+      
+            delete from `mart`.`mart_btc__daily_ohlc` where (day_local, coin_id) in (select day_local, coin_id
+                                          from `mart`.`mart_btc__daily_ohlc__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61`)
+      
+    ...
+[0m23:53:16.007702 [debug] [Thread-4  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m23:53:16.010524 [debug] [Thread-4  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__market_price_hourly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__market_price_hourly"} */
+
+        insert into `mart`.`mart_btc__market_price_hourly` select "hour_local", "coin_id", "low_usd", "high_usd", "open_usd", "close_usd" from `mart`.`mart_btc__market_price_hourly__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61` 
+    ...
+[0m23:53:16.017707 [debug] [Thread-4  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m23:53:16.027287 [debug] [Thread-4  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__market_price_hourly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__market_price_hourly"} */
+
+    drop table if exists `mart`.`mart_btc__market_price_hourly__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61` 
+  ...
+[0m23:53:16.028583 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.03 seconds
+[0m23:53:16.034400 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__daily_ohlc: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__daily_ohlc"} */
+
+    select name, type from system.columns where table = 'mart_btc__daily_ohlc'
+    
+      and database = 'mart'
+    
+    order by position
+  ...
+[0m23:53:16.035936 [debug] [Thread-4  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m23:53:16.043054 [debug] [Thread-4  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__market_price_hourly: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__market_price_hourly"} */
+
+    drop table if exists `mart`.`mart_btc__market_price_hourly__dbt_distributed_new_data` 
+  ...
+[0m23:53:16.044462 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m23:53:16.048425 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__daily_ohlc: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__daily_ohlc"} */
+
+        insert into `mart`.`mart_btc__daily_ohlc` select "day_local", "coin_id", "low_usd", "high_usd", "open_usd", "close_usd" from `mart`.`mart_btc__daily_ohlc__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61` 
+    ...
+[0m23:53:16.049816 [debug] [Thread-4  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:16.053587 [debug] [Thread-4  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c4d04e9e-2147-45cf-9c7e-91538ab69d61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea36238b0>]}
+[0m23:53:16.054898 [info ] [Thread-4  ]: 6 of 7 OK created sql incremental model `mart`.`mart_btc__market_price_hourly` . [[32mOK[0m in 0.62s]
+[0m23:53:16.056297 [debug] [Thread-4  ]: Finished running node model.ex_03_meteo.mart_btc__market_price_hourly
+[0m23:53:16.057922 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m23:53:16.063867 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__daily_ohlc: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__daily_ohlc"} */
+
+    drop table if exists `mart`.`mart_btc__daily_ohlc__dbt_new_data_c4d04e9e_2147_45cf_9c7e_91538ab69d61` 
+  ...
+[0m23:53:16.068114 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:16.074523 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.ex_03_meteo.mart_btc__daily_ohlc: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "node_id": "model.ex_03_meteo.mart_btc__daily_ohlc"} */
+
+    drop table if exists `mart`.`mart_btc__daily_ohlc__dbt_distributed_new_data` 
+  ...
+[0m23:53:16.077576 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m23:53:16.081221 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c4d04e9e-2147-45cf-9c7e-91538ab69d61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea3799b80>]}
+[0m23:53:16.082590 [info ] [Thread-1  ]: 5 of 7 OK created sql incremental model `mart`.`mart_btc__daily_ohlc` .......... [[32mOK[0m in 0.65s]
+[0m23:53:16.084115 [debug] [Thread-1  ]: Finished running node model.ex_03_meteo.mart_btc__daily_ohlc
+[0m23:53:16.086121 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:53:16.086718 [debug] [MainThread]: Connection 'list__clean' was left open.
+[0m23:53:16.087271 [debug] [MainThread]: On list__clean: Close
+[0m23:53:16.088019 [debug] [MainThread]: Connection 'list__mart' was left open.
+[0m23:53:16.088781 [debug] [MainThread]: On list__mart: Close
+[0m23:53:16.089538 [debug] [MainThread]: Connection 'model.ex_03_meteo.mart_btc__daily_ohlc' was left open.
+[0m23:53:16.090290 [debug] [MainThread]: On model.ex_03_meteo.mart_btc__daily_ohlc: Close
+[0m23:53:16.091042 [debug] [MainThread]: Connection 'model.ex_03_meteo.vw_btc__latest_24h' was left open.
+[0m23:53:16.091823 [debug] [MainThread]: On model.ex_03_meteo.vw_btc__latest_24h: Close
+[0m23:53:16.092573 [debug] [MainThread]: Connection 'model.ex_03_meteo.mart_btc__market_price_hourly' was left open.
+[0m23:53:16.093378 [debug] [MainThread]: On model.ex_03_meteo.mart_btc__market_price_hourly: Close
+[0m23:53:16.094120 [debug] [MainThread]: Connection 'test.ex_03_meteo.not_null_stg_btc__market_price_price_usd.639627ceb6' was left open.
+[0m23:53:16.094934 [debug] [MainThread]: On test.ex_03_meteo.not_null_stg_btc__market_price_price_usd.639627ceb6: Close
+[0m23:53:16.096674 [info ] [MainThread]: 
+[0m23:53:16.097702 [info ] [MainThread]: Finished running 2 view models, 3 data tests, 2 incremental models in 0 hours 0 minutes and 1.81 seconds (1.81s).
+[0m23:53:16.103762 [debug] [MainThread]: Command end result
+[0m23:53:16.308107 [info ] [MainThread]: 
+[0m23:53:16.309262 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m23:53:16.310053 [info ] [MainThread]: 
+[0m23:53:16.310897 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 TOTAL=7
+[0m23:53:16.312698 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 3.7585378, "process_in_blocks": "0", "process_kernel_time": 0.636078, "process_mem_max_rss": "114024", "process_out_blocks": "9744", "process_user_time": 6.136402}
+[0m23:53:16.313748 [debug] [MainThread]: Command `dbt build` succeeded at 23:53:16.313485 after 3.76 seconds
+[0m23:53:16.314615 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea74cc310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea53d5dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70fea401a490>]}
+[0m23:53:16.315472 [debug] [MainThread]: Flushing usage events
