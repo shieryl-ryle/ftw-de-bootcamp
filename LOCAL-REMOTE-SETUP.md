@@ -153,4 +153,33 @@ Note: Review each DLT and DBT job and ensure that target tables have the followi
 * **Remote hybrid:** teacher runs core on server, students point dlt/dbt jobs to server IP.
 * **Isolation:** For remote setup, each student must name their tables `database.tablename_studentname`
 
- 
+# Naming Standard Changes
+
+## DLT
+- Update resource declaration:
+  ```python
+  @dlt.resource(name="cars_<name>")
+````
+
+## DBT
+
+* Change names of SQL model files:
+
+  ```
+  mpg_standardized_<name>.sql
+  ```
+* Update sources in SQL models:
+
+  ```sql
+  {{ source('raw', 'autompg___cars_<name>') }}
+  ```
+* In `sources.yml`, update table names:
+
+  ```
+  autompg___cars_<name>
+  ```
+
+## Metabase & Sandbox
+
+* Ensure that the agreed naming standard is consistently followed across all models, sources, and dashboards.
+
