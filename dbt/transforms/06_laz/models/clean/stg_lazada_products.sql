@@ -10,7 +10,7 @@ with base as (
     name,
     ifNull(price, '')                  as price_str,      -- ensure NON-NULL String
     url
-  from {{ source('raw', 'lazada_products_20250827063214___lazada_products') }}
+  from {{ source('raw', 'lazada_products___lazada_products') }}
   where url is not null
 ),
 
