@@ -30,16 +30,13 @@
    Example (Auto MPG pipeline):
 
    ```bash
-   docker compose --profile jobs run --rm \
-  dlt python extract-loads/01-dlt-mpg-pipeline.py
+   docker compose --profile jobs run --rm dlt python extract-loads/01-dlt-mpg-pipeline.py
    ```
 
 4. **Run dbt transformations/tests**
 
    ```bash
-   docker compose --profile jobs run --rm \
-  -w /workdir/transforms/01_mpg \
-  dbt build --profiles-dir . --target local
+   docker compose --profile jobs run --rm -w /workdir/transforms/01_mpg dbt build --profiles-dir . --target local
    ```
 
 5. **Explore in Metabase**
@@ -120,8 +117,7 @@ Note: Review each DLT and DBT job and ensure that target tables have the followi
 3. **Run dlt job**
 
    ```bash
-   docker compose --profile jobs run --rm \
-  dlt python extract-loads/01-dlt-mpg-pipeline.py
+   docker compose --profile jobs run --rm  dlt python extract-loads/01-dlt-mpg-pipeline.py
    ```
 
 4. **Run dbt (remote target)**

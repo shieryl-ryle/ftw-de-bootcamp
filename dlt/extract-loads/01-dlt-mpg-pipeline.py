@@ -7,15 +7,18 @@ import os
 def mpg():
    
     
-    yield pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/mpg.csv")
+    yield pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/mpg.csv").astype(str)
     
+    # How to load a local CSV
+    # Place file in staging\auto-mpg folder
     #ROOT_DIR = os.path.dirname(__file__)
     #STAGING_DIR = os.path.join(ROOT_DIR, "staging", "auto-mpg")
     #FILE_PATH = os.path.join(STAGING_DIR, "mpg.csv")
-    # yield pd.read_csv(FILE_PATH)
+    # yield pd.read_csv(FILE_PATH).astype(str)
     
+    # How to load an excel file
     #FILE_PATH = os.path.join(STAGING_DIR, "mpg.xlsx")
-    #yield pd.read_excel(FILE_PATH)
+    #yield pd.read_excel(FILE_PATH).astype(str)
 
 def run():
     p = dlt.pipeline(

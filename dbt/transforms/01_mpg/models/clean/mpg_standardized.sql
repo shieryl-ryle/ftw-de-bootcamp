@@ -4,20 +4,17 @@
 -- Keep them as-is to preserve nullability and avoid insert errors.
 
 select
-  mpg,            -- Nullable(Float64)
-  cylinders,      -- Nullable(Int64)
-  displacement,   -- Nullable(Float64)
-  horsepower,     -- Nullable(Float64)
-  /*
-  coalesce(
-        horsepower,
-        avg(horsepower) over (partition by cylinders)
-    ) as horsepower_imputed,
-  */
-  weight,         -- Nullable(Int64)
-  acceleration,   -- Nullable(Float64)
-  model_year,     -- Nullable(Int64)
-  origin,         -- Nullable(String)
-  name as make    -- Nullable(String)
+  toFloat64OrNull(mpg)          as mpg,
+  toInt32OrNull(cylinders)      as cylinders,
+  toFloat64OrNull(displacement) as displacement,
+  toFloat64OrNull(horsepower)   as horsepower,
+  toInt32OrNull(weight)         as weight,
+  toFloat64OrNull(acceleration) as acceleration,
+  toInt32OrNull(model_year)     as model_year,
+  trim(origin)                  as origin,
+  trim(name)                    as make
 from {{ source('raw', 'autompg___cars') }}
+where horsepower is not null
+  and isFinite(horsepower)
+
 
