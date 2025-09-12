@@ -156,10 +156,10 @@ Note: Review each DLT and DBT job and ensure that target tables have the followi
 # Naming Standard Changes
 
 ## DLT
-- Update resource declaration:
+* Update resource declaration:
   ```python
   @dlt.resource(name="cars_<name>")
-```
+  ```
 
 ## DBT
 
