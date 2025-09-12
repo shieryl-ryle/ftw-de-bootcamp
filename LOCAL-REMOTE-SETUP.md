@@ -165,7 +165,7 @@ Note: Review each DLT and DBT job and ensure that target tables have the followi
 
 * Change names of SQL model files:
 
-  ```
+  ```bash
   mpg_standardized_<name>.sql
   ```
 * Update sources in SQL models:
@@ -175,7 +175,7 @@ Note: Review each DLT and DBT job and ensure that target tables have the followi
   ```
 * In `sources.yml`, update table names:
 
-  ```
+  ```bash
   autompg___cars_<name>
   ```
 
