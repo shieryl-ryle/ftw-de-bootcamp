@@ -102,7 +102,7 @@ Above all, this bootcamp emphasizes **SQL** with only minimal Python, YAML, and 
 ## 🔒 Security & Isolation
 
 * Students connect with **`ftw_user`** (no `CREATE DATABASE`).
-* Each student uses a **separate dbt schema**: `ftw_<alias>` to avoid collisions.
+* Each student `_<alias>` to tables and names to avoid collisions.
 * Secrets (API keys, passwords) are stored in **dlt secrets.toml** or `.env`.
 
 ---
