@@ -49,6 +49,8 @@
    * Pass: `ftw_pass`
    * DB:  `mart`, `sandbox`/ `raw` / `clean` / (as needed)
 
+
+
 ---
 
 ## Option 2: Remote Hybrid (server runs core; students run jobs)
@@ -145,6 +147,23 @@ Note: Review each DLT and DBT job and ensure that target tables have the followi
 5. **Check results in Metabase**
    Students access: `http://<SERVER_IP>:3001`.
 
+### Step 1: Open Metabase
+- URL: [http://54.87.106.52:3001](http://54.87.106.52:3001)
+
+### Step 2: Create User Account
+- Email: use any (example: `ftw@example.com`)
+- Password: set your own
+
+### Step 3: Connect Database
+- **Database Type:** ClickHouse
+- **Host:** `54.87.106.52` or `clickhouse`
+- **Port:** `8123`
+- **Databases:** 
+  - `sandbox`
+  - `mart` (production)
+- **Credentials:**
+  - Username: `ftw_user`
+  - Password: `ftw_pass`
 ---
 
 ✅ **Summary**

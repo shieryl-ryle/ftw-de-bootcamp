@@ -80,6 +80,7 @@ Sometimes we’ll run the **databases + Metabase** on a **remote server** (e.g.,
 * **DBeaver** – SQL database GUI
 * **GitHub** – account + basic config
 
+Note: Make sure to run the commands one line at a time!
 ---
 
 ## Windows (with WSL: Ubuntu)
