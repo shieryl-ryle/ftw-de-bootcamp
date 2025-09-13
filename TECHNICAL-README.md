@@ -213,6 +213,44 @@ docker compose --profile jobs run --rm \
 
 ---
 
+## Did you encounter an ingestion error?
+If for some reason the tables do not exist and throws an error, do the following:
+
+### Option A — one-time manual create (safe, non-destructive)
+
+Just create the DBs now and move on:
+
+```bash
+docker exec -it clickhouse clickhouse-client -q "
+  CREATE DATABASE IF NOT EXISTS raw;
+  CREATE DATABASE IF NOT EXISTS clean;
+  CREATE DATABASE IF NOT EXISTS mart;
+  CREATE DATABASE IF NOT EXISTS sandbox;
+"
+```
+
+You can also run this via dbeaver.
+
+### Option B — reinitialize the container (will wipe ClickHouse data)
+
+If you actually want the entrypoint to re-run the init scripts (and you’re okay losing anything in `clickhouse_data`):
+
+```bash
+# Stop and remove containers + volumes for this compose project
+docker compose down -v
+
+# (Optional) double-check the volume is gone:
+docker volume ls | grep clickhouse_data
+
+# Bring it back up; first boot will now run init scripts
+docker compose --compatibility up -d --profile core
+
+# Verify
+docker exec -it clickhouse clickhouse-client -q "SHOW DATABASES"
+```
+
+---
+
 ## 02 — Chinook (Postgres → ClickHouse)
 
 > Chinook Postgres is prepared by `chinook_fetch` + `postgres_chinook` in the **core** profile.
