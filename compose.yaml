@@ -98,6 +98,16 @@ services:
       POSTGRES_DB: postgres        # 👈 connect here so DROP/CREATE chinook works
       POSTGRES_USER: chinook
       POSTGRES_PASSWORD: chinook
+    command:
+      - postgres
+      - -c
+      - max_connections=300        # was 100
+      - -c
+      - shared_buffers=512MB       # raise a bit with more conns
+      - -c
+      - work_mem=8MB               # modest per-connection
+      - -c
+      - effective_cache_size=1GB
     volumes:
       - chinook_init:/docker-entrypoint-initdb.d:ro
       - pgdata:/var/lib/postgresql/data

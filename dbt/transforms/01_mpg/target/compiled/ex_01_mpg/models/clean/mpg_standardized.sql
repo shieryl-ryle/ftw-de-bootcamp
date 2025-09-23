@@ -13,6 +13,6 @@ select
   toInt32(model_year)     as model_year,
   trim(origin)                  as origin,
   trim(name)                    as make
-from `raw`.`autompg___cars_myk`
-where horsepower is not null
-  and isFinite(horsepower)
+from `raw`.`autompg___cars`
+-- where horsepower is not null
+  -- and isFinite(horsepower)
