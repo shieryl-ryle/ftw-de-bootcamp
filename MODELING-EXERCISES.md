@@ -52,11 +52,11 @@ Across all exercises, you will explore **six core themes**:
 
 ---
 
-## 1. Chinook (Music Store)
+## 1. [Chinook](https://github.com/lerocha/chinook-database/) (Music Store)
 
 ### About the Dataset
 - **Domain:** Digital music store (like iTunes).  
-- **Size/Complexity:** Small, normalized OLTP schema.  
+- **Size/Complexity:** 1MB, Small, normalized OLTP schema.  
 - **Tables:** Customers, Employees, Invoices, Tracks, Albums, Artists, Playlists.  
 
 ### Key Instructions
@@ -109,12 +109,12 @@ erDiagram
 
 ---
 
-## 2. Open University Learning Analytics Dataset (OULAD)
+## 2. [Open University Learning Analytics Dataset](https://archive.ics.uci.edu/dataset/349/open+university+learning+analytics+dataset) (OULAD)
 
 ### About the Dataset
 
 * **Domain:** Education analytics (Open University UK).
-* **Size/Complexity:** Medium (32k students, ~10M VLE interactions).
+* **Size/Complexity:** 500MB, Medium (32k students, ~10M VLE interactions).
 * **Tables:** Students, registrations, assessments, VLE logs.
 * **Features:** Time-series, demographics, missing values.
 
@@ -177,7 +177,7 @@ erDiagram
 
 ---
 
-## 3. IMDb Non-Commercial Datasets
+## 3. [https://developer.imdb.com/non-commercial-datasets/](https://developer.imdb.com/non-commercial-datasets/)  Non-Commercial Datasets
 
 ### About the Dataset
 
