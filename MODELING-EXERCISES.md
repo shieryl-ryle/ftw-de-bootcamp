@@ -35,6 +35,71 @@ Dimensional modeling is a database design technique used in data warehousing and
 
 ---
 
+## 🔄 The 3-Stage Data Pipeline
+
+In this project, you’ll practice a **modern analytics engineering workflow** by moving data through distinct layers:
+
+```mermaid
+flowchart LR
+  A[Raw Schema] --> B[Clean Schema] --> C[Mart Schema] --> D[Reporting Layer]
+````
+
+### 1. **Raw Schema** (Ingestion with dlt)
+
+* **Purpose:** Land the source data as-is.
+* **Tools:** [dlt](https://dlthub.com) (Data Load Tool).
+* **Activities:**
+
+  * Extract and load CSVs / DB dumps / TSVs.
+  * Preserve original structure (no transformations yet).
+  * Add minimal metadata (e.g., load time).
+
+### 2. **Clean Schema** (Standardization & Normalization)
+
+* **Purpose:** Make the data reliable and consistent.
+* **Tools:** SQL transformations (staging models in dbt).
+* **Activities:**
+
+  * Normalize messy structures (explode arrays, split multi-values).
+  * Standardize data types (dates, numbers, booleans).
+  * Handle nulls and missing values.
+  * Apply naming conventions.
+* **Outcome:** Data is tidy, consistent, and trustworthy.
+
+### 3. **Mart Schema** (Dimensional Modeling)
+
+* **Purpose:** Design **star schemas** for analytics.
+* **Tools:** [dbt](https://docs.getdbt.com/).
+* **Activities:**
+
+  * Build **fact tables** (business processes: sales, ratings, interactions).
+  * Build **dimension tables** (context: customer, course, title, date).
+  * Create bridges for many-to-many relationships (e.g., title–genre).
+  * Define surrogate keys and grain explicitly.
+* **Outcome:** An **analytics-ready warehouse layer**.
+
+### 🔬 Sandbox Schema
+
+* **Purpose:** Safe space to **prototype and test models** before productionizing them.
+* **Tools:** dbt or SQL IDE (DBeaver, VSCode, etc.).
+* **Activities:**
+
+  * Experiment with joins, aggregations, and transformations.
+  * Validate assumptions about grain, keys, and SCD handling.
+  * Once stable, promote to `mart`.
+
+### 📊 Reporting Layer
+
+* **Purpose:** Answer business questions and share insights.
+* **Tools:** [Metabase](https://www.metabase.com/).
+* **Activities:**
+
+  * Connect to `mart` schema.
+  * Build dashboards and reports.
+  * Explore themes: customer behavior, trends, retention, demographics, operations.
+
+---
+
 ## 🎯 Business Question Themes
 
 Across all exercises, you will explore **six core themes**:
