@@ -329,11 +329,16 @@ git clone git@github.com:ogbinar/ftw-de-bootcamp.git
 
 # Lesson Proper
 
+## Technical Instructions
 - Lecture slides will be provided separately
 - Technical overview and guide can be found [here](TECHNICAL-README.md).
 - Configuration for Local vs Remote setup can be found [here](LOCAL-REMOTE-SETUP.md).
 - Example of first exercise pipeline logs can be found [here](Example.md).
-- How do you document your DE project? Read [this](GENERATE-DOCS.md).
+
+## Exercises & Docs
+- For Dimensional Modeling Exercises, Read [this](MODELING-EXERCISES.md).
+- How do you document & present your DE project? Read [this](DOC-GUIDE.md).
+- Other documentation tips. Read [this](GENERATE-DOCS.md).
 
 # Track Your Learnings
 
