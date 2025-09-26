@@ -177,7 +177,7 @@ erDiagram
 
 ---
 
-## 3. [https://developer.imdb.com/non-commercial-datasets/](https://developer.imdb.com/non-commercial-datasets/)  Non-Commercial Datasets
+## 3. [IMDb](https://developer.imdb.com/non-commercial-datasets/)  Non-Commercial Datasets
 
 ### About the Dataset
 
