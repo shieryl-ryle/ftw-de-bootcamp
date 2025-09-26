@@ -262,6 +262,7 @@ This journey mirrors real-world work:
 * Start small with **Chinook**,
 * Handle richer, messier data with **OULAD**,
 * Tackle industry-scale complexity with **IMDb**.
+* Presenting and documenting your project? Read [this](DOC-GUIDE.md).
 
 Good luck, and happy modeling! 🚀
 

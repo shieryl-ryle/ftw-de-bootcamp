@@ -112,6 +112,7 @@ Follow the structure below, fill in your team’s work, and use it as both inter
 - Use **diagrams, screenshots, and SQL snippets**.  
 - Focus on both **technical process** and **business insights**.  
 - End with your **key learnings and future improvements**.  
+- For other documentation tips. Read [this](GENERATE-DOCS.md).
 
 ---
 
