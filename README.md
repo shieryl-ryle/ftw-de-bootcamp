@@ -338,7 +338,7 @@ git clone git@github.com:ogbinar/ftw-de-bootcamp.git
 ## Exercises & Docs
 - For Dimensional Modeling Exercises, Read [this](MODELING-EXERCISES.md).
 - How do you document & present your DE project? Read [this](DOC-GUIDE.md).
-- Other documentation tips. Read [this](GENERATE-DOCS.md).
+- Other documentation tips. Read [this](TECHNICAL-DOCS.md).
 
 # Track Your Learnings
 
