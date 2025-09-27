@@ -591,7 +591,7 @@ ORDER BY avg_customer_lifetime_value DESC;
 
 ### Group 2 Final Week Experience
 
-![Group 2 Final Week Meme](../../assets/grp-final%20week/group2-final-week-meme.jpg)
+![Group 2 Final Week Meme](../../assets/download(9).jpg)
 
 *The final week experience of Group 2 - accurately capturing the intensity, collaboration, and ultimate triumph of our data engineering bootcamp journey!*
 
