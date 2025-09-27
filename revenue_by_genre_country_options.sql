@@ -1,0 +1,54 @@
+-- Alternative Top Revenue by Genre per Country Analysis
+-- This query provides comprehensive revenue analysis by genre and country
+-- Uses standard SQL that works with ClickHouse
+
+-- Option 1: Simple aggregation showing top genres by country
+SELECT 
+    c.country,
+    g.name as genre_name,
+    ROUND(SUM(il.unit_price * il.quantity), 2) as total_revenue,
+    COUNT(DISTINCT i.customer_id) as unique_customers,
+    COUNT(il.invoice_line_id) as total_tracks_sold,
+    SUM(il.quantity) as total_quantity
+FROM raw.chinook_raw_grp4___invoice_line il
+JOIN raw.chinook_raw_grp4___invoice i ON il.invoice_id = i.invoice_id
+JOIN raw.chinook_raw_grp4___customer c ON i.customer_id = c.customer_id
+JOIN raw.chinook_raw_grp4___track t ON il.track_id = t.track_id
+JOIN raw.chinook_raw_grp4___genre g ON t.genre_id = g.genre_id
+GROUP BY c.country, g.name
+HAVING total_revenue > 0
+ORDER BY c.country ASC, total_revenue DESC;
+
+-- Option 2: Top 3 genres per country (requires window functions)
+-- WITH revenue_by_genre_country AS (
+--     SELECT 
+--         c.country,
+--         g.name as genre_name,
+--         SUM(il.unit_price * il.quantity) as total_revenue,
+--         COUNT(DISTINCT i.customer_id) as unique_customers,
+--         COUNT(il.invoice_line_id) as total_tracks_sold,
+--         SUM(il.quantity) as total_quantity
+--     FROM raw.chinook_raw_grp4___invoice_line il
+--     JOIN raw.chinook_raw_grp4___invoice i ON il.invoice_id = i.invoice_id
+--     JOIN raw.chinook_raw_grp4___customer c ON i.customer_id = c.customer_id
+--     JOIN raw.chinook_raw_grp4___track t ON il.track_id = t.track_id
+--     JOIN raw.chinook_raw_grp4___genre g ON t.genre_id = g.genre_id
+--     GROUP BY c.country, g.name
+-- ),
+-- ranked_genres AS (
+--     SELECT 
+--         *,
+--         ROW_NUMBER() OVER (PARTITION BY country ORDER BY total_revenue DESC) as genre_rank
+--     FROM revenue_by_genre_country
+-- )
+-- SELECT 
+--     country,
+--     genre_name,
+--     ROUND(total_revenue, 2) as total_revenue,
+--     unique_customers,
+--     total_tracks_sold,
+--     total_quantity,
+--     genre_rank
+-- FROM ranked_genres
+-- WHERE genre_rank <= 3
+-- ORDER BY country ASC, total_revenue DESC;
