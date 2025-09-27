@@ -7,7 +7,7 @@ from typing import Iterator, Dict, Any
 
 
 @dlt.resource(write_disposition="replace")
-def Grp2_exercise_2() -> Iterator[Dict[str, Any]]:
+def Grp2_StudentInfo() -> Iterator[Dict[str, Any]]:
     """
     Load studentInfo.csv data from mounted data directory to remote ClickHouse.
     """
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     )
     
     # Run the pipeline
-    load_info = pipeline.run(Grp2_exercise_2())
+    load_info = pipeline.run(Grp2_StudentInfo())
     
     # Print results
     print(f"Pipeline completed successfully!")
