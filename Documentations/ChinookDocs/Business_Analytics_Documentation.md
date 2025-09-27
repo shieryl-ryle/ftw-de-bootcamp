@@ -550,4 +550,51 @@ ORDER BY avg_customer_lifetime_value DESC;
 
 ---
 
+## 🚧 **CHALLENGES & LESSONS LEARNED**
+
+### Technical Challenges: MINOR
+
+#### 1. Database Connectivity Issues
+**Challenge**: Initial connection problems between Windows PowerShell and ClickHouse server  
+**Solution**: Switched to native TCP connection (port 9000) instead of HTTP, implemented proper error handling in Python scripts  
+**Learning**: Different database engines require different connection approaches
+
+#### 2. Table Naming Conventions
+**Challenge**: Confusion between different group table names (grp4 vs grp2) and exact table naming patterns  
+**Solution**: Systematic exploration of available tables using SHOW TABLES queries, proper source configuration in dbt  
+**Learning**: Always verify actual table names in the target database before writing queries
+
+#### 3. ClickHouse SQL Syntax Differences
+**Challenge**: ClickHouse has different syntax requirements (table engines, ORDER BY in CREATE TABLE)  
+**Initial Error**: ORDER BY clause not allowed in table creation with CTEs  
+**Solution**: Used separate CREATE and INSERT statements, learned ClickHouse-specific syntax  
+**Learning**: Each database engine has unique requirements and optimizations
+
+### Data Modeling Challenges
+
+#### 1. Missing Genre Dimension
+**Challenge**: Initially couldn't find the genre table  
+**Solution**: Discovered genre information was available through proper table exploration and joins  
+**Learning**: Always map out the complete data lineage before starting dimensional modeling
+
+#### 2. Undefined Business Requirements
+**Challenge**: Determining the right level of detail for both analyses (country-genre vs country-region)  
+**Solution**: Defined clear business requirements first, then determined appropriate grain levels  
+**Learning**: Grain definition drives the entire dimensional model design
+
+### Process & Methodology Challenges
+
+#### 1. Regional Segmentation Logic
+**Challenge**: Creating meaningful regional groupings and price sensitivity metrics  
+**Solution**: Developed business logic using CASE statements and percentage calculations  
+**Learning**: Business logic often requires creative SQL solutions
+
+### Group 2 Final Week Experience
+
+![Group 2 Final Week Meme](../../assets/grp-final%20week/group2-final-week-meme.jpg)
+
+*The final week experience of Group 2 - accurately capturing the intensity, collaboration, and ultimate triumph of our data engineering bootcamp journey!*
+
+---
+
 *This document serves as the comprehensive guide for all business analytics initiatives within the Chinook music store data warehouse project. Regular updates will be made as new analyses are completed and insights are discovered by Group 2.*
