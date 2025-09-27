@@ -78,7 +78,6 @@ services:
  
   chinook_fetch:
     image: alpine:3.20
-    restart: "no"
     entrypoint: /bin/sh
     command:
       - -c

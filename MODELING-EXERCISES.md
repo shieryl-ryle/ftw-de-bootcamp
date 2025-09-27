@@ -182,6 +182,7 @@ erDiagram
 * **Size/Complexity:** 500MB, Medium (32k students, ~10M VLE interactions).
 * **Tables:** Students, registrations, assessments, VLE logs.
 * **Features:** Time-series, demographics, missing values.
+* More references can be found [here](https://analyse.kmi.open.ac.uk/open-dataset).
 
 ### Key Instructions
 
