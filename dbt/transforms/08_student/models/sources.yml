@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw OULAD dataset tables loaded via DLT"
+    tables:
+      - name: grp2_oulad___assessments
+        description: "Assessment information for courses"
+        
+      - name: grp2_oulad___courses
+        description: "Course module information"
+        
+      - name: grp2_oulad___student_assessment
+        description: "Student assessment results"
+        
+      - name: grp2_oulad___student_info
+        description: "Student demographic information"
+        
+      - name: grp2_oulad___student_registration
+        description: "Student course registration data"
+        
+      - name: grp2_oulad___vle
+        description: "Virtual Learning Environment content"
+        
+      - name: grp2_oulad___student_vle
+        description: "Student VLE interaction data"

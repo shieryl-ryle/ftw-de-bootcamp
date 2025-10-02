@@ -1,0 +1,28 @@
+name: "ex_08_student"
+version: "1.0"
+config-version: 2
+
+profile: clickhouse_ftw
+model-paths: ["models"]
+macro-paths: ["macros"]  
+
+models:
+  ex_08_student:
+    # PRODUCTION SCHEMAS - focused on business questions
+    clean:
+      +schema: clean  # Production clean schema
+      +materialized: table
+    mart:
+      +schema: mart   # Production mart schema
+      +materialized: view
+    
+    # Dimensional Models - Production
+    dimensions:
+      +schema: mart  # Dimension tables in production mart
+      +materialized: table
+    facts:
+      +schema: mart  # Fact tables in production mart
+      +materialized: table
+    data_marts:
+      +schema: mart  # Business-focused analytical views in production mart
+      +materialized: view
