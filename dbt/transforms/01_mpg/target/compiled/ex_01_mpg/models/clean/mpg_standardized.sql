@@ -7,7 +7,7 @@ select
   toFloat64(mpg)          as mpg,
   toInt32(cylinders)      as cylinders,
   toFloat64(displacement) as displacement,
-  toFloat64OrNull(horsepower)   as horsepower,
+  CAST(horsepower AS Nullable(Float64)) as horsepower,
   toInt32(weight)         as weight,
   toFloat64(acceleration) as acceleration,
   toInt32(model_year)     as model_year,

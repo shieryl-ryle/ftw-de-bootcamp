@@ -17,13 +17,13 @@ select
   toFloat64(mpg)          as mpg,
   toInt32(cylinders)      as cylinders,
   toFloat64(displacement) as displacement,
-  toFloat64OrNull(horsepower)   as horsepower,
+  CAST(horsepower AS Nullable(Float64)) as horsepower,
   toInt32(weight)         as weight,
   toFloat64(acceleration) as acceleration,
   toInt32(model_year)     as model_year,
   trim(origin)                  as origin,
   trim(name)                    as make
-from `raw`.`autompg___cars_myk`
-where horsepower is not null
-  and isFinite(horsepower)
+from `raw`.`autompg___cars`
+-- where horsepower is not null
+  -- and isFinite(horsepower)
   
