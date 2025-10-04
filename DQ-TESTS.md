@@ -70,7 +70,7 @@ Generate static HTML documentation for this dbt project:
 ```bash
 docker compose --profile jobs run --rm \
   -w /workdir/transforms/01_mpg \
-  dbt docs generate --profiles-dir . --target local
+  dbt docs generate --profiles-dir . --target local --static
 ```
 
 Open the docs locally:

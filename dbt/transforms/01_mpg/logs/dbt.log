@@ -10542,3 +10542,175 @@ where weight is null
 [0m07:15:37.863996 [debug] [MainThread]: Command `dbt test` succeeded at 07:15:37.863591 after 3.41 seconds
 [0m07:15:37.865228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f23f23e3310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f23ef02ce20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f23efb68bb0>]}
 [0m07:15:37.866399 [debug] [MainThread]: Flushing usage events
+[0m07:22:06.894340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71666b3dae20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x716668046430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x716668046580>]}
+
+
+============================== 07:22:06.904343 | aa7bb17e-81c6-4ab0-947c-d23470cb1b56 ==============================
+[0m07:22:06.904343 [info ] [MainThread]: Running with dbt=1.8.9
+[0m07:22:06.905472 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'write_json': 'True', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'version_check': 'True', 'debug': 'False', 'empty': 'None', 'profiles_dir': '.', 'log_path': '/workdir/transforms/01_mpg/logs', 'log_format': 'default', 'use_colors': 'True', 'target_path': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt docs generate --profiles-dir . --target local --static', 'no_print': 'None', 'static_parser': 'True', 'log_cache_events': 'False', 'warn_error': 'None'}
+[0m07:22:07.194494 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'aa7bb17e-81c6-4ab0-947c-d23470cb1b56', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71666a871910>]}
+[0m07:22:07.290862 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'aa7bb17e-81c6-4ab0-947c-d23470cb1b56', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7166680150d0>]}
+[0m07:22:07.292182 [info ] [MainThread]: Registered adapter: clickhouse=1.8.6
+[0m07:22:07.464184 [debug] [MainThread]: checksum: 134c0f7b96382cc6938697739bc32fb1adc530b177e30f60cebddf61dbd7e979, vars: {}, profile: , target: local, version: 1.8.9
+[0m07:22:07.821535 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:22:07.822530 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:22:07.942557 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'aa7bb17e-81c6-4ab0-947c-d23470cb1b56', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7166677ec130>]}
+[0m07:22:08.161959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'aa7bb17e-81c6-4ab0-947c-d23470cb1b56', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71666779aa30>]}
+[0m07:22:08.162889 [info ] [MainThread]: Found 2 models, 11 data tests, 1 source, 471 macros
+[0m07:22:08.163518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'aa7bb17e-81c6-4ab0-947c-d23470cb1b56', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71666779aac0>]}
+[0m07:22:08.166536 [info ] [MainThread]: 
+[0m07:22:08.167679 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m07:22:08.169299 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list__clean'
+[0m07:22:08.170683 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list__mart'
+[0m07:22:08.215733 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:22:08.219171 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:22:08.551503 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__clean: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list__clean"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'clean'
+      
+
+  ...
+[0m07:22:08.557163 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m07:22:08.565617 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__mart: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "list__mart"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'mart'
+      
+
+  ...
+[0m07:22:08.577087 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m07:22:08.603557 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'aa7bb17e-81c6-4ab0-947c-d23470cb1b56', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7166677dd310>]}
+[0m07:22:08.604749 [info ] [MainThread]: Concurrency: 4 threads (target='local')
+[0m07:22:08.605436 [info ] [MainThread]: 
+[0m07:22:08.619747 [debug] [Thread-1  ]: Began running node model.ex_01_mpg.mpg_standardized
+[0m07:22:08.620756 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list__clean, now model.ex_01_mpg.mpg_standardized)
+[0m07:22:08.621537 [debug] [Thread-1  ]: Began compiling node model.ex_01_mpg.mpg_standardized
+[0m07:22:08.640989 [debug] [Thread-1  ]: Writing injected SQL for node "model.ex_01_mpg.mpg_standardized"
+[0m07:22:08.642352 [debug] [Thread-1  ]: Began executing node model.ex_01_mpg.mpg_standardized
+[0m07:22:08.643877 [debug] [Thread-1  ]: Finished running node model.ex_01_mpg.mpg_standardized
+[0m07:22:08.646853 [debug] [Thread-3  ]: Began running node model.ex_01_mpg.cylinders_by_origin
+[0m07:22:08.647861 [debug] [Thread-4  ]: Began running node test.ex_01_mpg.accepted_values_mpg_standardized_cylinders__3__4__5__6__8.e4e8ce25ed
+[0m07:22:08.648741 [debug] [Thread-2  ]: Began running node test.ex_01_mpg.accepted_values_mpg_standardized_origin__usa__europe__japan.59743c9a2d
+[0m07:22:08.649833 [debug] [Thread-1  ]: Began running node test.ex_01_mpg.not_null_mpg_standardized_acceleration.9ff1644aae
+[0m07:22:08.660365 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.ex_01_mpg.mpg_standardized, now test.ex_01_mpg.not_null_mpg_standardized_acceleration.9ff1644aae)
+[0m07:22:08.653649 [debug] [Thread-4  ]: Acquiring new clickhouse connection 'test.ex_01_mpg.accepted_values_mpg_standardized_cylinders__3__4__5__6__8.e4e8ce25ed'
+[0m07:22:08.651548 [debug] [Thread-3  ]: Acquiring new clickhouse connection 'model.ex_01_mpg.cylinders_by_origin'
+[0m07:22:08.661746 [debug] [Thread-1  ]: Began compiling node test.ex_01_mpg.not_null_mpg_standardized_acceleration.9ff1644aae
+[0m07:22:08.658739 [debug] [Thread-2  ]: Acquiring new clickhouse connection 'test.ex_01_mpg.accepted_values_mpg_standardized_origin__usa__europe__japan.59743c9a2d'
+[0m07:22:08.663459 [debug] [Thread-4  ]: Began compiling node test.ex_01_mpg.accepted_values_mpg_standardized_cylinders__3__4__5__6__8.e4e8ce25ed
+[0m07:22:08.664851 [debug] [Thread-3  ]: Began compiling node model.ex_01_mpg.cylinders_by_origin
+[0m07:22:08.687482 [debug] [Thread-2  ]: Began compiling node test.ex_01_mpg.accepted_values_mpg_standardized_origin__usa__europe__japan.59743c9a2d
+[0m07:22:08.690805 [debug] [Thread-1  ]: Writing injected SQL for node "test.ex_01_mpg.not_null_mpg_standardized_acceleration.9ff1644aae"
+[0m07:22:08.721290 [debug] [Thread-4  ]: Writing injected SQL for node "test.ex_01_mpg.accepted_values_mpg_standardized_cylinders__3__4__5__6__8.e4e8ce25ed"
+[0m07:22:08.722769 [debug] [Thread-3  ]: Writing injected SQL for node "model.ex_01_mpg.cylinders_by_origin"
+[0m07:22:08.733528 [debug] [Thread-2  ]: Writing injected SQL for node "test.ex_01_mpg.accepted_values_mpg_standardized_origin__usa__europe__japan.59743c9a2d"
+[0m07:22:08.735345 [debug] [Thread-1  ]: Began executing node test.ex_01_mpg.not_null_mpg_standardized_acceleration.9ff1644aae
+[0m07:22:08.736774 [debug] [Thread-4  ]: Began executing node test.ex_01_mpg.accepted_values_mpg_standardized_cylinders__3__4__5__6__8.e4e8ce25ed
+[0m07:22:08.737551 [debug] [Thread-3  ]: Began executing node model.ex_01_mpg.cylinders_by_origin
+[0m07:22:08.739563 [debug] [Thread-1  ]: Finished running node test.ex_01_mpg.not_null_mpg_standardized_acceleration.9ff1644aae
+[0m07:22:08.741614 [debug] [Thread-4  ]: Finished running node test.ex_01_mpg.accepted_values_mpg_standardized_cylinders__3__4__5__6__8.e4e8ce25ed
+[0m07:22:08.742711 [debug] [Thread-2  ]: Began executing node test.ex_01_mpg.accepted_values_mpg_standardized_origin__usa__europe__japan.59743c9a2d
+[0m07:22:08.744732 [debug] [Thread-3  ]: Finished running node model.ex_01_mpg.cylinders_by_origin
+[0m07:22:08.746083 [debug] [Thread-1  ]: Began running node test.ex_01_mpg.not_null_mpg_standardized_cylinders.b01f130acc
+[0m07:22:08.747202 [debug] [Thread-4  ]: Began running node test.ex_01_mpg.not_null_mpg_standardized_displacement.68b13a28b0
+[0m07:22:08.749127 [debug] [Thread-2  ]: Finished running node test.ex_01_mpg.accepted_values_mpg_standardized_origin__usa__europe__japan.59743c9a2d
+[0m07:22:08.750295 [debug] [Thread-3  ]: Began running node test.ex_01_mpg.not_null_mpg_standardized_model_year.ca032ab904
+[0m07:22:08.751486 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.ex_01_mpg.not_null_mpg_standardized_acceleration.9ff1644aae, now test.ex_01_mpg.not_null_mpg_standardized_cylinders.b01f130acc)
+[0m07:22:08.752247 [debug] [Thread-4  ]: Re-using an available connection from the pool (formerly test.ex_01_mpg.accepted_values_mpg_standardized_cylinders__3__4__5__6__8.e4e8ce25ed, now test.ex_01_mpg.not_null_mpg_standardized_displacement.68b13a28b0)
+[0m07:22:08.753207 [debug] [Thread-2  ]: Began running node test.ex_01_mpg.not_null_mpg_standardized_mpg.3592ad3231
+[0m07:22:08.754060 [debug] [Thread-3  ]: Re-using an available connection from the pool (formerly model.ex_01_mpg.cylinders_by_origin, now test.ex_01_mpg.not_null_mpg_standardized_model_year.ca032ab904)
+[0m07:22:08.754908 [debug] [Thread-1  ]: Began compiling node test.ex_01_mpg.not_null_mpg_standardized_cylinders.b01f130acc
+[0m07:22:08.755848 [debug] [Thread-4  ]: Began compiling node test.ex_01_mpg.not_null_mpg_standardized_displacement.68b13a28b0
+[0m07:22:08.756916 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly test.ex_01_mpg.accepted_values_mpg_standardized_origin__usa__europe__japan.59743c9a2d, now test.ex_01_mpg.not_null_mpg_standardized_mpg.3592ad3231)
+[0m07:22:08.757644 [debug] [Thread-3  ]: Began compiling node test.ex_01_mpg.not_null_mpg_standardized_model_year.ca032ab904
+[0m07:22:08.766433 [debug] [Thread-1  ]: Writing injected SQL for node "test.ex_01_mpg.not_null_mpg_standardized_cylinders.b01f130acc"
+[0m07:22:08.775133 [debug] [Thread-4  ]: Writing injected SQL for node "test.ex_01_mpg.not_null_mpg_standardized_displacement.68b13a28b0"
+[0m07:22:08.776301 [debug] [Thread-2  ]: Began compiling node test.ex_01_mpg.not_null_mpg_standardized_mpg.3592ad3231
+[0m07:22:08.784186 [debug] [Thread-3  ]: Writing injected SQL for node "test.ex_01_mpg.not_null_mpg_standardized_model_year.ca032ab904"
+[0m07:22:08.790866 [debug] [Thread-1  ]: Began executing node test.ex_01_mpg.not_null_mpg_standardized_cylinders.b01f130acc
+[0m07:22:08.795175 [debug] [Thread-2  ]: Writing injected SQL for node "test.ex_01_mpg.not_null_mpg_standardized_mpg.3592ad3231"
+[0m07:22:08.796307 [debug] [Thread-4  ]: Began executing node test.ex_01_mpg.not_null_mpg_standardized_displacement.68b13a28b0
+[0m07:22:08.798247 [debug] [Thread-1  ]: Finished running node test.ex_01_mpg.not_null_mpg_standardized_cylinders.b01f130acc
+[0m07:22:08.800734 [debug] [Thread-4  ]: Finished running node test.ex_01_mpg.not_null_mpg_standardized_displacement.68b13a28b0
+[0m07:22:08.802055 [debug] [Thread-3  ]: Began executing node test.ex_01_mpg.not_null_mpg_standardized_model_year.ca032ab904
+[0m07:22:08.803111 [debug] [Thread-1  ]: Began running node test.ex_01_mpg.not_null_mpg_standardized_origin.b3c0df5b4a
+[0m07:22:08.803912 [debug] [Thread-2  ]: Began executing node test.ex_01_mpg.not_null_mpg_standardized_mpg.3592ad3231
+[0m07:22:08.805091 [debug] [Thread-4  ]: Began running node test.ex_01_mpg.not_null_mpg_standardized_weight.5050df3d05
+[0m07:22:08.806963 [debug] [Thread-3  ]: Finished running node test.ex_01_mpg.not_null_mpg_standardized_model_year.ca032ab904
+[0m07:22:08.807963 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.ex_01_mpg.not_null_mpg_standardized_cylinders.b01f130acc, now test.ex_01_mpg.not_null_mpg_standardized_origin.b3c0df5b4a)
+[0m07:22:08.809569 [debug] [Thread-2  ]: Finished running node test.ex_01_mpg.not_null_mpg_standardized_mpg.3592ad3231
+[0m07:22:08.810807 [debug] [Thread-4  ]: Re-using an available connection from the pool (formerly test.ex_01_mpg.not_null_mpg_standardized_displacement.68b13a28b0, now test.ex_01_mpg.not_null_mpg_standardized_weight.5050df3d05)
+[0m07:22:08.811979 [debug] [Thread-3  ]: Began running node test.ex_01_mpg.accepted_values_cylinders_by_origin_origin__usa__europe__japan.61e009b3f2
+[0m07:22:08.812958 [debug] [Thread-1  ]: Began compiling node test.ex_01_mpg.not_null_mpg_standardized_origin.b3c0df5b4a
+[0m07:22:08.813841 [debug] [Thread-2  ]: Began running node test.ex_01_mpg.not_null_cylinders_by_origin_origin.9a9d6e89e9
+[0m07:22:08.814845 [debug] [Thread-4  ]: Began compiling node test.ex_01_mpg.not_null_mpg_standardized_weight.5050df3d05
+[0m07:22:08.815970 [debug] [Thread-3  ]: Re-using an available connection from the pool (formerly test.ex_01_mpg.not_null_mpg_standardized_model_year.ca032ab904, now test.ex_01_mpg.accepted_values_cylinders_by_origin_origin__usa__europe__japan.61e009b3f2)
+[0m07:22:08.824094 [debug] [Thread-1  ]: Writing injected SQL for node "test.ex_01_mpg.not_null_mpg_standardized_origin.b3c0df5b4a"
+[0m07:22:08.825093 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly test.ex_01_mpg.not_null_mpg_standardized_mpg.3592ad3231, now test.ex_01_mpg.not_null_cylinders_by_origin_origin.9a9d6e89e9)
+[0m07:22:08.836486 [debug] [Thread-4  ]: Writing injected SQL for node "test.ex_01_mpg.not_null_mpg_standardized_weight.5050df3d05"
+[0m07:22:08.837669 [debug] [Thread-3  ]: Began compiling node test.ex_01_mpg.accepted_values_cylinders_by_origin_origin__usa__europe__japan.61e009b3f2
+[0m07:22:08.838771 [debug] [Thread-2  ]: Began compiling node test.ex_01_mpg.not_null_cylinders_by_origin_origin.9a9d6e89e9
+[0m07:22:08.840091 [debug] [Thread-1  ]: Began executing node test.ex_01_mpg.not_null_mpg_standardized_origin.b3c0df5b4a
+[0m07:22:08.847610 [debug] [Thread-3  ]: Writing injected SQL for node "test.ex_01_mpg.accepted_values_cylinders_by_origin_origin__usa__europe__japan.61e009b3f2"
+[0m07:22:08.854915 [debug] [Thread-2  ]: Writing injected SQL for node "test.ex_01_mpg.not_null_cylinders_by_origin_origin.9a9d6e89e9"
+[0m07:22:08.856534 [debug] [Thread-1  ]: Finished running node test.ex_01_mpg.not_null_mpg_standardized_origin.b3c0df5b4a
+[0m07:22:08.857560 [debug] [Thread-4  ]: Began executing node test.ex_01_mpg.not_null_mpg_standardized_weight.5050df3d05
+[0m07:22:08.858752 [debug] [Thread-3  ]: Began executing node test.ex_01_mpg.accepted_values_cylinders_by_origin_origin__usa__europe__japan.61e009b3f2
+[0m07:22:08.860311 [debug] [Thread-4  ]: Finished running node test.ex_01_mpg.not_null_mpg_standardized_weight.5050df3d05
+[0m07:22:08.861157 [debug] [Thread-2  ]: Began executing node test.ex_01_mpg.not_null_cylinders_by_origin_origin.9a9d6e89e9
+[0m07:22:08.862435 [debug] [Thread-3  ]: Finished running node test.ex_01_mpg.accepted_values_cylinders_by_origin_origin__usa__europe__japan.61e009b3f2
+[0m07:22:08.864153 [debug] [Thread-2  ]: Finished running node test.ex_01_mpg.not_null_cylinders_by_origin_origin.9a9d6e89e9
+[0m07:22:08.866082 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:22:08.866689 [debug] [MainThread]: Connection 'test.ex_01_mpg.not_null_mpg_standardized_origin.b3c0df5b4a' was left open.
+[0m07:22:08.867216 [debug] [MainThread]: On test.ex_01_mpg.not_null_mpg_standardized_origin.b3c0df5b4a: Close
+[0m07:22:08.867718 [debug] [MainThread]: Connection 'list__mart' was left open.
+[0m07:22:08.868192 [debug] [MainThread]: On list__mart: Close
+[0m07:22:08.868678 [debug] [MainThread]: Connection 'test.ex_01_mpg.accepted_values_cylinders_by_origin_origin__usa__europe__japan.61e009b3f2' was properly closed.
+[0m07:22:08.869155 [debug] [MainThread]: Connection 'test.ex_01_mpg.not_null_mpg_standardized_weight.5050df3d05' was properly closed.
+[0m07:22:08.869637 [debug] [MainThread]: Connection 'test.ex_01_mpg.not_null_cylinders_by_origin_origin.9a9d6e89e9' was properly closed.
+[0m07:22:08.875570 [debug] [MainThread]: Command end result
+[0m07:22:09.164334 [debug] [MainThread]: Acquiring new clickhouse connection 'generate_catalog'
+[0m07:22:09.164970 [info ] [MainThread]: Building catalog
+[0m07:22:09.177682 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m07:22:09.238365 [debug] [MainThread]: dbt_clickhouse adapter: On generate_catalog: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "clickhouse_ftw", "target_name": "local", "connection_name": "generate_catalog"} */
+select
+      '' as table_database,
+      columns.database as table_schema,
+      columns.table as table_name,
+      if(tables.engine not in ('MaterializedView', 'View'), 'table', 'view') as table_type,
+      nullIf(tables.comment, '') as table_comment,
+      columns.name as column_name,
+      columns.position as column_index,
+      columns.type as column_type,
+      nullIf(columns.comment, '') as column_comment,
+      null as table_owner
+    from system.columns as columns
+    join system.tables as tables on tables.database = columns.database and tables.name = columns.table
+    where database != 'system' and
+    (columns.database = 'raw' or columns.database = 'clean' or columns.database = 'mart')
+    order by columns.database, columns.table, columns.position...
+[0m07:22:09.260312 [debug] [MainThread]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m07:22:09.441658 [info ] [MainThread]: Catalog written to /workdir/transforms/01_mpg/target/catalog.json
+[0m07:22:09.443662 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 2.6425815, "process_in_blocks": "8", "process_kernel_time": 0.660671, "process_mem_max_rss": "116308", "process_out_blocks": "16688", "process_user_time": 5.426303}
+[0m07:22:09.444502 [debug] [MainThread]: Command `dbt docs generate` succeeded at 07:22:09.444281 after 2.64 seconds
+[0m07:22:09.445073 [debug] [MainThread]: Connection 'generate_catalog' was left open.
+[0m07:22:09.445637 [debug] [MainThread]: On generate_catalog: Close
+[0m07:22:09.446302 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71666b3dae20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71666847af10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7166679f6970>]}
+[0m07:22:09.446946 [debug] [MainThread]: Flushing usage events
