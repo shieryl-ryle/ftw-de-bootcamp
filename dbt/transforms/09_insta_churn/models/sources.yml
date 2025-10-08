@@ -1,0 +1,110 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: "This schema contains the raw data from Instacart"
+    tables:
+      - name: raw___insta_products
+        description: "Product catalog with aisle and department relationships"
+        columns:
+          - name: product_id
+            description: "Unique product identifier"
+            tests:
+              - not_null
+              - unique
+          - name: product_name
+            description: "Product display name"
+            tests:
+              - not_null
+      - name: raw___insta_orders
+        description: "Customer orders with timing and sequence data"
+        columns:
+          - name: order_id
+            description: "Unique order identifier"
+            tests:
+              - not_null
+              - unique
+          - name: user_id
+            description: "Customer identifier"
+            tests:
+              - not_null
+          - name: order_dow
+            description: "Day of week (0-6)"
+            tests:
+              - accepted_values:
+                  values: [0,1,2,3,4,5,6]
+          - name: order_hour_of_day
+            description: "Hour of day (0-23)"
+            tests:
+              - accepted_values:
+                  values: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+
+      - name: raw___insta_order_products_train
+        description: "Training dataset: order-product relationships"
+        columns:
+          - name: order_id
+            description: "Foreign key to orders"
+            tests:
+              - not_null
+              - relationships:
+                  to: source('raw', 'raw___insta_orders')
+                  field: order_id
+          - name: product_id
+            description: "Foreign key to products"
+            tests:
+              - not_null
+              - relationships:
+                  to: source('raw', 'raw___insta_products')
+                  field: product_id
+          - name: reordered
+            description: "Binary flag for reorder"
+            tests:
+              - accepted_values:
+                  values: [0,1]
+      - name: raw___insta_order_products_prior
+        description: "Historical dataset: prior order-product relationships"
+        columns:
+          - name: order_id
+            description: "Foreign key to orders"
+            tests:
+              - not_null
+              - relationships:
+                  to: source('raw', 'raw___insta_orders')
+                  field: order_id
+          - name: product_id
+            description: "Foreign key to products"  
+            tests:
+              - not_null
+              - relationships:
+                  to: source('raw', 'raw___insta_products')
+                  field: product_id
+          - name: reordered
+            description: "Binary flag for reorder"
+            tests:
+              - accepted_values:
+                  values: [0,1]
+      - name: raw___insta_departments
+        description: "Product department master data"
+        columns:
+          - name: department_id
+            description: "Unique department identifier"
+            tests:
+              - not_null
+              - unique
+          - name: department
+            description: "Department name"
+            tests:
+              - not_null
+      - name: raw___insta_aisles
+        description: "Product aisle master data"
+        columns:
+          - name: aisle_id
+            description: "Unique aisle identifier"
+            tests:
+              - not_null
+              - unique
+          - name: aisle
+            description: "Aisle name"
+            tests:
+              - not_null

@@ -26,3 +26,6 @@ Thumbs.db
 .idea/
 .vscode/
 .git
+
+# ignore Windows ADS sidecar files
+*Zone.Identifier
