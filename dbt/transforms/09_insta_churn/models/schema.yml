@@ -1,0 +1,110 @@
+# models/schema.yml  
+# Comprehensive testing after dimensional modeling
+version: 2
+
+models:
+  # Clean layer tests
+  - name: g2_v2_cleaned_products
+    description: "Cleaned product data with standardized types"
+    columns:
+      - name: product_id  
+        description: "Primary key"
+        tests:
+          - not_null:
+              name: cleaned_products_pk_not_null
+          - unique:
+              name: cleaned_products_pk_unique
+      - name: aisle_id
+        tests:
+          - not_null:
+              name: cleaned_products_aisle_fk_not_null
+      - name: department_id
+        tests:
+          - not_null:
+              name: cleaned_products_dept_fk_not_null
+              
+  - name: g2_v2_cleaned_orders
+    description: "Cleaned order data with validated temporal fields"  
+    columns:
+      - name: order_id
+        tests:
+          - not_null:
+              name: cleaned_orders_pk_not_null
+          - unique:
+              name: cleaned_orders_pk_unique
+      - name: user_id
+        tests:
+          - not_null:
+              name: cleaned_orders_customer_fk_not_null
+      - name: order_dow
+        tests:
+          - accepted_values:
+              values: [0,1,2,3,4,5,6]
+              name: cleaned_orders_dow_domain_check
+      - name: order_hour_of_day
+        tests:
+          - accepted_values:
+              values: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+              name: cleaned_orders_hour_domain_check
+              
+  # Mart layer tests - after dimensional modeling 
+  - name: g2_v2_dim_products
+    description: "Product dimension with hierarchy validation"
+    columns:
+      - name: product_id
+        tests:
+          - not_null:
+              name: dim_products_pk_not_null
+          - unique:
+              name: dim_products_pk_unique
+              
+  - name: g2_v2_dim_customers  
+    description: "Customer dimension with behavioral metrics"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null:
+              name: dim_customers_pk_not_null  
+          - unique:
+              name: dim_customers_pk_unique
+      - name: total_orders
+        tests:
+          - not_null:
+              name: dim_customers_total_orders_not_null
+
+              
+  - name: g2_v2_fact_orders
+    description: "Main fact table for order transactions"
+    columns:
+      - name: order_id
+        tests:
+          - not_null:
+              name: fact_orders_order_id_not_null
+      - name: product_id
+        tests:
+          - not_null:
+              name: fact_orders_product_id_not_null
+      - name: customer_id
+        tests:
+          - not_null:
+              name: fact_orders_customer_id_not_null
+      - name: is_reorder
+        tests:
+          - accepted_values:
+              values: [0,1]
+              name: fact_orders_reorder_flag_domain
+              
+  # Business analytics tests
+  - name: g2_v2_top_products_sold
+    description: "Top products analysis with volume and reorder metrics"
+    columns:
+      - name: product_id
+        tests:
+          - not_null:
+              name: top_products_product_id_not_null
+      - name: total_orders  
+      - name: reorder_rate_pct
+
+              
+  - name: g2_v2_data_quality_summary
+    description: "Data quality monitoring across all pipeline layers"
