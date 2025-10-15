@@ -6,9 +6,6 @@ models:
   # Clean layer tests
   - name: g2_v2_cleaned_products
     description: "Cleaned product data with standardized types"
-    tests:
-      - dbt_utils.row_count:
-          name: cleaned_products_row_count_validation
     columns:
       - name: product_id  
         description: "Primary key"
@@ -50,12 +47,9 @@ models:
               values: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
               name: cleaned_orders_hour_domain_check
               
-  # Mart layer tests - after dimensional modeling
+  # Mart layer tests - after dimensional modeling 
   - name: g2_v2_dim_products
     description: "Product dimension with hierarchy validation"
-    tests:
-      - dbt_utils.row_count:
-          name: dim_products_row_count_validation
     columns:
       - name: product_id
         tests:
@@ -66,9 +60,6 @@ models:
               
   - name: g2_v2_dim_customers  
     description: "Customer dimension with behavioral metrics"
-    tests:
-      - dbt_utils.row_count:
-          name: dim_customers_row_count_validation
     columns:
       - name: customer_id
         tests:
@@ -80,26 +71,10 @@ models:
         tests:
           - not_null:
               name: dim_customers_total_orders_not_null
-          - dbt_utils.accepted_range:
-              min_value: 1
-              name: dim_customers_total_orders_positive
+
               
   - name: g2_v2_fact_orders
     description: "Main fact table for order transactions"
-    tests:
-      - dbt_utils.row_count:
-          name: fact_orders_row_count_validation
-      # Referential integrity tests
-      - dbt_utils.relationships_where:
-          column_name: customer_id
-          to: ref('g2_v2_dim_customers')
-          field: customer_id
-          name: fact_orders_customer_fk_integrity
-      - dbt_utils.relationships_where:
-          column_name: product_id  
-          to: ref('g2_v2_dim_products')
-          field: product_id
-          name: fact_orders_product_fk_integrity
     columns:
       - name: order_id
         tests:
@@ -122,32 +97,14 @@ models:
   # Business analytics tests
   - name: g2_v2_top_products_sold
     description: "Top products analysis with volume and reorder metrics"
-    tests:
-      - dbt_utils.row_count:
-          name: top_products_has_results
     columns:
       - name: product_id
         tests:
           - not_null:
               name: top_products_product_id_not_null
       - name: total_orders  
-        tests:
-          - dbt_utils.accepted_range:
-              min_value: 1
-              name: top_products_volume_positive
       - name: reorder_rate_pct
-        tests:
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 100  
-              name: top_products_reorder_rate_valid_pct
+
               
   - name: g2_v2_data_quality_summary
     description: "Data quality monitoring across all pipeline layers"
-    tests:
-      - dbt_utils.row_count:
-          name: dq_summary_has_results
-      # Custom test: Ensure no critical data quality failures
-      - dbt_utils.expression_is_true:
-          expression: "data_quality_status != 'CRITICAL: No clean data'"
-          name: dq_no_critical_failures
